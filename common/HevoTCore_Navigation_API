@@ -1,0 +1,41 @@
+# CREAR TEXTOS
+	<HevoTCore id="title" type="Text" spanClass="h1" title="Nombre de usuario" value = ""/>
+
+# CARGAR VISTAS
+	<HevoTCore type="view" view="loginSuperAdmin.xml"/>
+
+# CREAR BOTONES DE SUBMIT
+
+	<HevoTCore id="loginButton" type="SubmitButton" buttonClass="smallContainerButton" name="submit" title="Entrar" label="Entrar" value="lsar"/>
+	
+	#Este no usa componente botón sino algo simple con url en get para mejor trazabilidad
+	<HevoTCore id="back" type="LinkButton" spanClass="backButton" title="Regresar" value = "" url="submit=load_home" />
+
+# CARGAR PLANTILLAS TPL
+	<HevoTCore type="template" url="login.tpl"/>
+
+# CREAR ETIQUETAS A CAMPOS DE ENTRADA
+	<HevoTCore id="userLabel" type="Label" labelClass="loginLabel" title="Nombre de usuario" value="User" for="userNameInput"/>
+
+# CREAR CAMPOS DE ENTRADA
+	#Entrada normal
+	<HevoTCore id="userNameInput" type="TextInput" inputClass="loginInput" name="params[userNameInput]" title="Nombre de usuario" value=""/>
+	
+	#Entrada de contraseña
+	<HevoTCore id="userPassInput" type="PasswordInput" inputClass="loginInput" name="params[userPassInput]" title="Contraseña" value=""/>
+
+# EJECUTAR REQUERIMIENTOS
+	<HevoTCore type="request" id="load_home"/>
+
+# CREAR COLECCIÓNES
+
+	/* 
+	id: 				identificador de la colección
+	itemClass: 			clase CSS para cada item
+	tittleClass: 		clase CSS para el título,
+	controls: 			indica si la lista tendrá modificadores [ view | modify | delete ] o cualquier combinación separada por (,),
+	controlCommands:	indica los nombres de los servicios que se deben invocar cuando se active la opción correspondiente pero en el orden en que los controles están mencionados.
+	controlClasses:		estilo CSS de los controles respectivamente. 
+	*/
+
+	<HevoTCore id="enterpriseUserCollection" type="Collection" itemClass="listItem" tittleClass="listTittle" controls="view,delete" controlCommands="?submit=getEnterpriseUser,?submit=removeEnterpriseUser" controlClasses="viewButton,deleteButton"/>

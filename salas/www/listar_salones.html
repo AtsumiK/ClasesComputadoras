@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Eliminar Salon</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">Clases de computadoras</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">Software</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+        <h1>Listar Salones</h1>
+        <span class="tool_button"><a href="insertar_salon.html">Nuevo</a></span>
+        <table style="width:100%">
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+          <?
+
+//-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+// 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+//---------------------------------------------------------------------------------------------------------
+
+          	require_once 'facade.php';
+        	  $res = listarSalones();
+
+            if($res["exito"]){
+              $salones = $res["content"];
+              foreach ($salones as $salon) {
+
+
+    // 1. Poner los vínculos correspondientes
+
+        	    	echo '<tr><td>'.$salon->getId().'</td>
+                          <td>'.$salon->getSalonNombre().'</td>
+                          <td><a href="consultar_salon.html?id='.$salon->getId().'"> Ver </a>
+                              <a href="editar_salon.html?id='.$salon->getId().'"> Editar </a>
+                              <a href="eliminar_salon.html?id='.$salon->getId().'"> Eliminar </a>
+                          </td>
+                      </tr>';
+
+   // ------------- fin de 1 ------------------
+        	    }
+            }else{
+                echo $res["content"];
+            }
+          ?>
+        </table>
+      </div>
+    </div>
+    <div id="footer">
+      Salones de compuadora
+    </div>
+  </div>
+</html>

@@ -1,0 +1,36 @@
+****************************************
+File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
