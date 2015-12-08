@@ -170,12 +170,6 @@ echo $te["content"].'-----<br/>';
 
 
 
-
-
-
-
-
-
 //Salones
 	function listarSalones($firstItem = 0) {
 		$mainCtrl = new SalasMainController ();

@@ -312,5 +312,6 @@ table tr td
   border-top: 1px solid #FFF;}
 
 .tool_button {
+  margin-left: 20px;
   float: right;
 }

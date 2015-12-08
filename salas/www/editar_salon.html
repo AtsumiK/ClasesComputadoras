@@ -75,10 +75,12 @@
 
                   $salon = new SalonDTO($id, $nombre);
 
+                  $res = editarSalon($salon);
+
     // ------------- fin de 3 ------------------
 
 
-                  $res = editarSalon($salon);
+
                   if($res["exito"]){
                       echo $res["content"];
                       exit;
@@ -87,8 +89,11 @@
                   }
                 }else if(isset($_GET['id'])){
                   $id = $_GET['id'];
+
                   $res = consultarSalon($id);
+
                   if($res["exito"]){
+
                     $salon = $res["content"];
 
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
