@@ -18,7 +18,7 @@
  */
 
 /*
- 	$dto = new PersonaDTO(null, 'fdsa');
+ 	$dto = new SalonDTO(null, 'fdsa');
 	insertarSalon($dto);
 
  $dto = new PersonaDTO(null, '542', 'sdfg', 'sgdf');
@@ -41,7 +41,7 @@
  insertarMonitorSalon($dto);
  $dto = new ObjetoEnInventarioDTO(null, 'fsd', '524', '1', '1');
  insertarObjetoEnInventario($dto);
- $dto = new ObjetoPerdidoDTO(null, 'sf', '12/02/2016', 'SDF', 'sfg', '12/02/2016', 'gsf', '1', null);
+ $dto = new ObjetoPerdidoDTO(null, 'sf', '12/02/2016', 'SDF', '12/02/2016', 'gsf', '1', null);
  insertarObjetoPerdido($dto);
  $dto = new PrestamoDTO(null, '12/02/2016', '12/02/2016', 'fsd', '1', '1');
  insertarPrestamo($dto);
@@ -49,9 +49,9 @@
  insertarReserva($dto);
  $dto = new TareaDTO(null, 'fgsd', 'gsf', '12/02/2016', '12/02/2016', '1');
  insertarTarea($dto);
-*/
+
 //prueba consultar
-/*$te=consultarEstudiante(1);				echo $te["content"]->getId().'<br/>';
+$te=consultarEstudiante(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarImpresion(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarMonitor(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarMonitorSalon(1);			echo $te["content"]->getId().'<br/>';
@@ -63,9 +63,9 @@ $te=consultarReserva(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarResponsable(1);			echo $te["content"]->getId().'<br/>';
 $te=consultarSoftware(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarTarea(1);					echo $te["content"]->getId().'------<br/>';
-*/
+
 //prueba lista
-/*
+
 	$res = listarComputadoras();			printListas($res,'computadoras');
 	$res = listarComputadoraSoftwares();	printListas($res,'computadora softwares');
 	$res = listarEstudiantes();				printListas($res,'estudiantes');
@@ -88,10 +88,10 @@ $te=consultarTarea(1);					echo $te["content"]->getId().'------<br/>';
 			echo $res["content"];
 		}
 	}
-*/
 
 //prueba modificar
-/*$te = $te["content"];
+$te=consultarComputadora(1);
+$te = $te["content"];
 $te = editarComputadora($te);
 echo $te["content"].'<br/>';
 
@@ -144,11 +144,12 @@ $te=consultarTarea(1);
 $te = $te["content"];
 $te = editarTarea($te);
 echo $te["content"].'-----<br/>';
-*/
+
+
 
 //prueba eliminar
-/*
-	eliminarComputadora(6);
+
+	eliminarComputadora(1);
 	eliminarComputadoraSoftware(1);
 	eliminarEstudiante(1);
 	eliminarImpresion(1);
@@ -162,7 +163,7 @@ echo $te["content"].'-----<br/>';
 	eliminarResponsable(1);
 	eliminarSoftware(1);
 	eliminarTarea(1);
-	*/
+*/
 
 
 

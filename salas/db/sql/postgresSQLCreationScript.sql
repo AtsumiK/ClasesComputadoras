@@ -53,7 +53,6 @@ CREATE TABLE objeto_perdido (
     objeto_perdido_id SERIAL NOT NULL,
     objeto_perdido_elemento CHARACTER VARYING(250) NOT NULL,
     objeto_perdido_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
-    objeto_perdido_proprietario CHARACTER VARYING(250) NOT NULL,
     objeto_perdido_correo CHARACTER VARYING(250) NOT NULL,
     objeto_perdido_fecha_devolucion TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     objeto_perdido_comentarios CHARACTER VARYING(5000) ,
@@ -113,8 +112,7 @@ CREATE TABLE impresion (
     impresion_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     impresion_lugar CHARACTER VARYING(50) NOT NULL,
     impresion_estudiante BIGINT NOT NULL,
-    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id),
-    CONSTRAINT impresion_impresion_estudiante_key UNIQUE (impresion_estudiante)
+    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id)
 );
 
 

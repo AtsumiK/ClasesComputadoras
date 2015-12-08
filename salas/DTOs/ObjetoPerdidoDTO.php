@@ -12,7 +12,6 @@
 
         public static $ORDER_BY_OBJETO_PERDIDO_ELEMENTO = "objeto_perdido_elemento";
         public static $ORDER_BY_OBJETO_PERDIDO_FECHA = "objeto_perdido_fecha";
-        public static $ORDER_BY_OBJETO_PERDIDO_PROPRIETARIO = "objeto_perdido_proprietario";
         public static $ORDER_BY_OBJETO_PERDIDO_CORREO = "objeto_perdido_correo";
         public static $ORDER_BY_OBJETO_PERDIDO_FECHA_DEVOLUCION = "objeto_perdido_fecha_devolucion";
         public static $ORDER_BY_OBJETO_PERDIDO_COMENTARIOS = "objeto_perdido_comentarios";
@@ -23,7 +22,6 @@
 
         public $OBJETO_PERDIDO_ELEMENTO = "OBJETO_PERDIDO_ELEMENTO";
         public $OBJETO_PERDIDO_FECHA = "OBJETO_PERDIDO_FECHA";
-        public $OBJETO_PERDIDO_PROPRIETARIO = "OBJETO_PERDIDO_PROPRIETARIO";
         public $OBJETO_PERDIDO_CORREO = "OBJETO_PERDIDO_CORREO";
         public $OBJETO_PERDIDO_FECHA_DEVOLUCION = "OBJETO_PERDIDO_FECHA_DEVOLUCION";
         public $OBJETO_PERDIDO_COMENTARIOS = "OBJETO_PERDIDO_COMENTARIOS";
@@ -34,18 +32,16 @@
         private $id;
         private $objetoPerdidoElemento;
         private $objetoPerdidoFecha;
-        private $objetoPerdidoProprietario;
         private $objetoPerdidoCorreo;
         private $objetoPerdidoFechaDevolucion;
         private $objetoPerdidoComentarios;
         private $objetoPerdidoSalon;
         private $objetoPerdidoEstudiante;
 
-        function ObjetoPerdidoDTO($id = null, $objetoPerdidoElemento = null, $objetoPerdidoFecha = null, $objetoPerdidoProprietario = null, $objetoPerdidoCorreo = null, $objetoPerdidoFechaDevolucion = null, $objetoPerdidoComentarios = null, $objetoPerdidoSalon = null, $objetoPerdidoEstudiante = null){
+        function ObjetoPerdidoDTO($id = null, $objetoPerdidoElemento = null, $objetoPerdidoFecha = null, $objetoPerdidoCorreo = null, $objetoPerdidoFechaDevolucion = null, $objetoPerdidoComentarios = null, $objetoPerdidoSalon = null, $objetoPerdidoEstudiante = null){
             $this->id = $id;
             $this->objetoPerdidoElemento = $objetoPerdidoElemento;
             $this->objetoPerdidoFecha = $objetoPerdidoFecha;
-            $this->objetoPerdidoProprietario = $objetoPerdidoProprietario;
             $this->objetoPerdidoCorreo = $objetoPerdidoCorreo;
             $this->objetoPerdidoFechaDevolucion = $objetoPerdidoFechaDevolucion;
             $this->objetoPerdidoComentarios = $objetoPerdidoComentarios;
@@ -77,14 +73,6 @@
 
         public function setObjetoPerdidoFecha($objetoPerdidoFecha){
             $this->objetoPerdidoFecha = $objetoPerdidoFecha;
-        }
-
-        public function getObjetoPerdidoProprietario(){
-            return $this->objetoPerdidoProprietario;
-        }
-
-        public function setObjetoPerdidoProprietario($objetoPerdidoProprietario){
-            $this->objetoPerdidoProprietario = $objetoPerdidoProprietario;
         }
 
         public function getObjetoPerdidoCorreo(){
@@ -149,7 +137,6 @@
             $this->id = $entity->getId();
             $this->objetoPerdidoElemento = $entity->unscapeString($entity->getObjetoPerdidoElemento());
             $this->objetoPerdidoFecha = $entity->unscapeString($entity->getObjetoPerdidoFecha());
-            $this->objetoPerdidoProprietario = $entity->unscapeString($entity->getObjetoPerdidoProprietario());
             $this->objetoPerdidoCorreo = $entity->unscapeString($entity->getObjetoPerdidoCorreo());
             $this->objetoPerdidoFechaDevolucion = $entity->unscapeString($entity->getObjetoPerdidoFechaDevolucion());
             $this->objetoPerdidoComentarios = $entity->unscapeString($entity->getObjetoPerdidoComentarios());
@@ -172,7 +159,6 @@
             $objetoPerdido->setId($objetoPerdidoDTO->getId());
             $objetoPerdido->setObjetoPerdidoElemento($objetoPerdidoDTO->getObjetoPerdidoElemento());
             $objetoPerdido->setObjetoPerdidoFecha($objetoPerdidoDTO->getObjetoPerdidoFecha());
-            $objetoPerdido->setObjetoPerdidoProprietario($objetoPerdidoDTO->getObjetoPerdidoProprietario());
             $objetoPerdido->setObjetoPerdidoCorreo($objetoPerdidoDTO->getObjetoPerdidoCorreo());
             $objetoPerdido->setObjetoPerdidoFechaDevolucion($objetoPerdidoDTO->getObjetoPerdidoFechaDevolucion());
             $objetoPerdido->setObjetoPerdidoComentarios($objetoPerdidoDTO->getObjetoPerdidoComentarios());
@@ -186,7 +172,7 @@
             if($this->objetoPerdidoEstudiante !== null){
                 $otherValidations = $otherValidations &&  EntityValidator::validateId($this->objetoPerdidoEstudiante);
             }
-            return $otherValidations && EntityValidator::validateString($this->objetoPerdidoElemento) && EntityValidator::validateString($this->objetoPerdidoFecha) && EntityValidator::validateString($this->objetoPerdidoProprietario) && EntityValidator::validateString($this->objetoPerdidoCorreo) && EntityValidator::validateString($this->objetoPerdidoFechaDevolucion) && EntityValidator::validateId($this->objetoPerdidoSalon);
+            return $otherValidations && EntityValidator::validateString($this->objetoPerdidoElemento) && EntityValidator::validateString($this->objetoPerdidoFecha) && EntityValidator::validateString($this->objetoPerdidoCorreo) && EntityValidator::validateString($this->objetoPerdidoFechaDevolucion) && EntityValidator::validateId($this->objetoPerdidoSalon);
         }
         public function toXML(){
             $xml="";
@@ -203,11 +189,6 @@
                     $xml .= "<objetoPerdidoFecha><![CDATA[";
                         $xml .= $this->getObjetoPerdidoFecha();
                     $xml .= "]]></objetoPerdidoFecha>";
-                }
-                if($this->getObjetoPerdidoProprietario() !== null){
-                    $xml .= "<objetoPerdidoProprietario><![CDATA[";
-                        $xml .= $this->getObjetoPerdidoProprietario();
-                    $xml .= "]]></objetoPerdidoProprietario>";
                 }
                 if($this->getObjetoPerdidoCorreo() !== null){
                     $xml .= "<objetoPerdidoCorreo><![CDATA[";
@@ -269,13 +250,6 @@
                      $data = null;
                 }
                 $dao->setObjetoPerdidoFecha($data);
-                $data = $node->getElementsByTagName("objetoPerdidoProprietario");
-                if($data->length>0 && !ObjetoPerdidoDTO::isEmpty($data->item(0)->nodeValue)){
-                    $data = $data->item(0)->nodeValue;
-                }else{
-                     $data = null;
-                }
-                $dao->setObjetoPerdidoProprietario($data);
                 $data = $node->getElementsByTagName("objetoPerdidoCorreo");
                 if($data->length>0 && !ObjetoPerdidoDTO::isEmpty($data->item(0)->nodeValue)){
                     $data = $data->item(0)->nodeValue;

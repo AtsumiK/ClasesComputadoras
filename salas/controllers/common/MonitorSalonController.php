@@ -11,7 +11,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.MONITOR_SALON_ENTITY;
     require_once SALAS_COMP_BEANS_DIR.MONITOR_SALON_BEAN;
 
-
+    
 
     class MonitorSalonController {
 
@@ -38,7 +38,7 @@
 
         /**
          * Agregar MonitorSalon al sistema.
-         *
+         * 
          * @param MonitorSalonDTO $monitorSalonDTO
         */
         public function setMonitorSalon(MonitorSalonDTO &$monitorSalonDTO){
@@ -77,7 +77,7 @@
         }
         /**
          * Actualizar MonitorSalon al sistema.
-         *
+         * 
          * @param MonitorSalonDTO $monitorSalonDTO
         */
         public function updateMonitorSalon(MonitorSalonDTO &$monitorSalonDTO){
@@ -116,7 +116,7 @@
         }
         /**
          * Obtener un MonitorSalon único.
-         *
+         * 
          * @param MonitorSalonDTO &$monitorSalonDTO
         */
 
@@ -137,7 +137,7 @@
         }
         /**
          * Obtener todos los MonitorSalon
-         *
+         * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -156,7 +156,7 @@
 
         /**
          * Listar todos los MonitorSalon
-         *
+         * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -185,7 +185,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado $monitorSalonEntrada
-         *
+         * 
          * @param $monitorSalonEntrada
          * @param $performSize
          * @param $firstResultNumber
@@ -216,7 +216,7 @@
 
         /**
          * Listar algunos MonitorSalon dado $monitorSalonEntrada
-         *
+         * 
          * @param $monitorSalonEntrada
          * @param $performSize
          * @param $firstResultNumber
@@ -247,7 +247,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -279,7 +279,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -311,7 +311,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -342,7 +342,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -373,7 +373,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -404,7 +404,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -435,7 +435,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado $monitorSalonSalida
-         *
+         * 
          * @param $monitorSalonSalida
          * @param $performSize
          * @param $firstResultNumber
@@ -466,7 +466,7 @@
 
         /**
          * Listar algunos MonitorSalon dado $monitorSalonSalida
-         *
+         * 
          * @param $monitorSalonSalida
          * @param $performSize
          * @param $firstResultNumber
@@ -497,7 +497,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -529,7 +529,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -561,7 +561,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -592,7 +592,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -623,7 +623,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -654,7 +654,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -685,7 +685,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -716,7 +716,7 @@
 
         /**
          * Listar algunos MonitorSalon dado $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -747,7 +747,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -779,7 +779,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -811,7 +811,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -842,7 +842,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -873,7 +873,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -904,7 +904,7 @@
 
         /**
          * Listar algunos MonitorSalon dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -935,7 +935,7 @@
 
         /**
          *1. Obtener algunos MonitorSalon comenzando por $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -966,7 +966,7 @@
 
         /**
          *1. Listar algunos MonitorSalon comenzando por $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -997,7 +997,7 @@
 
         /**
          * Obtener algunos MonitorSalon terminando por $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -1028,7 +1028,7 @@
 
         /**
          * Listar algunos MonitorSalon terminando por $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -1059,7 +1059,7 @@
 
         /**
          * Obtener algunos MonitorSalon que contenga $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -1090,7 +1090,7 @@
 
         /**
          * Listar algunos MonitorSalon que contenga $monitorSalonComentarios
-         *
+         * 
          * @param $monitorSalonComentarios
          * @param $performSize
          * @param $firstResultNumber
@@ -1121,7 +1121,7 @@
 
         /**
          * Obtener algunos MonitorSalon dado el $monitorId
-         *
+         * 
          * @param $monitorId
          * @param $performSize
          * @param $firstResultNumber
@@ -1161,7 +1161,7 @@
 
         /**
          * Listar algunos MonitorSalon dado el $monitorId
-         *
+         * 
          * @param $monitorId
          * @param $performSize
          * @param $firstResultNumber
@@ -1200,7 +1200,7 @@
         }
         /**
          * Obtener algunos MonitorSalon dado el $salonId
-         *
+         * 
          * @param $salonId
          * @param $performSize
          * @param $firstResultNumber
@@ -1240,7 +1240,7 @@
 
         /**
          * Listar algunos MonitorSalon dado el $salonId
-         *
+         * 
          * @param $salonId
          * @param $performSize
          * @param $firstResultNumber
@@ -1280,13 +1280,13 @@
 
         /**
          * Eliminar un MonitorSalon Dado el $monitorSalonId
-         *
+         * 
          * @param $monitorSalonId
         */
         public function removeMonitorSalon($monitorSalonId){
 
             $monitorSalon = new MonitorSalon();
-            $monitorSalon->setId($monitorSalonId);
+            $monitorSalon->setId($monitorSalonId); 
 
             # Validamos los campos
             if( !EntityValidator::validateId($monitorSalonId)){

@@ -870,442 +870,6 @@
         }
 
         /**
-         * Obtener algunos ObjetoPerdido dado $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 78);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 80);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 82);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario );
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido dado $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 79);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 81);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 83);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Obtener algunos ObjetoPerdido dado un rango
-         * 
-         * @param $firstValue
-         * @param $secondValue
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 84);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 86);
-            }
-
-            if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 88);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido dado un rango
-         * 
-         * @param $firstValue
-         * @param $secondValue
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 85);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 87);
-            }
-
-            if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 89);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Obtener algunos ObjetoPerdido dado un rango superior
-         * 
-         * @param $value
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 90);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 92);
-            }
-
-            if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 94);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido dado un rango superior
-         * 
-         * @param $value
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 91);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 93);
-            }
-
-            if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 95);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Obtener algunos ObjetoPerdido dado un rango inferior
-         * 
-         * @param $value
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 96);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 98);
-            }
-
-            if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 100);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido dado un rango inferior
-         * 
-         * @param $value
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 97);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 99);
-            }
-
-            if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 101);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         *1. Obtener algunos ObjetoPerdido comenzando por $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 102);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 104);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 106);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         *1. Listar algunos ObjetoPerdido comenzando por $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 103);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 105);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 107);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Obtener algunos ObjetoPerdido terminando por $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 108);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 110);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 112);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido terminando por $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 109);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 111);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 113);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Obtener algunos ObjetoPerdido que contenga $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 114);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 116);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 118);
-            }
-
-            # Obtenemos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->getObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
-         * Listar algunos ObjetoPerdido que contenga $objetoPerdidoProprietario
-         * 
-         * @param $objetoPerdidoProprietario
-         * @param $performSize
-         * @param $firstResultNumber
-         * @param $numResults
-        */
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            # Validamos los campos
-            if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 115);
-            }
-
-            if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 117);
-            }
-
-            if( !(EntityValidator::validateString($objetoPerdidoProprietario))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 119);
-            }
-
-            # Listamos las entidades
-            if($performSize){
-                $this->lastRequestSize = $this->objetoPerdidoBean->countGetObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario);
-            }
-
-            return ObjetoPerdidoDTO::loadFromEntities($this->objetoPerdidoBean->listObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $firstResultNumber, $numResults, $orderBy, $orderPriority));
-
-        }
-
-        /**
          * Obtener algunos ObjetoPerdido dado $objetoPerdidoCorreo
          * 
          * @param $objetoPerdidoCorreo
@@ -1316,15 +880,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreo($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 120);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 78);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 122);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 80);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 124);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 82);
             }
 
             # Obtenemos las entidades
@@ -1347,15 +911,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreo($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 121);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 79);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 123);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 81);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 125);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 83);
             }
 
             # Listamos las entidades
@@ -1379,15 +943,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 126);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 84);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 128);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 86);
             }
 
             if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 130);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 88);
             }
 
             # Obtenemos las entidades
@@ -1411,15 +975,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 127);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 85);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 129);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 87);
             }
 
             if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 131);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 89);
             }
 
             # Listamos las entidades
@@ -1442,15 +1006,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 132);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 90);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 134);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 92);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 136);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 94);
             }
 
             # Obtenemos las entidades
@@ -1473,15 +1037,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 133);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 91);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 135);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 93);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 137);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 95);
             }
 
             # Listamos las entidades
@@ -1504,15 +1068,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 138);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 96);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 140);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 98);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 142);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 100);
             }
 
             # Obtenemos las entidades
@@ -1535,15 +1099,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 139);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 97);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 141);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 99);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 143);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 101);
             }
 
             # Listamos las entidades
@@ -1566,15 +1130,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoBeginsWith($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 144);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 102);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 146);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 104);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 148);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 106);
             }
 
             # Obtenemos las entidades
@@ -1597,15 +1161,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoBeginsWith($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 145);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 103);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 147);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 105);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 149);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 107);
             }
 
             # Listamos las entidades
@@ -1628,15 +1192,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoEndsWith($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 150);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 108);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 152);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 110);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 154);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 112);
             }
 
             # Obtenemos las entidades
@@ -1659,15 +1223,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoEndsWith($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 151);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 109);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 153);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 111);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 155);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 113);
             }
 
             # Listamos las entidades
@@ -1690,15 +1254,15 @@
         public function getObjetoPerdidosByObjetoPerdidoCorreoContains($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 156);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 114);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 158);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 116);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 160);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 118);
             }
 
             # Obtenemos las entidades
@@ -1721,15 +1285,15 @@
         public function listObjetoPerdidosByObjetoPerdidoCorreoContains($objetoPerdidoCorreo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 157);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 115);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 159);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 117);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoCorreo))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 161);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 119);
             }
 
             # Listamos las entidades
@@ -1752,15 +1316,15 @@
         public function getObjetoPerdidosByObjetoPerdidoFechaDevolucion($objetoPerdidoFechaDevolucion, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 162);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 120);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 164);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 122);
             }
 
             if( !(EntityValidator::validateDate($objetoPerdidoFechaDevolucion))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 166);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 124);
             }
 
             # Obtenemos las entidades
@@ -1783,15 +1347,15 @@
         public function listObjetoPerdidosByObjetoPerdidoFechaDevolucion($objetoPerdidoFechaDevolucion, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 163);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 121);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 165);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 123);
             }
 
             if( !(EntityValidator::validateDate($objetoPerdidoFechaDevolucion))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 167);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 125);
             }
 
             # Listamos las entidades
@@ -1815,15 +1379,15 @@
         public function getObjetoPerdidosByObjetoPerdidoFechaDevolucionBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 168);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 126);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 170);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 128);
             }
 
             if( !(EntityValidator::validateDate($firstValue) && EntityValidator::validateDate($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 172);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 130);
             }
 
             # Obtenemos las entidades
@@ -1847,15 +1411,15 @@
         public function listObjetoPerdidosByObjetoPerdidoFechaDevolucionBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 169);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 127);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 171);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 129);
             }
 
             if( !(EntityValidator::validateDate($firstValue) && EntityValidator::validateDate($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 173);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 131);
             }
 
             # Listamos las entidades
@@ -1878,15 +1442,15 @@
         public function getObjetoPerdidosByObjetoPerdidoFechaDevolucionBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 174);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 132);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 176);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 134);
             }
 
             if( !(EntityValidator::validateDate($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 178);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 136);
             }
 
             # Obtenemos las entidades
@@ -1909,15 +1473,15 @@
         public function listObjetoPerdidosByObjetoPerdidoFechaDevolucionBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 175);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 133);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 177);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 135);
             }
 
             if( !(EntityValidator::validateDate($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 179);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 137);
             }
 
             # Listamos las entidades
@@ -1940,15 +1504,15 @@
         public function getObjetoPerdidosByObjetoPerdidoFechaDevolucionLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 180);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 138);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 182);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 140);
             }
 
             if( !(EntityValidator::validateDate($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 184);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 142);
             }
 
             # Obtenemos las entidades
@@ -1971,15 +1535,15 @@
         public function listObjetoPerdidosByObjetoPerdidoFechaDevolucionLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 181);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 139);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 183);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 141);
             }
 
             if( !(EntityValidator::validateDate($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 185);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 143);
             }
 
             # Listamos las entidades
@@ -2002,15 +1566,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentarios($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 186);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 144);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 188);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 146);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 190);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 148);
             }
 
             # Obtenemos las entidades
@@ -2033,15 +1597,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentarios($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 187);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 145);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 189);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 147);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 191);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 149);
             }
 
             # Listamos las entidades
@@ -2065,15 +1629,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 192);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 150);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 194);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 152);
             }
 
             if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 196);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 154);
             }
 
             # Obtenemos las entidades
@@ -2097,15 +1661,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 193);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 151);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 195);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 153);
             }
 
             if( !(EntityValidator::validateString($firstValue) && EntityValidator::validateString($secondValue))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 197);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 155);
             }
 
             # Listamos las entidades
@@ -2128,15 +1692,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 198);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 156);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 200);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 158);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 202);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 160);
             }
 
             # Obtenemos las entidades
@@ -2159,15 +1723,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 199);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 157);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 201);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 159);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 203);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 161);
             }
 
             # Listamos las entidades
@@ -2190,15 +1754,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 204);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 162);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 206);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 164);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 208);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 166);
             }
 
             # Obtenemos las entidades
@@ -2221,15 +1785,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 205);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 163);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 207);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 165);
             }
 
             if( !(EntityValidator::validateString($value))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 209);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 167);
             }
 
             # Listamos las entidades
@@ -2252,15 +1816,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosBeginsWith($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 210);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 168);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 212);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 170);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 214);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 172);
             }
 
             # Obtenemos las entidades
@@ -2283,15 +1847,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosBeginsWith($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 211);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 169);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 213);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 171);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 215);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 173);
             }
 
             # Listamos las entidades
@@ -2314,15 +1878,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosEndsWith($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 216);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 174);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 218);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 176);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 220);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 178);
             }
 
             # Obtenemos las entidades
@@ -2345,15 +1909,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosEndsWith($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 217);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 175);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 219);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 177);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 221);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 179);
             }
 
             # Listamos las entidades
@@ -2376,15 +1940,15 @@
         public function getObjetoPerdidosByObjetoPerdidoComentariosContains($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 222);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 180);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 224);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 182);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 226);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 184);
             }
 
             # Obtenemos las entidades
@@ -2407,15 +1971,15 @@
         public function listObjetoPerdidosByObjetoPerdidoComentariosContains($objetoPerdidoComentarios, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 223);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 181);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 225);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 183);
             }
 
             if( !(EntityValidator::validateString($objetoPerdidoComentarios))){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 227);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 185);
             }
 
             # Listamos las entidades
@@ -2442,20 +2006,20 @@
 
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 228);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 186);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 230);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 188);
             }
 
             if( !EntityValidator::validateId($objetoPerdidoSalonId)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 232);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 190);
             }
 
             # Verificamos que la entidad exista
             if(!$objBean->getSalon($obj)){
-                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 234);
+                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 192);
             }
 
             # Obtenemos las entidades
@@ -2482,20 +2046,20 @@
 
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 229);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 187);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 231);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 189);
             }
 
             if( !EntityValidator::validateId($objetoPerdidoSalonId)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 233);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 191);
             }
 
             # Verificamos que la entidad exista
             if(!$objBean->getSalon($obj)){
-                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 235);
+                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 193);
             }
 
             # Listamos las entidades
@@ -2521,20 +2085,20 @@
 
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 236);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 194);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 238);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 196);
             }
 
             if( !EntityValidator::validateId($objetoPerdidoEstudianteId)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 240);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 198);
             }
 
             # Verificamos que la entidad exista
             if(!$objBean->getEstudiante($obj)){
-                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 242);
+                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 200);
             }
 
             # Obtenemos las entidades
@@ -2561,20 +2125,20 @@
 
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 237);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 195);
             }
 
             if(!EntityValidator::validateGlobalOrderPriority($orderPriority)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 239);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 197);
             }
 
             if( !EntityValidator::validateId($objetoPerdidoEstudianteId)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 241);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 199);
             }
 
             # Verificamos que la entidad exista
             if(!$objBean->getEstudiante($obj)){
-                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 243);
+                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 201);
             }
 
             # Listamos las entidades
@@ -2598,19 +2162,19 @@
 
             # Validamos los campos
             if( !EntityValidator::validateId($objetoPerdidoId)){
-                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 244);
+                throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 202);
             }
 
             # Verificamos que la entidad exista.
             if(!$this->objetoPerdidoBean->getObjetoPerdido($objetoPerdido)){
-                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 245);
+                throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 203);
             }
 
             # Verificamos que la entidad no esté siendo utilziada en alguna otra.
 
             # Eliminamos la entidad
             if(!$this->objetoPerdidoBean->removeObjetoPerdido($objetoPerdido)){
-                throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_FAIL, $this->ID + 246);
+                throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_FAIL, $this->ID + 204);
             }
 
         }

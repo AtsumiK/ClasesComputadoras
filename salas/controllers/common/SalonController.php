@@ -87,7 +87,6 @@
         public function getSalon(SalonDTO &$salonDTO){
 
             $salon = SalonDTO::toEntity($salonDTO);
-            
             # Validamos los campos
             if(!EntityValidator::validateId($salon->getId())){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 4);

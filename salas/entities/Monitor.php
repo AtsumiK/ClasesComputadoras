@@ -166,14 +166,14 @@
         */
         private function scapeString($str){
             if(!empty($str)){
-                return str_replace(array("'","’"),"''",$str);
+                return addslashes(stripslashes($str));
             }else{
                 return $str;
             }
         }
         public function unscapeString($str){
             if(!empty($str)){
-                return str_replace(array("''"),"'",$str);
+                return stripslashes($str);
             }else{
                 return $str;
             }

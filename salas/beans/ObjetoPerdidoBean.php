@@ -70,21 +70,6 @@
             return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_FECHA." LIKE '".$objetoPerdidoFecha."'");
 
         }
-        public function getObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_PROPRIETARIO." LIKE '".$objetoPerdidoProprietario."'", $orderBy , $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, $entity->getExplicitDbListFieldNamesWithPK(), $entity->OBJETO_PERDIDO_PROPRIETARIO." LIKE '".$objetoPerdidoProprietario."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_PROPRIETARIO." LIKE '".$objetoPerdidoProprietario."'");
-
-        }
         public function getObjetoPerdidosByObjetoPerdidoCorreo($objetoPerdidoCorreo, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             $entity = new ObjetoPerdido();
             return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_CORREO." LIKE '".$objetoPerdidoCorreo."'", $orderBy , $orderPriority, $firstResultNumber,$numResults);
@@ -190,21 +175,6 @@
             return $this->persistenceManager->countAll($entity, array("*"), $entity->OBJETO_PERDIDO_FECHA." BETWEEN '".$firstValue."' AND '".$secondValue."' ");
         }
 
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_PROPRIETARIO." BETWEEN '".$firstValue."' AND '".$secondValue."' ", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, $entity->getExplicitDbListFieldNamesWithPK(), $entity->OBJETO_PERDIDO_PROPRIETARIO." BETWEEN '".$firstValue."' AND '".$secondValue."' ", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioBetween($firstValue, $secondValue){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->countAll($entity, array("*"), $entity->OBJETO_PERDIDO_PROPRIETARIO." BETWEEN '".$firstValue."' AND '".$secondValue."' ");
-        }
-
         public function getObjetoPerdidosByObjetoPerdidoCorreoBetween($firstValue, $secondValue, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             $entity = new ObjetoPerdido();
             return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_CORREO." BETWEEN '".$firstValue."' AND '".$secondValue."' ", $orderBy, $orderPriority, $firstResultNumber,$numResults);
@@ -280,21 +250,6 @@
             return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_FECHA." > '".$value."'");
         }
 
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_PROPRIETARIO." > '".$value."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, $entity->getExplicitDbListFieldNamesWithPK(), $entity->OBJETO_PERDIDO_PROPRIETARIO." > '".$value."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioBiggerThan($value){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_PROPRIETARIO." > '".$value."'");
-        }
-
         public function getObjetoPerdidosByObjetoPerdidoCorreoBiggerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             $entity = new ObjetoPerdido();
             return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_CORREO." > '".$value."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
@@ -368,21 +323,6 @@
         public function countGetObjetoPerdidosByObjetoPerdidoFechaLowerThan($value){
             $entity = new ObjetoPerdido();
             return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_FECHA." < '".$value."'");
-        }
-
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, array("*"), $entity->OBJETO_PERDIDO_PROPRIETARIO." < '".$value."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->findAll($entity, $entity->getExplicitDbListFieldNamesWithPK(), $entity->OBJETO_PERDIDO_PROPRIETARIO." < '".$value."'", $orderBy, $orderPriority, $firstResultNumber,$numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioLowerThan($value){
-            $entity = new ObjetoPerdido();
-            return $this->persistenceManager->countAll($entity, array(), $entity->OBJETO_PERDIDO_PROPRIETARIO." < '".$value."'");
         }
 
         public function getObjetoPerdidosByObjetoPerdidoCorreoLowerThan($value, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
@@ -466,42 +406,6 @@
             return $this->countGetObjetoPerdidosByObjetoPerdidoElemento("%" . $objetoPerdidoElemento . "%");
         }
 
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->getObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario . "%", $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->listObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario . "%", $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioBeginsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null){
-            return $this->countGetObjetoPerdidosByObjetoPerdidoProprietario($objetoPerdidoProprietario . "%", $firstResultNumber, $numResults);
-        }
-
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->getObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario, $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->listObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario, $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioEndsWith($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null){
-            return $this->countGetObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario, $firstResultNumber, $numResults);
-        }
-
-        public function getObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->getObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario . "%", $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function listObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
-            return $this->listObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario . "%", $orderBy, $orderPriority, $firstResultNumber, $numResults);
-        }
-
-        public function countGetObjetoPerdidosByObjetoPerdidoProprietarioContains($objetoPerdidoProprietario){
-            return $this->countGetObjetoPerdidosByObjetoPerdidoProprietario("%" . $objetoPerdidoProprietario . "%");
-        }
-
         public function getObjetoPerdidosByObjetoPerdidoCorreoBeginsWith($objetoPerdidoCorreo, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             return $this->getObjetoPerdidosByObjetoPerdidoCorreo($objetoPerdidoCorreo . "%", $orderBy, $orderPriority, $firstResultNumber, $numResults);
         }
@@ -581,11 +485,6 @@
 
         public function updateObjetoPerdidoFecha(ObjetoPerdido $entity,  $objetoPerdidoFecha){
             $entity->setObjetoPerdidoFecha($objetoPerdidoFecha);
-            return $this->persistenceManager->update($entity);
-        }
-
-        public function updateObjetoPerdidoProprietario(ObjetoPerdido $entity,  $objetoPerdidoProprietario){
-            $entity->setObjetoPerdidoProprietario($objetoPerdidoProprietario);
             return $this->persistenceManager->update($entity);
         }
 

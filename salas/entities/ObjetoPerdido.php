@@ -14,8 +14,6 @@
         public static $ORDER_BY_OBJETO_PERDIDO_ELEMENTO = "objeto_perdido_elemento";
         public $OBJETO_PERDIDO_FECHA = "objeto_perdido_fecha";
         public static $ORDER_BY_OBJETO_PERDIDO_FECHA = "objeto_perdido_fecha";
-        public $OBJETO_PERDIDO_PROPRIETARIO = "objeto_perdido_proprietario";
-        public static $ORDER_BY_OBJETO_PERDIDO_PROPRIETARIO = "objeto_perdido_proprietario";
         public $OBJETO_PERDIDO_CORREO = "objeto_perdido_correo";
         public static $ORDER_BY_OBJETO_PERDIDO_CORREO = "objeto_perdido_correo";
         public $OBJETO_PERDIDO_FECHA_DEVOLUCION = "objeto_perdido_fecha_devolucion";
@@ -30,7 +28,6 @@
         # Constantes privadas que indican el tamaño de los campos que son caracteres
 
         private $OBJETO_PERDIDO_ELEMENTO_SIZE = 250;
-        private $OBJETO_PERDIDO_PROPRIETARIO_SIZE = 250;
         private $OBJETO_PERDIDO_CORREO_SIZE = 250;
         private $OBJETO_PERDIDO_COMENTARIOS_SIZE = 5000;
 
@@ -38,18 +35,16 @@
         private $id;
         private $objetoPerdidoElemento;
         private $objetoPerdidoFecha;
-        private $objetoPerdidoProprietario;
         private $objetoPerdidoCorreo;
         private $objetoPerdidoFechaDevolucion;
         private $objetoPerdidoComentarios;
         private $objetoPerdidoSalon;
         private $objetoPerdidoEstudiante;
 
-        function ObjetoPerdido($objetoPerdidoElemento = null, $objetoPerdidoFecha = null, $objetoPerdidoProprietario = null, $objetoPerdidoCorreo = null, $objetoPerdidoFechaDevolucion = null, $objetoPerdidoComentarios = null, $objetoPerdidoSalon = null, $objetoPerdidoEstudiante = null){
+        function ObjetoPerdido($objetoPerdidoElemento = null, $objetoPerdidoFecha = null, $objetoPerdidoCorreo = null, $objetoPerdidoFechaDevolucion = null, $objetoPerdidoComentarios = null, $objetoPerdidoSalon = null, $objetoPerdidoEstudiante = null){
             $this->id = null;
             $this->objetoPerdidoElemento = $this->scapeString($objetoPerdidoElemento);
             $this->objetoPerdidoFecha = $this->scapeString($objetoPerdidoFecha);
-            $this->objetoPerdidoProprietario = $this->scapeString($objetoPerdidoProprietario);
             $this->objetoPerdidoCorreo = $this->scapeString($objetoPerdidoCorreo);
             $this->objetoPerdidoFechaDevolucion = $this->scapeString($objetoPerdidoFechaDevolucion);
             $this->objetoPerdidoComentarios = $this->scapeString($objetoPerdidoComentarios);
@@ -85,18 +80,6 @@
 
         public function setObjetoPerdidoFecha($objetoPerdidoFecha){
             $this->objetoPerdidoFecha = $objetoPerdidoFecha;
-        }
-
-        public function getObjetoPerdidoProprietario(){
-            return $this->objetoPerdidoProprietario;
-        }
-
-        public function setObjetoPerdidoProprietario($objetoPerdidoProprietario){
-            if(strlen($objetoPerdidoProprietario) > $this->OBJETO_PERDIDO_PROPRIETARIO_SIZE){;
-                $this->objetoPerdidoProprietario = $this->scapeString(substr($objetoPerdidoProprietario, 0, $this->OBJETO_PERDIDO_PROPRIETARIO_SIZE));
-            }else{
-                $this->objetoPerdidoProprietario = $this->scapeString($objetoPerdidoProprietario);
-            }
         }
 
         public function getObjetoPerdidoCorreo(){
@@ -151,51 +134,51 @@
         # Métodos que dan soporte a la base de datos
 
         public function getExplicitDbFieldNames(){
-            return array($this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_PROPRIETARIO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getExplicitDbFieldNamesWithPK(){
-            return array($this->ENTITY_DB_NAME.".".$this->PRIMARY_KEY_DB_NAME,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_PROPRIETARIO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->ENTITY_DB_NAME.".".$this->PRIMARY_KEY_DB_NAME,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getDbFieldNames(){
-            return array($this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_PROPRIETARIO,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getDbFieldNamesWithPK(){
-            return array($this->PRIMARY_KEY_DB_NAME,$this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_PROPRIETARIO,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->PRIMARY_KEY_DB_NAME,$this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getExplicitDbListFieldNames(){
-            return array($this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_PROPRIETARIO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getExplicitDbListFieldNamesWithPK(){
-            return array($this->ENTITY_DB_NAME.".".$this->PRIMARY_KEY_DB_NAME,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_PROPRIETARIO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->ENTITY_DB_NAME.".".$this->PRIMARY_KEY_DB_NAME,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ELEMENTO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_CORREO,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_COMENTARIOS,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_SALON,$this->ENTITY_DB_NAME.".".$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getDbListFieldNames(){
-            return array($this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_PROPRIETARIO,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getDbListFieldNamesWithPK(){
-            return array($this->PRIMARY_KEY_DB_NAME,$this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_PROPRIETARIO,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
+            return array($this->PRIMARY_KEY_DB_NAME,$this->OBJETO_PERDIDO_ELEMENTO,$this->OBJETO_PERDIDO_FECHA,$this->OBJETO_PERDIDO_CORREO,$this->OBJETO_PERDIDO_FECHA_DEVOLUCION,$this->OBJETO_PERDIDO_COMENTARIOS,$this->OBJETO_PERDIDO_SALON,$this->OBJETO_PERDIDO_ESTUDIANTE);
         }
 
         public function getDbFieldValues(){
-            return array($this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoProprietario(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
+            return array($this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
         }
 
         public function getDbFieldValuesWithPK(){
-            return array($this->getId(),$this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoProprietario(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
+            return array($this->getId(),$this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
         }
 
         public function getDbListFieldValues(){
-            return array($this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoProprietario(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
+            return array($this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
         }
 
         public function getDbListFieldValuesWithPK(){
-            return array($this->getId(),$this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoProprietario(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
+            return array($this->getId(),$this->getObjetoPerdidoElemento(),$this->getObjetoPerdidoFecha(),$this->getObjetoPerdidoCorreo(),$this->getObjetoPerdidoFechaDevolucion(),$this->getObjetoPerdidoComentarios(),$this->getObjetoPerdidoSalon(),$this->getObjetoPerdidoEstudiante());
         }
 
         public function loadFromSqlResultQuery($rq){
@@ -209,11 +192,6 @@
                 $this->objetoPerdidoFecha = $this->scapeString($rq[$this->OBJETO_PERDIDO_FECHA]);
             }else{
                 $this->objetoPerdidoFecha = null;
-            }
-            if(isset($rq[$this->OBJETO_PERDIDO_PROPRIETARIO]) && !ObjetoPerdidoDTO::isEmpty($rq[$this->OBJETO_PERDIDO_PROPRIETARIO])){
-                $this->objetoPerdidoProprietario = $this->scapeString($rq[$this->OBJETO_PERDIDO_PROPRIETARIO]);
-            }else{
-                $this->objetoPerdidoProprietario = null;
             }
             if(isset($rq[$this->OBJETO_PERDIDO_CORREO]) && !ObjetoPerdidoDTO::isEmpty($rq[$this->OBJETO_PERDIDO_CORREO])){
                 $this->objetoPerdidoCorreo = $this->scapeString($rq[$this->OBJETO_PERDIDO_CORREO]);
@@ -247,7 +225,6 @@
             $objetoPerdidoDTO->setId($this->getId());
             $objetoPerdidoDTO->setObjetoPerdidoElemento($this->unscapeString($this->getObjetoPerdidoElemento()));
             $objetoPerdidoDTO->setObjetoPerdidoFecha($this->unscapeString($this->getObjetoPerdidoFecha()));
-            $objetoPerdidoDTO->setObjetoPerdidoProprietario($this->unscapeString($this->getObjetoPerdidoProprietario()));
             $objetoPerdidoDTO->setObjetoPerdidoCorreo($this->unscapeString($this->getObjetoPerdidoCorreo()));
             $objetoPerdidoDTO->setObjetoPerdidoFechaDevolucion($this->unscapeString($this->getObjetoPerdidoFechaDevolucion()));
             $objetoPerdidoDTO->setObjetoPerdidoComentarios($this->unscapeString($this->getObjetoPerdidoComentarios()));
@@ -261,7 +238,7 @@
             if($this->objetoPerdidoEstudiante !== null){
                 $otherValidations = $otherValidations &&  EntityValidator::validateId($this->objetoPerdidoEstudiante);
             }
-            return $otherValidations && EntityValidator::validateString($this->objetoPerdidoElemento) && EntityValidator::validateString($this->objetoPerdidoFecha) && EntityValidator::validateString($this->objetoPerdidoProprietario) && EntityValidator::validateString($this->objetoPerdidoCorreo) && EntityValidator::validateString($this->objetoPerdidoFechaDevolucion) && EntityValidator::validateId($this->objetoPerdidoSalon);
+            return $otherValidations && EntityValidator::validateString($this->objetoPerdidoElemento) && EntityValidator::validateString($this->objetoPerdidoFecha) && EntityValidator::validateString($this->objetoPerdidoCorreo) && EntityValidator::validateString($this->objetoPerdidoFechaDevolucion) && EntityValidator::validateId($this->objetoPerdidoSalon);
         }
         /**
          * Esta función trata de prevenir el SQL Injection
@@ -269,14 +246,14 @@
         */
         private function scapeString($str){
             if(!empty($str)){
-                return str_replace(array("'","’"),"''",$str);
+                return addslashes(stripslashes($str));
             }else{
                 return $str;
             }
         }
         public function unscapeString($str){
             if(!empty($str)){
-                return str_replace(array("''"),"'",$str);
+                return stripslashes($str);
             }else{
                 return $str;
             }
