@@ -146,10 +146,13 @@
 		public function setPersona($personaDTO) {
 			try{
 				$personaCtrl = new PersonaController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
-
-				$personaCtrl->setPersona($personaDTO);
-				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 11,$personaDTO);
-
+				$personas = $personaCtrl->getPersonasByPersonaDocumentoIdentidad($personaDTO->getPersonaDocumentoIdentidad(),false,0,1);
+				if(count($personas)==0){
+					$personaCtrl->setPersona($personaDTO);
+					$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 11,$personaDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe una persona con el número de documento: ".$personaDTO->getPersonaDocumentoIdentidad(),$this->ID + 11,$personaDTO);
+				}
 				return $cm;
 			}catch (Exception $e){
 				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 12) ."->".$e->getCode());
@@ -291,14 +294,20 @@
 		  try{
 		    $softwareCtrl = new SoftwareController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
 
+				$softwares = $softwareCtrl->getSoftwaresBySoftwareNumeroSerie($softwareDTO->getSoftwareNumeroSerie(),false,0,1);
+				if(count($softwares)==0){
 		    $softwareCtrl->setSoftware($softwareDTO);
 		    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 31,$softwareDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe un software con el número de serie: ".$softwareDTO->getSoftwareNumeroSerie(),$this->ID + 11);
+				}
 
 		    return $cm;
 		  }catch (Exception $e){
 		    return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 32) ."->".$e->getCode());
 		  }
 		}
+
 
 		public function getSoftware($idSoftware) {
 		  try{
@@ -376,9 +385,13 @@
 		public function setResponsable($responsableDTO) {
 		  try{
 		    $responsableCtrl = new ResponsableController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
-
-		    $responsableCtrl->setResponsable($responsableDTO);
-		    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 41,$responsableDTO);
+				$responsables = $responsableCtrl->getResponsablesByResponsablePersonaId($responsableDTO->getResponsablePersonaId(),false,0,1);
+				if(count($responsables)==0){
+			    $responsableCtrl->setResponsable($responsableDTO);
+			    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 41,$responsableDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe una responsable con el número de documento: ".$responsableDTO->getResponsablePersonaId(),$this->ID + 11,$responsableDTO);
+				}
 
 		    return $cm;
 		  }catch (Exception $e){
@@ -714,8 +727,13 @@
 		  try{
 		    $objetoEnInventarioCtrl = new ObjetoEnInventarioController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
 
-		    $objetoEnInventarioCtrl->setObjetoEnInventario($objetoEnInventarioDTO);
-		    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 81,$objetoEnInventarioDTO);
+				$objetoEnInventarios = $objetoEnInventarioCtrl->getObjetoEnInventariosByInventarioNumeroSerie($objetoEnInventarioDTO->getInventarioNumeroSerie(),false,0,1);
+				if(count($objetoEnInventarios)==0){
+			    $objetoEnInventarioCtrl->setObjetoEnInventario($objetoEnInventarioDTO);
+			    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 81,$objetoEnInventarioDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe un objeto con el número de serie: ".$objetoEnInventarioDTO->getInventarioNumeroSerie(),$this->ID + 11);
+				}
 
 		    return $cm;
 		  }catch (Exception $e){
@@ -795,9 +813,13 @@
 		public function setMonitorSalon($monitorSalonDTO) {
 		  try{
 		    $monitorSalonCtrl = new MonitorSalonController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
-
-		    $monitorSalonCtrl->setMonitorSalon($monitorSalonDTO);
-		    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 91,$monitorSalonDTO);
+				$monitors = $monitorSalonCtrl->getMonitorsByMonitorEstudianteId($monitorSalonDTO->getMonitorEstudianteId(),false,0,1);
+				if(count($monitors)==0){
+			    $monitorSalonCtrl->setMonitorSalon($monitorSalonDTO);
+			    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 91,$monitorSalonDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe una monitor con el número de estudiante: ".$monitorSalonDTO->getMonitorEstudianteId(),$this->ID + 11,$monitorSalonDTO);
+				}
 
 		    return $cm;
 		  }catch (Exception $e){
@@ -1020,7 +1042,14 @@
 		public function setEstudiante($estudianteDTO) {
 			try{
 				$estudianteCtrl = new EstudianteController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
-
+				$estudiantesByCode = $estudianteCtrl->getEstudiantesByEstudianteCodigo($estudianteDTO->getEstudianteCodigo(),false,0,1);
+				$estudiantesByDoc = $estudianteCtrl->getEstudiantesByEstudiantePersonaId($estudianteDTO->getEstudiantePersonaId(),false,0,1);
+				if(count($estudiantesByCode)==0&&count($estudiantesByDoc)==0){
+					$estudianteCtrl->setEstudiante($estudianteDTO);
+					$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 11,$estudianteDTO);
+				}else{
+					$cm = new CommunicationMensaje(false,"Ya existe un estudiante con el número de documento: ".$estudianteDTO->getEstudiantePersonaId()."o con el código de estudiante: ".$estudianteDTO->getEstudianteCodigo(),$this->ID + 11,$estudianteDTO);
+				}
 				$estudianteCtrl->setEstudiante($estudianteDTO);
 				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 119,$estudianteDTO);
 
@@ -1070,7 +1099,6 @@
 				$estudiante->setId($estudianteDTO->getId());
 				$ctrl->getEstudiante($estudiante);
 
-				$estudiante->setEstudianteCodigo($estudianteDTO->getEstudianteCodigo());
 				$estudiante->setEstudianteFacultad($estudianteDTO->getEstudianteFacultad());
 				$estudiante->setEstudianteCarrerra($estudianteDTO->getEstudianteCarrerra());
 

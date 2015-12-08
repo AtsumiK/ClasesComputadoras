@@ -236,8 +236,3 @@ ALTER TABLE responsable ADD CONSTRAINT responsable_persona
 
 ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
     FOREIGN KEY ( estudiante_persona) REFERENCES persona(persona_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
-
-
-
-
-
