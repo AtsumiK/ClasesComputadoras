@@ -8,10 +8,39 @@
 
 
 	#Navigation CMS includes
-	require_once SALAS_COMP_COMMON_CONTROLLER_DIR.SALON_CONTROLLER;
+
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.SALON_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.COMPUTADORA_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.COMPUTADORA_SOFTWARE_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.ESTUDIANTE_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.IMPRESION_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.MONITOR_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.MONITOR_SALON_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.OBJETO_EN_INVENTARIO_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.OBJETO_PERDIDO_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.PERSONA_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.PRESTAMO_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.RESERVA_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.RESPONSABLE_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.SOFTWARE_CONTROLLER;
+		require_once SALAS_COMP_COMMON_CONTROLLER_DIR.TAREA_CONTROLLER;
 
 
-	require_once SALAS_COMP_DTOS_DIR.SALON_DTO;
+		require_once SALAS_COMP_DTOS_DIR.SALON_DTO;
+		require_once SALAS_COMP_DTOS_DIR.COMPUTADORA_DTO;
+		require_once SALAS_COMP_DTOS_DIR.COMPUTADORA_SOFTWARE_DTO;
+		require_once SALAS_COMP_DTOS_DIR.ESTUDIANTE_DTO;
+		require_once SALAS_COMP_DTOS_DIR.IMPRESION_DTO;
+		require_once SALAS_COMP_DTOS_DIR.MONITOR_DTO;
+		require_once SALAS_COMP_DTOS_DIR.MONITOR_SALON_DTO;
+		require_once SALAS_COMP_DTOS_DIR.OBJETO_EN_INVENTARIO_DTO;
+		require_once SALAS_COMP_DTOS_DIR.OBJETO_PERDIDO_DTO;
+		require_once SALAS_COMP_DTOS_DIR.PERSONA_DTO;
+		require_once SALAS_COMP_DTOS_DIR.PRESTAMO_DTO;
+		require_once SALAS_COMP_DTOS_DIR.RESERVA_DTO;
+		require_once SALAS_COMP_DTOS_DIR.RESPONSABLE_DTO;
+		require_once SALAS_COMP_DTOS_DIR.SOFTWARE_DTO;
+		require_once SALAS_COMP_DTOS_DIR.TAREA_DTO;
 
 
 
@@ -155,29 +184,6 @@
 				return $cm;
 			}catch (Exception $e){
 				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 16) ."->".$e->getCode());
-			}
-		}
-
-		public function updatePersona($personaDTO) {
-			try{
-
-				$ctrl = new PersonaController($this->persistenceManager);
-				$persona = new PersonaDTO();
-
-				$persona->setId($personaDTO->getId());
-				$ctrl->getPersona($persona);
-
-				$persona->setPersonaDocumentoIdentidad($personaDTO->getPersonaDocumentoIdentidad());
-				$persona->setPersonaNombres($personaDTO->getPersonaNombres());
-				$persona->setPersonaApellidos($personaDTO->getPersonaApellidos());
-
-				$ctrl->updatePersona($persona);
-
-				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 17,$persona);
-
-				return $cm;
-			}catch (Exception $e){
-				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 18) ."->".$e->getCode());
 			}
 		}
 
@@ -1212,8 +1218,8 @@
 				$computadora->setComputadoraRam($computadoraDTO->getComputadoraRam());
 				$computadora->setComputadoraProcesador($computadoraDTO->getComputadoraProcesador());
 				$computadora->setComputadoraDiscoDuro($computadoraDTO->getComputadoraDiscoDuro());
-				$computadora->setComputadoraDirIp($computadoraDTO->setComputadoraDirIp());
-				$computadora->getComputadoraDirMac($computadoraDTO->setComputadoraDirMac());
+				$computadora->setComputadoraDirIp($computadoraDTO->getComputadoraDirIp());
+				$computadora->setComputadoraDirMac($computadoraDTO->getComputadoraDirMac());
 
 				$ctrl->updateComputadora($computadora);
 
