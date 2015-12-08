@@ -36,7 +36,6 @@
       </div>
       <div id="content">
           <h1>Consultar Salon</h1>
-        <table style="width:100%">
           <?php
 //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
 // 0. Las variables ejemplo $salon, deben ser sustituidas por las correspondentes de cada objeto-----------
@@ -52,14 +51,15 @@
 
    // 1. Poner en la tabla los valores de cada campo * en el mismo echo
 
-              echo '<tr><td>Id</td><td>'.$salon->getId().'</td></tr><tr><td>Nombre</td><td>'.$salon->getSalonNombre().'</td></tr>';
+              echo '<span class="tool_button"><a href="editar_salon.html?id='.$salon->getId().'">Editar</a></span>
+                    <span class="tool_button"><a href="eliminar_salon.html?id='.$salon->getId().'">Eliminar</a></span>
+                    <table style="width:100%"><tr><td>Id</td><td>'.$salon->getId().'</td></tr><tr><td>Nombre</td><td>'.$salon->getSalonNombre().'</td></tr></table>';
 
    // ------------- fin de 1 ------------------
             }else{
               echo $res["content"];
             }
           ?>
-        </table>
       </div>
     </div>
     <div id="footer">
