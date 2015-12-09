@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Eliminar Profesor de los Registros</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div id="logo">
+          <div id="logo_text">
+            <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">Software</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+          <h1>Eliminar Profesor de los Registros</h1>
+
+            <?php
+            	require_once 'facade.php';
+              $id = null;
+
+    // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
+
+
+                $facultad = "";
+                $asignatura = "";
+                $persona = "";
+
+
+    // ------------- fin de 1 ------------------
+
+              if(isset($_POST['submit'])){
+                $id = $_POST['id'];
+
+    // 2. Guardar en la variable el resultado de la insersion.
+
+                $res = eliminarResponsable($id);
+
+    // ------------- fin de 2 ------------------
+
+                if($res["exito"]){
+                    echo $res["content"];
+                    exit;
+                }else{
+                    echo '<span>'.$res["content"].'</span>';
+                }
+              }else if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                $res = consultarResponsable($id);
+                if($res["exito"]){
+                  $responsable = $res["content"];
+
+                  $facultad = $responsable->getResponsableFacultad();
+                  $asignatura = $responsable->getResponsableAsignatura();
+                  $persona = $responsable->getResponsablePersona();
+
+                  echo
+                    '<p>De hacer clic en "Eliminar" la siguiente información se perderá definitivamente</p>
+                    <b>Id: </b>'.$id.'<br>
+                    <b>Facultad: </b>'.$facultad.'<br>
+                    <b>Asignatura: </b>'.$asignatura.'<br>
+                    <b>Id Persona: </b>'.$persona.'<br>';
+                }else{
+                    echo '<span>'.$res["content"].'</span>';
+                    exit;
+                }
+              }
+
+            echo '<form method="post" action="#">
+              <input class="contact" type="hidden" name="id" value="'.$id.'">
+              <div class="form_settings">
+                <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Eliminar" /></p>
+              </div>
+            </form>';
+          ?>
+
+      </div>
+    </div>
+    <div id="footer">
+      Universidad Nacional de Colombia
+    </div>
+  </div>
+</html>

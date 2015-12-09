@@ -1,5 +1,5 @@
 ****************************************
-File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
 Class: PostgresDriver
 Method: PostgresDriver::countSelect
 Line: 73
@@ -8,7 +8,7 @@ SELECT COUNT(*) AS size FROM salon WHERE TRUE
 
 
 ****************************************
-File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
 Class: PostgresDriver
 Method: PostgresDriver::performSelect
 Line: 50
@@ -17,7 +17,7 @@ SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
 
 
 ****************************************
-File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
 Class: PostgresDriver
 Method: PostgresDriver::countSelect
 Line: 73
@@ -26,7 +26,4237 @@ SELECT COUNT(*) AS size FROM salon WHERE TRUE
 
 
 ****************************************
-File: /Applications/XAMPP/xamppfiles/htdocs/salas/common/customDrivers/db/postgres/PostgresDriver.php
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE 'Hola'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE 'Hola'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE 'Hola'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE 'Hola'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO salon ( salon_nombre) VALUES ('Nombre') RETURNING salon_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE 'Persona'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '1014208809'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('1014208809','Juan','David') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE inventario_salon = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_perdido WHERE objeto_perdido_salon = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor_salon WHERE salon = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_salon = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM salon WHERE salon_id=2
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE inventario_salon = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_perdido WHERE objeto_perdido_salon = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor_salon WHERE salon = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_salon = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM salon WHERE salon_id=1
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '654'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('654','Juanpe','joske') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_persona = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM persona WHERE persona_id=1
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_persona = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM persona WHERE persona_id=2
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '4654'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('4654','asd','wqe') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO salon ( salon_nombre) VALUES ('juan') RETURNING salon_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_persona = '3' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '3' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM persona WHERE persona_id=3
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '3445'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('3445','Hola','Holsa') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '4587'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '4'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO estudiante ( estudiante_codigo,estudiante_facultad,estudiante_carrerra,estudiante_persona) VALUES ('4587','asdsa','zcx','4') RETURNING estudiante_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_perdido WHERE objeto_perdido_estudiante = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM prestamo WHERE prestamo_estudiante = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM impresion WHERE impresion_estudiante = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_estudiante = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM estudiante WHERE estudiante_id=1
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '654'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '4'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO estudiante ( estudiante_codigo,estudiante_facultad,estudiante_carrerra,estudiante_persona) VALUES ('654','klj','kjsdk','4') RETURNING estudiante_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '56555'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('56555','adsfasf','dsafgs') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=5  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_persona = '5'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=5  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO responsable ( responsable_facultad,responsable_asignatura,responsable_persona) VALUES ('sdfsfsa','sdfasdf','5') RETURNING responsable_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_responsable = '1' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM responsable WHERE responsable_id=1
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '64565465'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=5  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '5'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_codigo LIKE '987979'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=5  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_persona = '5'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=5  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO estudiante ( estudiante_codigo,estudiante_facultad,estudiante_carrerra,estudiante_persona) VALUES ('987979','sfdsafa','asdfasfd','5') RETURNING estudiante_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=4  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performUpdate
+Line: 188
+----- SQL -----
+UPDATE estudiante SET estudiante_codigo='654' ,estudiante_facultad='klj' ,estudiante_carrerra='kjsdk' ,estudiante_persona='4'  WHERE estudiante_id=2 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM persona WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE TRUE ORDER BY persona_apellidos ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_documento_identidad LIKE '456456'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO persona ( persona_documento_identidad,persona_nombres,persona_apellidos) VALUES ('456456','sdfsf','xvcxvc') RETURNING persona_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=6  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_persona = '6'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=6  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO responsable ( responsable_facultad,responsable_asignatura,responsable_persona) VALUES ('asdasda','asddfsadf','6') RETURNING responsable_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM persona WHERE persona_id=6  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performUpdate
+Line: 188
+----- SQL -----
+UPDATE responsable SET responsable_facultad='asdasdaa' ,responsable_asignatura='asddfsadf' ,responsable_persona='6'  WHERE responsable_id=2 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_estudiante = '2'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO monitor ( monitor_tipo,monitor_horario,monitor_estudiante) VALUES ('adsda','12/02/2016','2') RETURNING monitor_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM estudiante WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE TRUE ORDER BY estudiante_codigo ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_estudiante = '3'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO monitor ( monitor_tipo,monitor_horario,monitor_estudiante) VALUES ('ddxc','12/02/2016','3') RETURNING monitor_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM estudiante WHERE estudiante_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performUpdate
+Line: 188
+----- SQL -----
+UPDATE monitor SET monitor_tipo='ddxc' ,monitor_horario='12/02/2016' ,monitor_estudiante='3'  WHERE monitor_id=2 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM tarea WHERE tarea_monitor = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor_salon WHERE monitor = '2' 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performDelete
+Line: 92
+----- SQL -----
+DELETE FROM monitor WHERE monitor_id=2
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM monitor WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE TRUE ORDER BY monitor_horario ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM monitor WHERE monitor_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM responsable WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE TRUE ORDER BY responsable_asignatura ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performInsert
+Line: 155
+----- SQL -----
+INSERT INTO reserva ( reserva_clase,reserva_hora_inicio,reserva_hora_fin,reserva_responsable,reserva_salon) VALUES ('asda','12/12/12','12/12/12','2','3') RETURNING reserva_id
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM responsable WHERE responsable_id=2  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performUpdate
+Line: 188
+----- SQL -----
+UPDATE reserva SET reserva_clase='asdaa' ,reserva_hora_inicio='2012-12-12 00:00:00' ,reserva_hora_fin='2012-12-12 00:00:00' ,reserva_responsable='2' ,reserva_salon='3'  WHERE reserva_id=1 
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM reserva WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE TRUE ORDER BY reserva_salon ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM reserva WHERE reserva_id=1  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM objeto_en_inventario WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE TRUE ORDER BY inventario_elemento ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE TRUE ORDER BY salon_nombre ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM objeto_en_inventario WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE TRUE ORDER BY inventario_elemento ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM objeto_en_inventario WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE TRUE ORDER BY inventario_elemento ASC LIMIT 2000 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE inventario_numero_serie LIKE '3'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM computadora WHERE computadora_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE inventario_numero_serie LIKE '3'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM computadora WHERE computadora_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM objeto_en_inventario WHERE inventario_numero_serie LIKE '3'  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM salon WHERE salon_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::performSelect
+Line: 50
+----- SQL -----
+SELECT * FROM computadora WHERE computadora_id=3  LIMIT 1 OFFSET 0
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
+Class: PostgresDriver
+Method: PostgresDriver::countSelect
+Line: 73
+----- SQL -----
+SELECT COUNT(*) AS size FROM salon WHERE TRUE
+
+
+****************************************
+File: C:\xampp\htdocs\salas\common\customDrivers\db\postgres\PostgresDriver.php
 Class: PostgresDriver
 Method: PostgresDriver::performSelect
 Line: 50
