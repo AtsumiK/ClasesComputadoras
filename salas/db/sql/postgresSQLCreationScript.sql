@@ -112,7 +112,8 @@ CREATE TABLE impresion (
     impresion_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     impresion_lugar CHARACTER VARYING(50) NOT NULL,
     impresion_estudiante BIGINT NOT NULL,
-    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id)
+    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id),
+    CONSTRAINT impresion_impresion_estudiante_key UNIQUE (impresion_estudiante)
 );
 
 
@@ -171,6 +172,17 @@ CREATE TABLE persona (
     persona_apellidos CHARACTER VARYING(250) NOT NULL,
     CONSTRAINT persona_pkey PRIMARY KEY (persona_id),
     CONSTRAINT persona_persona_documento_identidad_key UNIQUE (persona_documento_identidad)
+);
+
+
+
+CREATE TABLE usuarios (
+    usuarios_id SERIAL NOT NULL,
+    usuario_login CHARACTER VARYING(20) NOT NULL,
+    usuario_clave CHARACTER VARYING(20) NOT NULL,
+    usuario_tipo CHARACTER VARYING(3) NOT NULL,
+    CONSTRAINT usuarios_pkey PRIMARY KEY (usuarios_id),
+    CONSTRAINT usuarios_usuario_login_key UNIQUE (usuario_login)
 );
 
 
@@ -256,4 +268,4 @@ CREATE TRIGGER cuando_elimine_computadora
   BEFORE DELETE
   ON computadora
   FOR EACH ROW
-  EXECUTE PROCEDURE eliminar_inventarios_computadora();
+  EXECUTE PROCEDURE eliminar_inventarios_computadora();
