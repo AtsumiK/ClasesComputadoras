@@ -9,7 +9,6 @@
 	require_once SALAS_COMP_CONFIG_DIR . SALAS_COMP_ENUMS_FILE;
 	require_once SALAS_COMP_CONFIG_DIR . SALAS_COMP_CONFIG_FILE;
 	require_once SALAS_COMP_CONTROLLER_DIR . SALAS_COMP_MAIN_CONTROLLER;
-
 	require_once UTILS_DIR . COMMUNICATION_MESSAGE_OBJ;
 
 //prueba crear
@@ -17,7 +16,8 @@
  * OBJ PERDIDO PROPRIETARIO ELIMINAR CAMPO
  */
 
-/*
+
+ /*
  	$dto = new SalonDTO(null, 'fdsa');
 	insertarSalon($dto);
 
@@ -153,7 +153,6 @@ $te=consultarUsuario(1);
 $te = $te["content"];
 $te = editarUsuario($te);
 echo $te["content"].'-----<br/>';
-
 
 
 //prueba eliminar
@@ -333,6 +332,26 @@ echo $te["content"].'-----<br/>';
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getEstudiantes ( $firstItem, "ASC" );
+		$estudiantes = $cm->getData ();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $estudiantes
+		);
+	}
+	function listarEstudiantesTopeImpresion($firstItem = 0) {
+		$mainCtrl = new SalasMainController ();
+
+		$cm = $mainCtrl->darEstudiantesTopeImpresion ();
+		$estudiantes = $cm->getData ();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $estudiantes
+		);
+	}
+	function listarEstudiantesResponsables($firstItem = 0) {
+		$mainCtrl = new SalasMainController ();
+
+		$cm = $mainCtrl->darEstudiantesResponsables();
 		$estudiantes = $cm->getData ();
 		return array (
 				"exito" => $cm->getStatus (),
@@ -533,6 +552,16 @@ echo $te["content"].'-----<br/>';
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getObjetoEnInventarios ( $firstItem, "ASC" );
+		$objetoEnInventarios = $cm->getData ();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $objetoEnInventarios
+		);
+	}
+	function listarObjetoEnComputador($firstItem = 0) {
+		$mainCtrl = new SalasMainController ();
+
+		$cm = $mainCtrl->darInventarioComputador ();
 		$objetoEnInventarios = $cm->getData ();
 		return array (
 				"exito" => $cm->getStatus (),

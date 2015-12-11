@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Personas</title>
+  <title>Estudiantes responsables</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -35,13 +35,15 @@
 
       </div>
       <div id="content">
-        <h1>Listar Personas</h1>
-        <span class="tool_button"><a href="insertar_persona.html">Nuevo</a></span>
+        <h1>Estudiantes responsables</h1>
+        <span class="tool_button"><a href="insertar_estudiante.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
+            <th>Código</th>
+            <th>Facultad</th>
+            <th>Carrera</th>
+            <th>Persona</th>
             <th>Acción</th>
 
           </tr>
@@ -52,21 +54,23 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarPersonas();
+        	  $res = listarEstudiantesResponsables();
 
             if($res["exito"]){
-              $personas = $res["content"];
-              foreach ($personas as $persona) {
+              $estudiantes = $res["content"];
+              foreach ($estudiantes as $estudiante) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$persona->getId().'</td>
-                          <td>'.$persona->getPersonaNombres().'</td>
-                          <td>'.$persona->getPersonaApellidos().'</td>
-                          <td><a href="consultar_persona.html?id='.$persona->getId().'"> Ver </a>
-                              <a href="editar_persona.html?id='.$persona->getId().'"> Editar </a>
-                              <a href="eliminar_persona.html?id='.$persona->getId().'"> Eliminar </a>
+        	    	echo '<tr><td>'.$estudiante->getId().'</td>
+                          <td>'.$estudiante->getEstudianteCodigo().'</td>
+                          <td>'.$estudiante->getEstudianteFacultad().'</td>
+                          <td>'.$estudiante->getEstudianteCarrerra().'</td>
+                          <td>'.$estudiante->getEstudiantePersona().'</td>
+                          <td><a href="consultar_estudiante.html?id='.$estudiante->getId().'"> Ver  -</a>
+                              <a href="editar_estudiante.html?id='.$estudiante->getId().'"> Editar  -</a>
+                              <a href="eliminar_estudiante.html?id='.$estudiante->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

@@ -11,7 +11,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.OBJETO_EN_INVENTARIO_ENTITY;
     require_once SALAS_COMP_BEANS_DIR.OBJETO_EN_INVENTARIO_BEAN;
 
-    
+
 
     class ObjetoEnInventarioController {
 
@@ -38,7 +38,7 @@
 
         /**
          * Agregar ObjetoEnInventario al sistema.
-         * 
+         *
          * @param ObjetoEnInventarioDTO $objetoEnInventarioDTO
         */
         public function setObjetoEnInventario(ObjetoEnInventarioDTO &$objetoEnInventarioDTO){
@@ -77,7 +77,7 @@
         }
         /**
          * Actualizar ObjetoEnInventario al sistema.
-         * 
+         *
          * @param ObjetoEnInventarioDTO $objetoEnInventarioDTO
         */
         public function updateObjetoEnInventario(ObjetoEnInventarioDTO &$objetoEnInventarioDTO){
@@ -116,7 +116,7 @@
         }
         /**
          * Obtener un ObjetoEnInventario único.
-         * 
+         *
          * @param ObjetoEnInventarioDTO &$objetoEnInventarioDTO
         */
 
@@ -137,7 +137,7 @@
         }
         /**
          * Obtener todos los ObjetoEnInventario
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -156,7 +156,7 @@
 
         /**
          * Listar todos los ObjetoEnInventario
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -185,7 +185,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -216,7 +216,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -247,7 +247,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -279,7 +279,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -311,7 +311,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -342,7 +342,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -373,7 +373,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -404,7 +404,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -435,7 +435,7 @@
 
         /**
          *1. Obtener algunos ObjetoEnInventario comenzando por $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -466,7 +466,7 @@
 
         /**
          *1. Listar algunos ObjetoEnInventario comenzando por $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -497,7 +497,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario terminando por $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -528,7 +528,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario terminando por $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -559,7 +559,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario que contenga $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -590,7 +590,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario que contenga $inventarioElemento
-         * 
+         *
          * @param $inventarioElemento
          * @param $performSize
          * @param $firstResultNumber
@@ -621,7 +621,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -652,7 +652,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -683,7 +683,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -715,7 +715,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -747,7 +747,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -778,7 +778,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -809,7 +809,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -840,7 +840,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -871,7 +871,7 @@
 
         /**
          *1. Obtener algunos ObjetoEnInventario comenzando por $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -902,7 +902,7 @@
 
         /**
          *1. Listar algunos ObjetoEnInventario comenzando por $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -933,7 +933,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario terminando por $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -964,7 +964,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario terminando por $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -995,7 +995,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario que contenga $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -1026,7 +1026,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario que contenga $inventarioNumeroSerie
-         * 
+         *
          * @param $inventarioNumeroSerie
          * @param $performSize
          * @param $firstResultNumber
@@ -1057,7 +1057,7 @@
 
         /**
          * Obtener algunos ObjetoEnInventario dado el $inventarioSalonId
-         * 
+         *
          * @param $inventarioSalonId
          * @param $performSize
          * @param $firstResultNumber
@@ -1097,7 +1097,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado el $inventarioSalonId
-         * 
+         *
          * @param $inventarioSalonId
          * @param $performSize
          * @param $firstResultNumber
@@ -1136,7 +1136,7 @@
         }
         /**
          * Obtener algunos ObjetoEnInventario dado el $computadoraId
-         * 
+         *
          * @param $computadoraId
          * @param $performSize
          * @param $firstResultNumber
@@ -1176,7 +1176,7 @@
 
         /**
          * Listar algunos ObjetoEnInventario dado el $computadoraId
-         * 
+         *
          * @param $computadoraId
          * @param $performSize
          * @param $firstResultNumber
@@ -1216,13 +1216,13 @@
 
         /**
          * Eliminar un ObjetoEnInventario Dado el $objetoEnInventarioId
-         * 
+         *
          * @param $objetoEnInventarioId
         */
         public function removeObjetoEnInventario($objetoEnInventarioId){
 
             $objetoEnInventario = new ObjetoEnInventario();
-            $objetoEnInventario->setId($objetoEnInventarioId); 
+            $objetoEnInventario->setId($objetoEnInventarioId);
 
             # Validamos los campos
             if( !EntityValidator::validateId($objetoEnInventarioId)){
@@ -1243,6 +1243,10 @@
 
         }
 
+        // Funciones personalizadas
+        public function darInventarioComputador(){
+            return ObjetoEnInventarioDTO::loadFromEntities($this->objetoEnInventarioBean->darInventarioComputador());
+        }
     }
 
 ?>

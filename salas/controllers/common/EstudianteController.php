@@ -13,7 +13,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.ESTUDIANTE_ENTITY;
     require_once SALAS_COMP_BEANS_DIR.ESTUDIANTE_BEAN;
 
-    
+
 
     class EstudianteController {
 
@@ -40,7 +40,7 @@
 
         /**
          * Agregar Estudiante al sistema.
-         * 
+         *
          * @param EstudianteDTO $estudianteDTO
         */
         public function setEstudiante(EstudianteDTO &$estudianteDTO){
@@ -70,7 +70,7 @@
         }
         /**
          * Actualizar Estudiante al sistema.
-         * 
+         *
          * @param EstudianteDTO $estudianteDTO
         */
         public function updateEstudiante(EstudianteDTO &$estudianteDTO){
@@ -100,7 +100,7 @@
         }
         /**
          * Obtener un Estudiante único.
-         * 
+         *
          * @param EstudianteDTO &$estudianteDTO
         */
 
@@ -121,7 +121,7 @@
         }
         /**
          * Obtener todos los Estudiante
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -140,7 +140,7 @@
 
         /**
          * Listar todos los Estudiante
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -169,7 +169,7 @@
 
         /**
          * Obtener algunos Estudiante dado $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -200,7 +200,7 @@
 
         /**
          * Listar algunos Estudiante dado $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -231,7 +231,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -263,7 +263,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -295,7 +295,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -326,7 +326,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -357,7 +357,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -388,7 +388,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -419,7 +419,7 @@
 
         /**
          *1. Obtener algunos Estudiante comenzando por $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -450,7 +450,7 @@
 
         /**
          *1. Listar algunos Estudiante comenzando por $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -481,7 +481,7 @@
 
         /**
          * Obtener algunos Estudiante terminando por $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -512,7 +512,7 @@
 
         /**
          * Listar algunos Estudiante terminando por $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -543,7 +543,7 @@
 
         /**
          * Obtener algunos Estudiante que contenga $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -574,7 +574,7 @@
 
         /**
          * Listar algunos Estudiante que contenga $estudianteCodigo
-         * 
+         *
          * @param $estudianteCodigo
          * @param $performSize
          * @param $firstResultNumber
@@ -605,7 +605,7 @@
 
         /**
          * Obtener algunos Estudiante dado $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -636,7 +636,7 @@
 
         /**
          * Listar algunos Estudiante dado $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -667,7 +667,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -699,7 +699,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -731,7 +731,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -762,7 +762,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -793,7 +793,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -824,7 +824,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -855,7 +855,7 @@
 
         /**
          *1. Obtener algunos Estudiante comenzando por $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -886,7 +886,7 @@
 
         /**
          *1. Listar algunos Estudiante comenzando por $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -917,7 +917,7 @@
 
         /**
          * Obtener algunos Estudiante terminando por $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -948,7 +948,7 @@
 
         /**
          * Listar algunos Estudiante terminando por $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -979,7 +979,7 @@
 
         /**
          * Obtener algunos Estudiante que contenga $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -1010,7 +1010,7 @@
 
         /**
          * Listar algunos Estudiante que contenga $estudianteFacultad
-         * 
+         *
          * @param $estudianteFacultad
          * @param $performSize
          * @param $firstResultNumber
@@ -1041,7 +1041,7 @@
 
         /**
          * Obtener algunos Estudiante dado $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1072,7 +1072,7 @@
 
         /**
          * Listar algunos Estudiante dado $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1103,7 +1103,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1135,7 +1135,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1167,7 +1167,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1198,7 +1198,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1229,7 +1229,7 @@
 
         /**
          * Obtener algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1260,7 +1260,7 @@
 
         /**
          * Listar algunos Estudiante dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1291,7 +1291,7 @@
 
         /**
          *1. Obtener algunos Estudiante comenzando por $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1322,7 +1322,7 @@
 
         /**
          *1. Listar algunos Estudiante comenzando por $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1353,7 +1353,7 @@
 
         /**
          * Obtener algunos Estudiante terminando por $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1384,7 +1384,7 @@
 
         /**
          * Listar algunos Estudiante terminando por $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1415,7 +1415,7 @@
 
         /**
          * Obtener algunos Estudiante que contenga $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1446,7 +1446,7 @@
 
         /**
          * Listar algunos Estudiante que contenga $estudianteCarrerra
-         * 
+         *
          * @param $estudianteCarrerra
          * @param $performSize
          * @param $firstResultNumber
@@ -1477,7 +1477,7 @@
 
         /**
          * Obtener algunos Estudiante dado el $estudiantePersonaId
-         * 
+         *
          * @param $estudiantePersonaId
          * @param $performSize
          * @param $firstResultNumber
@@ -1517,7 +1517,7 @@
 
         /**
          * Listar algunos Estudiante dado el $estudiantePersonaId
-         * 
+         *
          * @param $estudiantePersonaId
          * @param $performSize
          * @param $firstResultNumber
@@ -1557,7 +1557,7 @@
 
         /**
          * Eliminar un Estudiante Dado el $estudianteId
-         * 
+         *
          * @param $estudianteId
         */
         public function removeEstudiante($estudianteId){
@@ -1567,7 +1567,7 @@
             $monitorBean = new MonitorBean($this->persistenceManager);
 
             $estudiante = new Estudiante();
-            $estudiante->setId($estudianteId); 
+            $estudiante->setId($estudianteId);
 
             # Validamos los campos
             if( !EntityValidator::validateId($estudianteId)){
@@ -1610,6 +1610,14 @@
                 throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_FAIL, $this->ID + 150);
             }
 
+        }
+
+        // Funciones personalizadas
+        public function darEstudiantesTopeImpresion($numMax){
+            return EstudianteDTO::loadFromEntities($this->estudianteBean->darEstudiantesTopeImpresion($numMax));
+        }
+        public function darEstudiantesResponsables(){
+            return EstudianteDTO::loadFromEntities($this->estudianteBean->darEstudiantesResponsables());
         }
 
     }

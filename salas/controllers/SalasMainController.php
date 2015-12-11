@@ -1091,6 +1091,7 @@
 			}
 		}
 
+
 		public function updateEstudiante($estudianteDTO) {
 			try{
 
@@ -1353,6 +1354,50 @@
 				return $cm;
 			}catch (Exception $e){
 				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 156) ."->".$e->getCode());
+			}
+		}
+
+
+		public function darEstudiantesTopeImpresion() {
+			try{
+
+				$ctrl = new EstudianteController($this->persistenceManager);
+
+				$estudiante = $ctrl->darEstudiantesTopeImpresion(SALAS_COMP_NUM_MAX_IMPRESIONES);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 157,$estudiante);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 158) ."->".$e->getCode());
+			}
+		}
+		public function darInventarioComputador() {
+			try{
+
+				$ctrl = new ObjetoEnInventarioController($this->persistenceManager);
+
+				$inventario = $ctrl->darInventarioComputador();
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 159,$inventario);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 160) ."->".$e->getCode());
+			}
+		}
+		public function darEstudiantesResponsables() {
+			try{
+
+				$ctrl = new EstudianteController($this->persistenceManager);
+
+				$estudiante = $ctrl->darEstudiantesResponsables();
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 161,$estudiante);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 162) ."->".$e->getCode());
 			}
 		}
 	}

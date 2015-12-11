@@ -4,7 +4,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.COMPUTADORA_ENTITY;
     require_once SALAS_COMP_ENTITIES_DIR.OBJETO_EN_INVENTARIO_ENTITY;
 
-    
+
 
     class ObjetoEnInventarioBean {
 
@@ -298,6 +298,23 @@
             return $this->persistenceManager->remove($entity);
         }
 
+//Funciones personalizadas
+        public function darInventarioComputador(){
+            $inventario = array();
+
+            $res = $this->persistenceManager->performCustomQuery("SELECT * FROM objeto_en_inventario WHERE exists
+                (SELECT * FROM computadora WHERE objeto_en_inventario.computadora_id = computadora.computadora_id)");
+            if(!$res){
+                return $inventario;
+            }
+
+            foreach($res as $rsEntity){
+                $entityTmp = new ObjetoEnInventario();
+                $entityTmp->loadFromSqlResultQuery($rsEntity);
+                $inventario[] = $entityTmp;
+            }
+            return $inventario;
+        }
 
     }
 

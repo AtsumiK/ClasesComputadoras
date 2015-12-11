@@ -6,5 +6,7 @@
     define('SALAS_COMP_DB_NAME', 'salas');
     define('SALAS_COMP_DB_USER_NAME', 'postgres');
     define('SALAS_COMP_DB_USER_PASS', '123456');
-    
+
+
+    define('SALAS_COMP_NUM_MAX_IMPRESIONES', '50');
 ?>

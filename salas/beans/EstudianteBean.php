@@ -3,7 +3,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.PERSONA_ENTITY;
     require_once SALAS_COMP_ENTITIES_DIR.ESTUDIANTE_ENTITY;
 
-    
+
 
     class EstudianteBean {
 
@@ -378,6 +378,40 @@
             return $this->persistenceManager->remove($entity);
         }
 
+        // Funciones personalizadas
+        public function darEstudiantesTopeImpresion($numMax){
+            $estudiantes = array();
+
+            $res = $this->persistenceManager->performCustomQuery("SELECT * FROM estudiante WHERE estudiante_id IN
+                (SELECT impresion_estudiante FROM impresion GROUP BY (impresion_estudiante) HAVING COUNT(impresion_id)>=".$numMax.")");
+            if(!$res){
+                return $estudiantes;
+            }
+
+            foreach($res as $rsEntity){
+                $entityTmp = new Estudiante();
+                $entityTmp->loadFromSqlResultQuery($rsEntity);
+                $estudiantes[] = $entityTmp;
+            }
+            return $estudiantes;
+        }
+
+        public function darEstudiantesResponsables(){
+            $estudiantes = array();
+
+            $res = $this->persistenceManager->performCustomQuery("SELECT * FROM persona, estudiante WHERE persona_id = estudiante_persona AND EXISTS
+                (SELECT * FROM responsable WHERE persona_id = responsable_persona)");
+            if(!$res){
+                return $estudiantes;
+            }
+
+            foreach($res as $rsEntity){
+                $entityTmp = new Estudiante();
+                $entityTmp->loadFromSqlResultQuery($rsEntity);
+                $estudiantes[] = $entityTmp;
+            }
+            return $estudiantes;
+        }
 
     }
 

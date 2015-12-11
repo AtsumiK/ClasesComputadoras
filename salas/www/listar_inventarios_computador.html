@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Personas</title>
+  <title>Inventario en Computador</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -35,13 +35,15 @@
 
       </div>
       <div id="content">
-        <h1>Listar Personas</h1>
-        <span class="tool_button"><a href="insertar_persona.html">Nuevo</a></span>
+        <h1>Listar Inventario en Computador</h1>
+        <span class="tool_button"><a href="insertar_inventario.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
+            <th>Elemento</th>
+            <th>N de Serie</th>
+            <th>Salon</th>
+            <th>Persona</th>
             <th>Acción</th>
 
           </tr>
@@ -52,21 +54,23 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarPersonas();
+        	  $res = listarObjetoEnComputador();
 
             if($res["exito"]){
-              $personas = $res["content"];
-              foreach ($personas as $persona) {
+              $inventarios = $res["content"];
+              foreach ($inventarios as $inventario) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$persona->getId().'</td>
-                          <td>'.$persona->getPersonaNombres().'</td>
-                          <td>'.$persona->getPersonaApellidos().'</td>
-                          <td><a href="consultar_persona.html?id='.$persona->getId().'"> Ver </a>
-                              <a href="editar_persona.html?id='.$persona->getId().'"> Editar </a>
-                              <a href="eliminar_persona.html?id='.$persona->getId().'"> Eliminar </a>
+        	    	echo '<tr><td>'.$inventario->getId().'</td>
+                          <td>'.$inventario->getInventarioElemento().'</td>
+                          <td>'.$inventario->getInventarioNumeroSerie().'</td>
+                          <td>'.$inventario->getInventarioSalon().'</td>
+                          <td>'.$inventario->getComputadora().'</td>
+                          <td><a href="consultar_inventario.html?id='.$inventario->getId().'"> Ver  -</a>
+                              <a href="editar_inventario.html?id='.$inventario->getId().'"> Editar  -</a>
+                              <a href="eliminar_inventario.html?id='.$inventario->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

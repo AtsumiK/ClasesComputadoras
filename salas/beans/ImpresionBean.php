@@ -3,7 +3,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.ESTUDIANTE_ENTITY;
     require_once SALAS_COMP_ENTITIES_DIR.IMPRESION_ENTITY;
 
-    
+
 
     class ImpresionBean {
 
