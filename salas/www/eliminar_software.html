@@ -5,7 +5,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta charset="UTF-8">
   </head>
-  <body>
+  <body><?
+require_once 'facade.php';
+checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+?>
     <div id="main">
       <div id="header">
         <div id="logo">
@@ -30,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
       <div class="sidebar">
 
       </div>

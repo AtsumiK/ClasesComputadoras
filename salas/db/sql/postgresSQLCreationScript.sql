@@ -285,6 +285,8 @@ ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
       RETURNS trigger AS $eic$
     BEGIN
      DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
+     DELETE FROM computadora_software WHERE computadora = OLD.computadora_id;
+     DELETE FROM prestamo WHERE prestamo_computadora = OLD.computadora_id;
      RETURN OLD;
     END;
     $eic$ LANGUAGE plpgsql;

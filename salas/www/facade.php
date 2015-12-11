@@ -1,5 +1,5 @@
 <?php
-	// session_start();
+	session_start();
 	error_reporting ( E_ALL );
 	ini_set ( 'display_errors', 1 );
 
@@ -170,7 +170,33 @@ echo $te["content"].'-----<br/>';
 
 
 //Salones
+
+	function checkLogin($msg){
+		if(!isset($_SESSION["in_session"]) || $_SESSION["in_session"]!==true){
+			echo $msg;
+			exit;
+		}
+	}
+	function login($user,$pass) {
+		$mainCtrl = new SalasMainController ();
+
+		$cm = $mainCtrl->login ( $user,$pass);
+		$salones = $cm->getData ();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $salones
+		);
+	}
+	function logout($user,$pass) {
+		$mainCtrl = new SalasMainController ();
+		$cm = $mainCtrl->logout();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $salones
+		);
+	}
 	function listarSalones($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getSalones ( $firstItem, "ASC" );
@@ -181,6 +207,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarSalon($idSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getSalon ( $idSalon );
 		$salon = $cm->getData ();
@@ -197,6 +224,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarSalon($idSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeSalon ( $idSalon );
 		return array (
@@ -205,6 +233,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarSalon($salon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateSalon ( $salon );
 		return array (
@@ -213,6 +242,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarSalon($salon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setSalon ( $salon );
 		return array (
@@ -223,6 +253,7 @@ echo $te["content"].'-----<br/>';
 
 //Computadoras
 	function listarComputadoras($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getComputadoras( $firstItem, "ASC" );
@@ -233,6 +264,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarComputadora($idComputadora) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getComputadora( $idComputadora );
 		$computadora = $cm->getData ();
@@ -249,6 +281,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarComputadora($idComputadora) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeComputadora( $idComputadora );
 		return array (
@@ -257,6 +290,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarComputadora($computadora) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateComputadora( $computadora );
 		return array (
@@ -265,6 +299,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarComputadora($computadora) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setComputadora( $computadora );
 		return array (
@@ -275,6 +310,7 @@ echo $te["content"].'-----<br/>';
 
 //ComputadoraSoftwares
 	function listarComputadoraSoftwares($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getComputadoraSoftwares( $firstItem, "ASC" );
@@ -285,6 +321,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarComputadoraSoftware($idComputadoraSoftware) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getComputadoraSoftware( $idComputadoraSoftware );
 		$computadoraSoftware = $cm->getData ();
@@ -301,6 +338,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarComputadoraSoftware($idComputadoraSoftware) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeComputadoraSoftware( $idComputadoraSoftware );
 		return array (
@@ -309,6 +347,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarComputadoraSoftware($computadoraSoftware) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setComputadoraSoftware( $computadoraSoftware );
 		return array (
@@ -319,6 +358,7 @@ echo $te["content"].'-----<br/>';
 
 //Estudiantes
 	function listarEstudiantes($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getEstudiantes ( $firstItem, "ASC" );
@@ -329,6 +369,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function listarEstudiantesTopeImpresion($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->darEstudiantesTopeImpresion ();
@@ -339,6 +380,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function listarEstudiantesResponsables($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->darEstudiantesResponsables();
@@ -365,6 +407,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarEstudiante($idEstudiante) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeEstudiante ( $idEstudiante );
 		return array (
@@ -373,6 +416,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarEstudiante($estudiante) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateEstudiante ( $estudiante );
 		return array (
@@ -381,6 +425,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarEstudiante($estudiante) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setEstudiante ( $estudiante );
 		return array (
@@ -391,6 +436,7 @@ echo $te["content"].'-----<br/>';
 
 //Impresiones
 	function listarImpresiones($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getImpresions ( $firstItem, "ASC" );
@@ -401,6 +447,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarImpresion($idImpresion) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getImpresion ( $idImpresion );
 		$impresion = $cm->getData ();
@@ -417,6 +464,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarImpresion($idImpresion) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeImpresion ( $idImpresion );
 		return array (
@@ -425,6 +473,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarImpresion($impresion) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setImpresion ( $impresion );
 		return array (
@@ -435,6 +484,7 @@ echo $te["content"].'-----<br/>';
 
 //Monitores
 	function listarMonitores($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getMonitors ( $firstItem, "ASC" );
@@ -445,6 +495,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarMonitor($idMonitor) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getMonitor ( $idMonitor );
 		$monitor = $cm->getData ();
@@ -461,6 +512,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarMonitor($idMonitor) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeMonitor ( $idMonitor );
 		return array (
@@ -469,6 +521,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarMonitor($monitor) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateMonitor ( $monitor );
 		return array (
@@ -477,6 +530,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarMonitor($monitor) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setMonitor ( $monitor );
 		return array (
@@ -487,6 +541,7 @@ echo $te["content"].'-----<br/>';
 
 //Monitor Salones
 	function listarMonitorSalones($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getMonitorSalons ( $firstItem, "ASC" );
@@ -497,6 +552,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarMonitorSalon($idMonitorSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getMonitorSalon ( $idMonitorSalon );
 		$monitorSalon = $cm->getData ();
@@ -513,6 +569,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarMonitorSalon($idMonitorSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeMonitorSalon ( $idMonitorSalon );
 		return array (
@@ -521,6 +578,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarMonitorSalon($monitorSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateMonitorSalon ( $monitorSalon );
 		return array (
@@ -529,6 +587,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarMonitorSalon($monitorSalon) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setMonitorSalon ( $monitorSalon );
 		return array (
@@ -539,6 +598,7 @@ echo $te["content"].'-----<br/>';
 
 //Objetos Inventario
 	function listarObjetoEnInventarios($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getObjetoEnInventarios ( $firstItem, "ASC" );
@@ -549,6 +609,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function listarObjetoEnComputador($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->darInventarioComputador ();
@@ -558,7 +619,19 @@ echo $te["content"].'-----<br/>';
 				"content" => $objetoEnInventarios
 		);
 	}
+	function getObjetoEnInventariosByComputadoraId ($idComputadora, $firstItem = 0) {
+
+		$mainCtrl = new SalasMainController ();
+
+		$cm = $mainCtrl->darObjetoEnInventariosByComputadoraId ($idComputadora);
+		$objetoEnInventarios = $cm->getData ();
+		return array (
+				"exito" => $cm->getStatus (),
+				"content" => $objetoEnInventarios
+		);
+	}
 	function consultarObjetoEnInventario($idObjetoEnInventario) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getObjetoEnInventario ( $idObjetoEnInventario );
 		$objetoEnInventario = $cm->getData ();
@@ -575,6 +648,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarObjetoEnInventario($idObjetoEnInventario) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeObjetoEnInventario ( $idObjetoEnInventario );
 		return array (
@@ -583,6 +657,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarObjetoEnInventario($objetoEnInventario) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateObjetoEnInventario ( $objetoEnInventario );
 		return array (
@@ -591,6 +666,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarObjetoEnInventario($objetoEnInventario) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setObjetoEnInventario ( $objetoEnInventario );
 		return array (
@@ -601,6 +677,7 @@ echo $te["content"].'-----<br/>';
 
 //Objetos Perdidos
 	function listarObjetoPerdidos($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getObjetoPerdidos ( $firstItem, "ASC" );
@@ -611,6 +688,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarObjetoPerdido($idObjetoPerdido) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getObjetoPerdido ( $idObjetoPerdido );
 		$objetoPerdido = $cm->getData ();
@@ -627,6 +705,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarObjetoPerdido($idObjetoPerdido) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeObjetoPerdido ( $idObjetoPerdido );
 		return array (
@@ -635,6 +714,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarObjetoPerdido($objetoPerdido) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateObjetoPerdido ( $objetoPerdido );
 		return array (
@@ -643,6 +723,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarObjetoPerdido($objetoPerdido) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setObjetoPerdido ( $objetoPerdido );
 		return array (
@@ -653,6 +734,7 @@ echo $te["content"].'-----<br/>';
 
 //Personas
 	function listarPersonas($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getPersonas ( $firstItem, "ASC" );
@@ -663,6 +745,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarPersona($idPersona) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getPersona ( $idPersona );
 		$persona = $cm->getData ();
@@ -679,6 +762,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarPersona($idPersona) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removePersona ( $idPersona );
 		return array (
@@ -697,6 +781,7 @@ echo $te["content"].'-----<br/>';
 
 //Prestamos
 	function listarPrestamos($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getPrestamos ( $firstItem, "ASC" );
@@ -707,6 +792,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarPrestamo($idPrestamo) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getPrestamo ( $idPrestamo );
 		$prestamo = $cm->getData ();
@@ -723,6 +809,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarPrestamo($idPrestamo) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removePrestamo ( $idPrestamo );
 		return array (
@@ -731,6 +818,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarPrestamo($prestamo) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updatePrestamo ( $prestamo );
 		return array (
@@ -739,6 +827,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarPrestamo($prestamo) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setPrestamo ( $prestamo );
 		return array (
@@ -749,6 +838,7 @@ echo $te["content"].'-----<br/>';
 
 //Reservas
 	function listarReservas($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getReservas ( $firstItem, "ASC" );
@@ -759,6 +849,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarReserva($idReserva) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getReserva ( $idReserva );
 		$reserva = $cm->getData ();
@@ -775,6 +866,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarReserva($idReserva) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeReserva ( $idReserva );
 		return array (
@@ -783,6 +875,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarReserva($reserva) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateReserva ( $reserva );
 		return array (
@@ -791,6 +884,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarReserva($reserva) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setReserva ( $reserva );
 		return array (
@@ -801,6 +895,7 @@ echo $te["content"].'-----<br/>';
 
 //Responsables
 	function listarResponsables($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getResponsables ( $firstItem, "ASC" );
@@ -811,6 +906,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarResponsable($idResponsable) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getResponsable ( $idResponsable );
 		$responsable = $cm->getData ();
@@ -827,6 +923,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarResponsable($idResponsable) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeResponsable ( $idResponsable );
 		return array (
@@ -835,6 +932,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarResponsable($responsable) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateResponsable ( $responsable );
 		return array (
@@ -843,6 +941,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarResponsable($responsable) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setResponsable ( $responsable );
 		return array (
@@ -853,6 +952,7 @@ echo $te["content"].'-----<br/>';
 
 //Softawares
 	function listarSoftwares($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getSoftwares ( $firstItem, "ASC" );
@@ -863,6 +963,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarSoftware($idSoftware) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getSoftware ( $idSoftware );
 		$software = $cm->getData ();
@@ -879,6 +980,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarSoftware($idSoftware) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeSoftware ( $idSoftware );
 		return array (
@@ -887,6 +989,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarSoftware($software) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateSoftware ( $software );
 		return array (
@@ -895,6 +998,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarSoftware($software) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setSoftware ( $software );
 		return array (
@@ -905,6 +1009,7 @@ echo $te["content"].'-----<br/>';
 
 //Tareas
 	function listarTareas($firstItem = 0) {
+
 		$mainCtrl = new SalasMainController ();
 
 		$cm = $mainCtrl->getTareas ( $firstItem, "ASC" );
@@ -915,6 +1020,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function consultarTarea($idTarea) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->getTarea ( $idTarea );
 		$tarea = $cm->getData ();
@@ -931,6 +1037,7 @@ echo $te["content"].'-----<br/>';
 		}
 	}
 	function eliminarTarea($idTarea) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->removeTarea ( $idTarea );
 		return array (
@@ -939,6 +1046,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function editarTarea($tarea) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->updateTarea ( $tarea );
 		return array (
@@ -947,6 +1055,7 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 	function insertarTarea($tarea) {
+
 		$mainCtrl = new SalasMainController ();
 		$cm = $mainCtrl->setTarea ( $tarea );
 		return array (

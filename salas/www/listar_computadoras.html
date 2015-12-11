@@ -5,7 +5,10 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
-<body>
+<body><?
+require_once 'facade.php';
+checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+?>
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -30,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
       <div class="sidebar">
 
       </div>
@@ -47,7 +50,6 @@
             <th>Dirección IP</th>
             <th>Dirección MAC</th>
             <th>Acciones</th>
-            <th>Objetos en Inventario</th>        
 
           </tr>
           <?php
@@ -56,7 +58,7 @@
 // 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
 //---------------------------------------------------------------------------------------------------------
 
-          	require_once 'facade.php';
+
         	  $res = listarComputadoras();
 
             if($res["exito"]){
@@ -73,7 +75,6 @@
                           <td>'.$computadora->getComputadoraDiscoDuro().'</td>
                           <td>'.$computadora->getComputadoraDirIp().'</td>
                           <td>'.$computadora->getComputadoraDirMac().'</td>
-                          <td>'.$computadora->getComputaoraObjetosInventario().'</td>
                           <td><a href="consultar_computadora.html?id='.$computadora->getId().'"> Ver  -</a>
                               <a href="editar_computadora.html?id='.$computadora->getId().'"> Editar  -</a>
                               <a href="eliminar_computadora.html?id='.$computadora->getId().'"> Eliminar   </a>

@@ -5,7 +5,10 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
-<body>
+<body><?
+require_once 'facade.php';
+checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+?>
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -30,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
       <div class="sidebar">
 
       </div>
@@ -73,8 +76,6 @@
                   $discoDuro = $_POST['computadoraDiscoDuro'];
                   $dirIp = $_POST['computadoraDirIp'];
                   $dirMac = $_POST['computadoraDirMac'];
-                  $objetosInventario = $_POST['computadoraInventario'];
-
 
     // ------------- fin de 2 ------------------
 
@@ -83,12 +84,12 @@
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        ComputadoraDTO($id = null, $ computadoraNombre = null, $ computadoraRam = null, $ computadoraProcesador = null, $ computadoraDiscoDuro = null)
+        ComputadoraDTO($id, $nombre, $ram, $computadoraProcesador = null, $computadoraDiscoDuro = null, $computadoraDirIp = null, $computadoraDirMac = null, $discoDuro)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $computadora = new ComputadoraDTO($id, $nombre, $ram, $procesador, $discoDuro, $dirIp, $dirMac, $objetosInventario);
+                  $computadora = new ComputadoraDTO($id, $nombre, $ram, $procesador, $discoDuro, $dirIp, $dirMac);
 
                   $res = editarComputadora($computadora);
 
@@ -118,7 +119,7 @@
                     $discoDuro = $computadora->getComputadoraDiscoDuro();
                     $dirIp = $computadora->getComputadoraDirIp();
                     $dirMac = $computadora->getComputadoraDirMac();
-                    $objetosInventario = $computadora->getComputaoraInventario();
+
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -137,10 +138,9 @@
                     <p><span>Nombre</span><input class="contact" type="text" name="computadoraNombre" value="'.$nombre.'"></input></p>
                     <p><span>Memoria Ram</span><input class="contact" type="text" name="computadoraRam" value="'.$ram.'"></input></p>
                     <p><span>Procesador</span><input class="contact" type="text" name="computadoraProcesador" value="'.$procesador.'"></input></p>
-                    <p><span>Disco Duro</span><input class="contact" type="text" name="computadoradiscoDuro" value="'.$discoDuro.'"></input></p>
-                    <p><span>Dirección IP</span><input class="contact" type="text" name="computadoradirIp" value="'.$dirIp.'"></input></p>
-                    <p><span>Dirección Mac</span><input class="contact" type="text" name="computadoradirMac" value="'.$dirMac.'"></input></p>
-                    <p><span>Objetos Asociados</span><input class="contact" type="text" name="computadoraobjetosInventario" value="'.$objetosInventario.'"></input></p>
+                    <p><span>Disco Duro</span><input class="contact" type="text" name="computadoraDiscoDuro" value="'.$discoDuro.'"></input></p>
+                    <p><span>Dirección IP</span><input class="contact" type="text" name="computadoraDirIp" value="'.$dirIp.'"></input></p>
+                    <p><span>Dirección Mac</span><input class="contact" type="text" name="computadoraDirMac" value="'.$dirMac.'"></input></p>
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>

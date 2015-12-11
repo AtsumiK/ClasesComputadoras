@@ -59,7 +59,7 @@
      * Cuando no se puede eliminar la entidad porque está siendo utilizada en alguna parte.
      *
      */
-    define('SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_LINKED_FAIL',	'SALAS_COMP_{SalasAlert}_E_{remove_entity_linked}_{fail}');
+    define('SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_LINKED_FAIL',	'No se puede eliminar porque está siendo utilizado en otra parte');
     /**
      * Cuando no se puede actualizar la entidad.
      *

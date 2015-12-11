@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><span>Iniciar sesión</span></h1>
+        </div>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+        <h1>Insertar Salon</h1>
+
+        <?php
+
+          require_once 'facade.php';
+
+
+
+                $nombre = "";
+                $pass = "";
+
+          if(isset($_POST['submit'])){
+
+            $res = login($_POST["nombre"],$_POST["pass"]);
+   // ------------- fin de 2 ------------------
+
+
+            if($res["exito"]){
+              header('Location: index.html');
+              exit;
+            }else{
+                echo '<span>'.$res["content"].'</span>';
+            }
+          }
+
+          echo '
+
+          <form method="post" action="#">
+            <div class="form_settings">
+              <p><span>Nombre de usuario</span><input class="contact" type="text" name="nombre" value="" /></p>
+              <p><span>Contraseña</span><input class="contact" type="password" name="pass" value="" /></p>
+              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Entrar" /></p>
+            </div>
+          </form>';
+
+        ?>
+      </div>
+    </div>
+    <div id="footer">
+      Salones de compuadora
+    </div>
+  </div>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Cerrar sesión</title>
+</head>
+<body>
+
+        <?php
+
+          require_once 'facade.php';
+          logout();
+          header('Location: login.html');
+          exit;
+        ?>
+</body>
+</html>

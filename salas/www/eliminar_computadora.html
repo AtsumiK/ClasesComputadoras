@@ -5,7 +5,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta charset="UTF-8">
   </head>
-  <body>
+  <body><?
+require_once 'facade.php';
+checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+?>
     <div id="main">
       <div id="header">
         <div id="logo">
@@ -30,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
       <div class="sidebar">
 
       </div>
@@ -49,7 +52,6 @@
                 $discoDuro = "";
                 $dirIp = "";
                 $dirMac = "";
-                $objetosInventario = "";
 
 
     // ------------- fin de 1 ------------------
@@ -80,7 +82,6 @@
                   $discoDuro = $computadora->getComputadoraDiscoDuro();
                   $dirIp = $computadora->getComputadoraDirIp();
                   $dirMac = $computadora->getComputadoraDirMac();
-                  $objetosInventario = $computadora->getComputaoraInventario();
 
                   echo
                     '<p>De hacer clic en "Eliminar" la siguiente información se perderá definitivamente</p>
@@ -91,7 +92,16 @@
                     <b>discoDuro: </b>'.$discoDuro.'<br>
                     <b>Direción IP: </b>'.$dirIp.'<br>
                     <b>Dirección MAC: </b>'.$dirMac.'<br>
-                    <b>Objetos Asociados: </b>'.$objetosInventario.'<br>';
+                    <br>
+                    <hr>
+                    <b>Objetos Asociados: </b>';
+
+                    $res = getObjetoEnInventariosByComputadoraId($computadora->getId());
+                    $inventarios = $res["content"];
+                    foreach($inventarios as $objeto){
+                      echo '<p> <b>Nombre: </b>'.$objeto->getInventarioElemento().' (Serial: '.$objeto->getInventarioNumeroSerie().')</p>';
+                    }
+
 
                 }else{
                     echo '<span>'.$res["content"].'</span>';

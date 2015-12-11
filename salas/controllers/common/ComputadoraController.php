@@ -10,7 +10,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.COMPUTADORA_ENTITY;
     require_once SALAS_COMP_BEANS_DIR.COMPUTADORA_BEAN;
 
-    
+
 
     class ComputadoraController {
 
@@ -37,7 +37,7 @@
 
         /**
          * Agregar Computadora al sistema.
-         * 
+         *
          * @param ComputadoraDTO $computadoraDTO
         */
         public function setComputadora(ComputadoraDTO &$computadoraDTO){
@@ -58,7 +58,7 @@
         }
         /**
          * Actualizar Computadora al sistema.
-         * 
+         *
          * @param ComputadoraDTO $computadoraDTO
         */
         public function updateComputadora(ComputadoraDTO &$computadoraDTO){
@@ -79,7 +79,7 @@
         }
         /**
          * Obtener un Computadora único.
-         * 
+         *
          * @param ComputadoraDTO &$computadoraDTO
         */
 
@@ -100,7 +100,7 @@
         }
         /**
          * Obtener todos los Computadora
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -119,7 +119,7 @@
 
         /**
          * Listar todos los Computadora
-         * 
+         *
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -148,7 +148,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -179,7 +179,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -210,7 +210,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -242,7 +242,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -274,7 +274,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -305,7 +305,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -336,7 +336,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -367,7 +367,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -398,7 +398,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -429,7 +429,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -460,7 +460,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -491,7 +491,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -522,7 +522,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -553,7 +553,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraNombre
-         * 
+         *
          * @param $computadoraNombre
          * @param $performSize
          * @param $firstResultNumber
@@ -584,7 +584,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -615,7 +615,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -646,7 +646,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -678,7 +678,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -710,7 +710,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -741,7 +741,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -772,7 +772,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -803,7 +803,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -834,7 +834,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -865,7 +865,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -896,7 +896,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -927,7 +927,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -958,7 +958,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -989,7 +989,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraRam
-         * 
+         *
          * @param $computadoraRam
          * @param $performSize
          * @param $firstResultNumber
@@ -1020,7 +1020,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1051,7 +1051,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1082,7 +1082,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1114,7 +1114,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1146,7 +1146,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1177,7 +1177,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1208,7 +1208,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1239,7 +1239,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1270,7 +1270,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1301,7 +1301,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1332,7 +1332,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1363,7 +1363,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1394,7 +1394,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1425,7 +1425,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraProcesador
-         * 
+         *
          * @param $computadoraProcesador
          * @param $performSize
          * @param $firstResultNumber
@@ -1456,7 +1456,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1487,7 +1487,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1518,7 +1518,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1550,7 +1550,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1582,7 +1582,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1613,7 +1613,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1644,7 +1644,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1675,7 +1675,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1706,7 +1706,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1737,7 +1737,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1768,7 +1768,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1799,7 +1799,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1830,7 +1830,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1861,7 +1861,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraDiscoDuro
-         * 
+         *
          * @param $computadoraDiscoDuro
          * @param $performSize
          * @param $firstResultNumber
@@ -1892,7 +1892,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -1923,7 +1923,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -1954,7 +1954,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1986,7 +1986,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -2018,7 +2018,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2049,7 +2049,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2080,7 +2080,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2111,7 +2111,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2142,7 +2142,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2173,7 +2173,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2204,7 +2204,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2235,7 +2235,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2266,7 +2266,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2297,7 +2297,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraDirIp
-         * 
+         *
          * @param $computadoraDirIp
          * @param $performSize
          * @param $firstResultNumber
@@ -2328,7 +2328,7 @@
 
         /**
          * Obtener algunos Computadora dado $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2359,7 +2359,7 @@
 
         /**
          * Listar algunos Computadora dado $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2390,7 +2390,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -2422,7 +2422,7 @@
 
         /**
          * Listar algunos Computadora dado un rango
-         * 
+         *
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -2454,7 +2454,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2485,7 +2485,7 @@
 
         /**
          * Listar algunos Computadora dado un rango superior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2516,7 +2516,7 @@
 
         /**
          * Obtener algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2547,7 +2547,7 @@
 
         /**
          * Listar algunos Computadora dado un rango inferior
-         * 
+         *
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -2578,7 +2578,7 @@
 
         /**
          *1. Obtener algunos Computadora comenzando por $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2609,7 +2609,7 @@
 
         /**
          *1. Listar algunos Computadora comenzando por $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2640,7 +2640,7 @@
 
         /**
          * Obtener algunos Computadora terminando por $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2671,7 +2671,7 @@
 
         /**
          * Listar algunos Computadora terminando por $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2702,7 +2702,7 @@
 
         /**
          * Obtener algunos Computadora que contenga $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2733,7 +2733,7 @@
 
         /**
          * Listar algunos Computadora que contenga $computadoraDirMac
-         * 
+         *
          * @param $computadoraDirMac
          * @param $performSize
          * @param $firstResultNumber
@@ -2764,7 +2764,7 @@
 
         /**
          * Obtener algunos Computadora dado el $computaoraObjetosInventarioId
-         * 
+         *
          * @param $computaoraObjetosInventarioId
          * @param $performSize
          * @param $firstResultNumber
@@ -2804,7 +2804,7 @@
 
         /**
          * Listar algunos Computadora dado el $computaoraObjetosInventarioId
-         * 
+         *
          * @param $computaoraObjetosInventarioId
          * @param $performSize
          * @param $firstResultNumber
@@ -2844,7 +2844,7 @@
 
         /**
          * Eliminar un Computadora Dado el $computadoraId
-         * 
+         *
          * @param $computadoraId
         */
         public function removeComputadora($computadoraId){
@@ -2853,7 +2853,7 @@
             $objetoEnInventarioBean = new ObjetoEnInventarioBean($this->persistenceManager);
 
             $computadora = new Computadora();
-            $computadora->setId($computadoraId); 
+            $computadora->setId($computadoraId);
 
             # Validamos los campos
             if( !EntityValidator::validateId($computadoraId)){
@@ -2892,6 +2892,38 @@
 
         }
 
+        //Personalizados
+
+
+                /**
+                 * Eliminar un Computadora Dado el $computadoraId
+                 *
+                 * @param $computadoraId
+                */
+                public function removeComputadoraCustom($computadoraId){
+                    $computadoraSoftwareBean = new ComputadoraSoftwareBean($this->persistenceManager);
+                    $prestamoBean = new PrestamoBean($this->persistenceManager);
+                    $objetoEnInventarioBean = new ObjetoEnInventarioBean($this->persistenceManager);
+
+                    $computadora = new Computadora();
+                    $computadora->setId($computadoraId);
+
+                    # Validamos los campos
+                    if( !EntityValidator::validateId($computadoraId)){
+                        throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 271);
+                    }
+
+                    # Verificamos que la entidad exista.
+                    if(!$this->computadoraBean->getComputadora($computadora)){
+                        throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 272);
+                    }
+
+                    # Eliminamos la entidad
+                    if(!$this->computadoraBean->removeComputadora($computadora)){
+                        throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_FAIL, $this->ID + 273);
+                    }
+
+                }
     }
 
 ?>

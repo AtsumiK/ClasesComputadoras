@@ -5,7 +5,10 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
-<body>
+<body><?
+require_once 'facade.php';
+checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+?>
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -30,7 +33,7 @@
         </ul>
       </div>
     </div>
-    <div id="site_content">
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
       <div class="sidebar">
 
       </div>
@@ -55,7 +58,6 @@
                 $discoDuro = "";
                 $dirIp = "";
                 $dirMac = "";
-                $objetosInventario = "";
 
 
     // ------------- fin de 1 ------------------
@@ -70,12 +72,11 @@
             $discoDuro = $_POST['computadoraDiscoDuro'];
             $dirIp = $_POST['computadoraDirIp'];
             $dirMac = $_POST['computadoraDirMac'];
-            $objetosInventario = $_POST['computadoraInventario'];
    // ------------- fin de 2 ------------------
 
 
 
-            $computadora = new ComputadoraDTO(null, $nombre, $ram, $procesador, $discoDuro, $dirIp, $dirMac, $objetosInventario);
+            $computadora = new ComputadoraDTO(null, $nombre, $ram, $procesador, $discoDuro, $dirIp, $dirMac);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
@@ -101,7 +102,6 @@
               <p><span>DiscoDuro</span><input class="contact" type="text" name="computadoraDiscoDuro" value="'.$discoDuro.'" /></p>
               <p><span>Dirección IP</span><input class="contact" type="text" name="computadoraDirIp" value="'.$dirIp.'" /></p>
               <p><span>Dirección MAC</span><input class="contact" type="text" name="computadoraDirMac" value="'.$dirMac.'" /></p>
-              <p><span>Objetos Inventario</span><input class="contact" type="text" name="computadoraInventario" value="'.$objetosInventario.'" /></p>
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';

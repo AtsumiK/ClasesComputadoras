@@ -64,6 +64,31 @@
 
 
 
+		public function login($user,$pass) {
+			try{
+				$userCtrl = new UsuarioController($this->persistenceManager);
+
+				$users = $userCtrl->getUsuariosByUsuarioLoginAndUsuarioClave($user,md5($pass));
+				if(count($users) == 1){
+						$_SESSION["in_session"]=true;
+						$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 0);
+				}else{
+					  $cm = new CommunicationMensaje(false,"Usuario o contraseña incorrectos.",$this->ID + 0,"Usuario o contraseña incorrectos.");
+				}
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 2) ."->".$e->getCode());
+			}
+		}
+		public function logout($user,$pass) {
+			try{
+				unset($_SESSION["in_session"]);
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 0);
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 2) ."->".$e->getCode());
+			}
+		}
 		public function setSalon($salonDTO) {
 			try{
 				$salonCtrl = new SalonController($this->persistenceManager);
@@ -1266,7 +1291,7 @@
 
 				$ctrl = new ComputadoraController($this->persistenceManager);
 
-				$ctrl->removeComputadora($idComputadora);
+				$ctrl->removeComputadoraCustom($idComputadora);
 
 				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 145);
 
@@ -1398,6 +1423,20 @@
 				return $cm;
 			}catch (Exception $e){
 				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 162) ."->".$e->getCode());
+			}
+		}
+		public function darObjetoEnInventariosByComputadoraId($idComputadora) {
+			try{
+
+				$ctrl = new ObjetoEnInventarioController($this->persistenceManager);
+
+				$inventario = $ctrl->getObjetoEnInventariosByComputadoraId($idComputadora);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 163,$inventario);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 164) ."->".$e->getCode());
 			}
 		}
 	}
