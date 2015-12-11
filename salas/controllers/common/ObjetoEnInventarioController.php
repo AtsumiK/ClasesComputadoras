@@ -61,7 +61,7 @@
                 }
             }
 
-            if($objetoEnInventario->getComputadora() !== null){
+            if($objetoEnInventario->getComputadora() !== ""){
                 $computadora->setId($objetoEnInventario->getComputadora());
                 if(!$computadoraBean->getComputadora($computadora)){
                     throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 1);

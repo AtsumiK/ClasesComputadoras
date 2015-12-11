@@ -173,7 +173,7 @@ echo $te["content"].'-----<br/>';
 
 	function checkLogin($msg){
 		if(!isset($_SESSION["in_session"]) || $_SESSION["in_session"]!==true){
-			echo $msg;
+			header('Location: login.html');
 			exit;
 		}
 	}

@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -49,13 +49,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
           $res = null;
           $responsable = null;
           $error = null;
+          $personaId=null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
 
                 $facultad = "";
                 $asignatura = "";
-                $persona = "";
+                $res = listarPersonas();
+                $personas = $res["content"];
 
 
     // ------------- fin de 1 ------------------
@@ -68,12 +70,12 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
             $facultad = $_POST['responsableFacultad'];
             $asignatura = $_POST['responsableAsignatura'];
 
-            $persona = $_POST['responsablePersona'];
+            $personaId = $_POST['personaId'];
    // ------------- fin de 2 ------------------
 
 
 
-            $responsable = new ResponsableDTO(null, $facultad,  $asignatura, $persona);
+            $responsable = new ResponsableDTO(null, $facultad,  $asignatura, $personaId);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
@@ -95,7 +97,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
             <div class="form_settings">
               <p><span>Facultad</span><input class="contact" type="text" name="responsableFacultad" value="'.$facultad.'" /></p>
               <p><span>Carrera</span><input class="contact" type="text" name="responsableAsignatura" value="'.$asignatura.'" /></p>
-              <p><span>Persona</span><input class="contact" type="text" name="responsablePersona" value="'.$persona.'" /></p>
+              <p><span>Persona</span><select name="personaId" ><option value="">Ninguno</option>';
+                foreach($personas as $persona){
+                  if($persona->getId() == $personaId){
+                      echo'<option selected="true" value="'.$persona->getId().'">'.$persona->getPersonaNombres().'</option>';
+                  }else{
+                      echo'<option value="'.$persona->getId().'">'.$persona->getPersonaNombres().'</option>';
+                  }
+                }
+              echo'</select> </p>
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';

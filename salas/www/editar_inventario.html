@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -54,8 +54,11 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
                 $elemento = "";
                 $numeroSerie = "";
-                $salon = "";
-                $computadora = "";
+                $res = listarComputadoras();
+                $computadoras = $res["content"];
+                $res = listarSalones();
+                $salones =  $res["content"];
+
 
     // ------------- fin de 1 ------------------
 
@@ -65,10 +68,8 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
 
-                  $elemento = $_POST['inventarioElemento'];
-                  $numeroSerie = $_POST['inventarioNumeroSerie'];
-                  $salon = $_POST['inventarioSalon'];
-                  $computadora = $_POST['computadora'];
+                  $idSalon = $_POST['idSalon'];
+                  $idComputadora = $_POST['idComputadora'];
 
     // ------------- fin de 2 ------------------
 
@@ -82,9 +83,9 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $inventario = new ObjetoEnInventarioDTO($id, $elemento, $numeroSerie, $salon, $computadora);
+                  $inventario = new ObjetoEnInventarioDTO($id, $elemento, $numeroSerie, $idSalon, $idComputadora);
 
-                  $res = editarInventario($inventario);
+                  $res = editarObjetoEnInventario($inventario);
 
     // ------------- fin de 3 ------------------
 
@@ -98,18 +99,13 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                   }
                 }else if(isset($_GET['id'])){
                   $id = $_GET['id'];
-
-                  $res = consultarInventario($id);
-
+                  $res = consultarObjetoEnInventario($id);
                   if($res["exito"]){
-
                     $inventario = $res["content"];
 
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
-                    $elemento = $inventario->getInventarioElemento();
-                    $numeroSerie = $inventario->getInventarioNumeroSerie();
-                    $salon = $inventario->getInventarioSalon();
-                    $computadora = $inventario->getComputadora();
+                    $idSalon = $inventario->getInventarioSalon();
+                    $idComputadora = $inventario->getComputadora();
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -125,11 +121,25 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                   <input class="contact" type="hidden" name="id" value="'.$id.'">
                   </input>
                   <div class="form_settings">
-                    <p><span>Elemento</span><input class="contact" type="text" name="inventarioElemento" value="'.$elemento.'"></input></p>
-                    <p><span>Numero de Serie</span><input class="contact" type="text" name="inventarioNumeroSerie" value="'.$numeroSerie.'"></input></p>
-                    <p><span>Salon</span><input class="contact" type="text" name="inventarioSalon" value="'.$salon.'"></input></p>
-                    <p><span>Computadora</span><input class="contact" type="text" name="computadora" value="'.$computadora.'"></input></p>
-
+                    <p><span>Elemento</span>'.$inventario->getInventarioElemento().'</p>
+                    <p><span>Numero de Serie</span>'.$inventario->getInventarioNumeroSerie().'</p>
+                    <p><span>Salon</span><select name="idSalon" ><option value="">Ninguno</option>';
+                      foreach($salones as $salon){
+                        if($salon->getId() == $idSalon){
+                            echo'<option selected="true" value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                        }else{
+                            echo'<option value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                        }
+                      }
+                    echo'</select> </p><p><span>Computadoras</span><select name="idComputadora" ><option value="">Ninguno</option>';
+                      foreach($computadoras as $computadora){
+                        if($computadora->getId() == $idComputadora){
+                            echo'<option selected="true" value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
+                        }else{
+                            echo'<option value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
+                        }
+                      }
+                    echo'</select> </p>
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>
               </form>

@@ -1128,6 +1128,7 @@
 
 				$estudiante->setEstudianteFacultad($estudianteDTO->getEstudianteFacultad());
 				$estudiante->setEstudianteCarrerra($estudianteDTO->getEstudianteCarrerra());
+				$estudiante->setEstudianteCodigo($estudianteDTO->getEstudianteCodigo());
 
 				$ctrl->updateEstudiante($estudiante);
 

@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -40,6 +40,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
       <div id="content">
         <h1>Listar Inventario</h1>
         <span class="tool_button"><a href="insertar_inventario.html">Nuevo</a></span>
+        <span class="tool_button"><a href="listar_inventarios_computador.html">Listar Inventarios que hacen parte de un computador</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>

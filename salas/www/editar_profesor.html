@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -50,12 +50,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                 $responsable = null;
                 $res = null;
                 $error = null;
+                $personaId=null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
 
                 $facultad = "";
                 $asignatura = "";
-                $persona = "";
+                $persona=null;
+                $res = listarPersonas();
+                $personas = $res["content"];
 
     // ------------- fin de 1 ------------------
 
@@ -64,11 +67,8 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-
-
                   $facultad = $_POST['responsableFacultad'];
                   $asignatura = $_POST['responsableAsignatura'];
-                  $persona = $_POST['responsablePersona'];
 
     // ------------- fin de 2 ------------------
 
@@ -77,7 +77,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        ResponsableDTO($id = null, $ responsableCodigo = null, $ responsableFacultad = null, $ responsableAsignatura = null, $ responsablePersona = null)
+        ResponsableDTO($id,$facultad,$asignatura,$personaId)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
@@ -109,7 +109,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
                     $facultad = $responsable->getResponsableFacultad();
                     $asignatura = $responsable->getResponsableAsignatura();
-                    $persona = $responsable->getResponsablePersona();
+                    $personaId = $responsable->getResponsablePersona();
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -128,7 +128,14 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
                     <p><span>Facultad</span><input class="contact" type="text" name="responsableFacultad" value="'.$facultad.'"></input></p>
                     <p><span>Asignatura</span><input class="contact" type="text" name="responsableAsignatura" value="'.$asignatura.'"></input></p>
-                    <p><span>Persona</span><input class="contact" type="text" name="responsablePersona" value="'.$persona.'"></input></p>
+                    <p><span>Persona</span><br>
+                    <hr>';
+                      foreach($personas as $persona){
+                        if($persona->getId() == $personaId){
+                            echo '<span><b>Nombre: </b></span>'.$persona->getPersonaNombres().'</br><span><b>Apellido: </b></span>'. $persona->getPersonaApellidos();
+                        }
+                      }
+                    echo'</p>
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>

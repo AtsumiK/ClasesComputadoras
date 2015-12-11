@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -50,11 +50,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                 $monitor = null;
                 $res = null;
                 $error = null;
+                $idEstudiante;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
                 $tipo = "";
                 $horario = "";
                 $estudiante = "";
+                $res = listarEstudiantes();
+                $estudiantes = $res["content"];
+
 
 
     // ------------- fin de 1 ------------------
@@ -67,7 +71,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
                   $tipo = $_POST['monitorTipo'];
                   $horario = $_POST['monitorHorario'];
-                  $estudiante = $_POST['monitorEstudiante'];
+                  $idEstudiante = $_POST['idEstudiante'];
 
 
     // ------------- fin de 2 ------------------
@@ -82,7 +86,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $monitor = new MonitorDTO($id, $tipo, $horario, $estudiante);
+                  $monitor = new MonitorDTO($id, $tipo, $horario, $idEstudiante);
 
                   $res = editarMonitor($monitor);
 
@@ -108,7 +112,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
                     $tipo = $monitor->getMonitorTipo();
                     $horario = $monitor->getMonitorHorario();
-                    $estudiante = $monitor->getMonitorEstudiante();
+                    $idEstudiante = $monitor->getMonitorEstudiante();
 
 
     // ------------- fin de 4 ------------------
@@ -127,7 +131,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                   <div class="form_settings">
                     <p><span>Tipo</span><input class="contact" type="text" name="monitorTipo" value="'.$tipo.'"></input></p>
                     <p><span>Horario</span><input class="contact" type="text" name="monitorHorario" value="'.$horario.'"></input></p>
-                    <p><span>Estudiante ID</span><input class="contact" type="text" name="monitorEstudiante" value="'.$estudiante.'"></input></p>
+                    <p><span>Estudiante ID</span><select name="idEstudiante" ><option value="">Ninguno</option>';
+                      foreach($estudiantes as $estudiante){
+                        if($estudiante->getId() == $idEstudiante){
+                            echo'<option selected="true" value="'.$estudiante->getId().'">'.$estudiante->getEstudianteCodigo().'</option>';
+                        }else{
+                            echo'<option value="'.$estudiante->getId().'">'.$estudiante->getEstudianteCodigo().'</option>';
+                        }
+                      }
+                    echo'</select></p>
 
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>

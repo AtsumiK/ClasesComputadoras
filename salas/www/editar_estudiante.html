@@ -7,7 +7,7 @@
 </head>
 <body><?
 require_once 'facade.php';
-checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p>');
+checkLogin();
 ?>
   <div id="main">
     <div id="header">
@@ -50,12 +50,15 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                 $estudiante = null;
                 $res = null;
                 $error = null;
+                $personaId=null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $codigo = "";
                 $facultad = "";
                 $carrera = "";
-                $persona = "";
+                $codigo = "";
+                $res = listarPersonas();
+                $personas = $res["content"];
+
 
     // ------------- fin de 1 ------------------
 
@@ -64,11 +67,9 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
 
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-
-                  $codigo = $_POST['estudianteCodigo'];
                   $facultad = $_POST['estudianteFacultad'];
+                  $codigo = $_POST['estudianteCodigo'];
                   $carrera = $_POST['estudianteCarrera'];
-                  $persona = $_POST['estudiantePersona'];
 
     // ------------- fin de 2 ------------------
 
@@ -77,12 +78,12 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        EstudianteDTO($id = null, $ estudianteCodigo = null, $ estudianteFacultad = null, $ estudianteCarrera = null, $ estudiantePersona = null)
+        EstudianteDTO($id,$$estudianteCodigo,$$estudianteFacultad,$$estudianteCarrerra,$estudiantePersona)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $estudiante = new EstudianteDTO($id, $codigo, $facultad, $carrera, $persona);
+                  $estudiante = new EstudianteDTO($id, $codigo, $facultad, $carrera, $personaId);
 
                   $res = editarEstudiante($estudiante);
 
@@ -109,7 +110,7 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                     $codigo = $estudiante->getEstudianteCodigo();
                     $facultad = $estudiante->getEstudianteFacultad();
                     $carrera = $estudiante->getEstudianteCarrerra();
-                    $persona = $estudiante->getEstudiantePersona();
+                    $personaId = $estudiante->getEstudiantePersona();
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -128,7 +129,14 @@ checkLogin('<p>Haga click <a href="login.html">aquí</a> para iniciar sesión</p
                     <p><span>Codigo</span><input class="contact" type="text" name="estudianteCodigo" value="'.$codigo.'"></input></p>
                     <p><span>Facultad</span><input class="contact" type="text" name="estudianteFacultad" value="'.$facultad.'"></input></p>
                     <p><span>Carrera</span><input class="contact" type="text" name="estudianteCarrera" value="'.$carrera.'"></input></p>
-                    <p><span>Persona</span><input class="contact" type="text" name="estudiantePersona" value="'.$persona.'"></input></p>
+                    <p><span>Persona</span><br>
+                    <hr>';
+                      foreach($personas as $persona){
+                        if($persona->getId() == $personaId){
+                            echo '<span><b>Nombre: </b></span>'.$persona->getPersonaNombres().'</br><span><b>Apellido: </b></span>'. $persona->getPersonaApellidos();
+                        }
+                      }
+                    echo'</p>
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>
