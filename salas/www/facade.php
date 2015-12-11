@@ -171,7 +171,7 @@ echo $te["content"].'-----<br/>';
 
 //Salones
 
-	function checkLogin($msg){
+	function checkLogin(){
 		if(!isset($_SESSION["in_session"]) || $_SESSION["in_session"]!==true){
 			header('Location: login.html');
 			exit;

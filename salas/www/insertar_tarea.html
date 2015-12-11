@@ -94,16 +94,18 @@ checkLogin();
 
           $resMonitores = listarMonitores();
           $resEstudiantes = array();
-          $relEstMonitor = array();
+          $relMonitorEstudiante = array();
           if($resMonitores["exito"]){
-            $resMonitores = $resMonitores["content"];
-            foreach ($resMonitores as $m) {
+            $monitores = $resMonitores["content"];
+            foreach ($monitores as $m) {
               $resEstudiante = consultarEstudiante($m->getMonitorEstudiante());
               if($resEstudiante["exito"]){
                 $relMonitorEstudiante[$m->getId()] = $resEstudiante["content"];
               }
             }
           }
+
+
 
           echo '
 
@@ -115,12 +117,14 @@ checkLogin();
               <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'" /></p>';
               
               echo '<p><span>Monitor (Cód. Estudiante)</span><select name="tareaMonitor" >';
-                foreach($resMonitores as $m){
-                  $e = $relMonitorEstudiante[$m-getId()];
+
+                foreach($monitores as $m){
+                  $e = $relMonitorEstudiante[$m->getId()];
+
                   if($e && $m->getId()==$monitor){
-                      echo'<option selected="true" value="'.$monitor.'">'.$e->getEstudianteCodigo().'</option>';
+                      echo'<option selected="true" value="'.$m->getId().'">'.$e->getEstudianteCodigo().'</option>';
                   }else if($e){
-                      echo'<option value="'.$monitor.'">'.$e->getEstudianteCodigo().'</option>';
+                      echo'<option value="'.$m->getId().'">'.$e->getEstudianteCodigo().'</option>';
                   }
                 
               }

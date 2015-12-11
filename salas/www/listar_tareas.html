@@ -68,7 +68,7 @@ checkLogin();
                 $resMonitor = consultarMonitor($tarea->getTareaMonitor());
                 $resEstudiante = null;
                 if($resMonitor["exito"]){
-                  $resEstudiante = consultarEstudiante($resMonitor->getMonitorEstudiante());
+                  $resEstudiante = consultarEstudiante($resMonitor["content"]->getMonitorEstudiante());
                 }
 
     // 1. Poner los vínculos correspondientes
