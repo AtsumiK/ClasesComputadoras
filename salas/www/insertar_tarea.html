@@ -95,13 +95,15 @@ checkLogin();
           $resMonitores = listarMonitores();
           $resEstudiantes = array();
           $relEstMonitor = array();
-          foreach ($resMonitores as $m) {
-            $resEstudiante = consultarEstudiante($m->getMonitorEstudiante());
-            if($resEstudiante["exito"]){
-              $relMonitorEstudiante[$m->getId()] = $resEstudiante["content"];
+          if($resMonitores["exito"]){
+            $resMonitores = $resMonitores["content"];
+            foreach ($resMonitores as $m) {
+              $resEstudiante = consultarEstudiante($m->getMonitorEstudiante());
+              if($resEstudiante["exito"]){
+                $relMonitorEstudiante[$m->getId()] = $resEstudiante["content"];
+              }
             }
           }
-     
 
           echo '
 
