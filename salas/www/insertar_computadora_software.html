@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Agregar ComputadoraSoftware</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta charset="UTF-8">
+</head>
+<body><?
+require_once 'facade.php';
+checkLogin();
+?>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">ComputadoraSoftware</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content"><a href="logout.html" style="float:right;"><span>Cerrar sesión</span></a>
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+        <h1>Insertar ComputadoraSoftware</h1>
+
+        <?php
+  //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+  // 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+  //---------------------------------------------------------------------------------------------------------
+          require_once 'facade.php';
+          $id = null;
+          $res = null;
+          $computadoraSoftware = null;
+          $error = null;
+
+
+    // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
+                $numeroSeriePrograma = "";
+                $FechaInstalacion = "";
+                $computadora = "";
+                $software= "";
+                $fechaAquisicion = "";
+                $equiposPermitidos = "";
+                $comentarios = "";
+
+
+    // ------------- fin de 1 ------------------
+
+          if(isset($_POST['submit'])){
+
+
+   // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
+            $numeroSeriePrograma = $_POST['computadoraSoftwareNumeroSerie'];
+            $computadora = $_POST['computadoraSoftwareVersion'];
+            $FechaInstalacion = $_POST['computadoraSoftwareNombre'];
+            $software= $_POST['computadoraSoftwareFechaCaducidad'];
+            $fechaAquisicion = $_POST['computadoraSoftwareFechaAquisicion'];
+            $equiposPermitidos = $_POST['computadoraSoftwareEquiposPermitidos'];
+            $comentarios = $_POST['computadoraSoftwareComentarios'];
+   // ------------- fin de 2 ------------------
+
+
+
+            $computadoraSoftware = new ComputadoraSoftwareDTO(null, $numeroSeriePrograma, $FechaInstalacion, $computadora, $software, $fechaAquisicion, $equiposPermitidos, $comentarios);
+
+   // 3. Guardar en la variable el resultado de la insersion.
+
+            $res = insertarComputadoraSoftware($computadoraSoftware);
+   // ------------- fin de 2 ------------------
+
+
+            if($res["exito"]){
+                echo $res["content"];
+                exit;
+            }else{
+                echo '<span>'.$res["content"].'</span>';
+            }
+          }
+
+          echo '
+
+          <form method="post" action="#">
+            <div class="form_settings">
+              <p><span>Numero de Serie</span><input class="contact" type="text" name="computadoraSoftwareNumeroSerie" value="'.$numeroSeriePrograma.'" /></p>
+              <p><span>Fecha instalacion</span><input class="contact" type="text" name="computadoraSoftwareNombre" value="'.$FechaInstalacion.'" /></p>
+              <p><span>Computadora</span><input class="contact" type="text" name="computadoraSoftwareVersion" value="'.$computadora.'" /></p>
+              <p><span>Software</span><input class="contact" type="text" name="computadoraSoftwareFechaCaducidad" value="'.$software.'" /></p>
+              <p><span>Fecha Adquisición</span><input class="contact" type="text" name="computadoraSoftwareFechaAquisicion" value="'.$fechaAquisicion.'" /></p>
+              <p><span>Número de Equipos Permitidos</span><input class="contact" type="text" name="computadoraSoftwareEquiposPermitidos" value="'.$equiposPermitidos.'" /></p>
+              <p><span>Comentarios</span><input class="contact" type="text" name="computadoraSoftwareComentarios" value="'.$comentarios.'" /></p>
+              <p style="padding-top 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
+            </div>
+          </form>';
+
+        ?>
+      </div>
+    </div>
+    <div id="footer">
+      Universidad Nacional de Colombia
+    </div>
+  </div>
+</html>
