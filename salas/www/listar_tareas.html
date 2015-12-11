@@ -47,7 +47,7 @@ checkLogin();
             <th>Comentarios</th>            
             <th>Fecha de Inicio</th>
             <th>Fecha de Finalización</th>
-            <th>Monitor</th>
+            <th>Monitor (Cód. estudiante)</th>
             <th>Acción</th>      
 
           </tr>
@@ -58,12 +58,17 @@ checkLogin();
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarTareas();
-
+        	 
             if($res["exito"]){
               $tareas = $res["content"];
+              $res = listarTareas();
+              
               foreach ($tareas as $tarea) {
-
+                $resMonitor = consultarMonitor($tarea->getTareaMonitor());
+                $resEstudiante = null;
+                if($resMonitor["exito"]){
+                  $resEstudiante = consultarEstudiante($resMonitor->getMonitorEstudiante());
+                }
 
     // 1. Poner los vínculos correspondientes
 
@@ -71,9 +76,15 @@ checkLogin();
                           <td>'.$tarea->getTareaDescripcion().'</td>
                           <td>'.$tarea->getTareaComentarios().'</td>
                           <td>'.$tarea->getTareaFechaInicio().'</td>
-                          <td>'.$tarea->getTareaFechaFin().'</td>
-                          <td>'.$tarea->getTareaMonitor().'</td>
-                          <td><a href="consultar_tarea.html?id='.$tarea->getId().'"> Ver  -</a>
+                          <td>'.$tarea->getTareaFechaFin().'</td>';
+
+                          if($resEstudiante["exito"]){
+                            echo '<td>'.$resEstudiante["content"]->getEstudianteCodigo().'</td>';
+                          }else{
+                            echo '<td>---</td>';
+                          }
+
+                          echo'<td><a href="consultar_tarea.html?id='.$tarea->getId().'"> Ver  -</a>
                               <a href="editar_tarea.html?id='.$tarea->getId().'"> Editar  -</a>
                               <a href="eliminar_tarea.html?id='.$tarea->getId().'"> Eliminar   </a>
                           </td>

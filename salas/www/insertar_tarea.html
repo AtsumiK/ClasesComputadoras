@@ -87,9 +87,21 @@ checkLogin();
                 echo $res["content"];
                 exit;
             }else{
+
                 echo '<span>'.$res["content"].'</span>';
             }
           }
+
+          $resMonitores = listarMonitores();
+          $resEstudiantes = array();
+          $relEstMonitor = araay();
+          foreach ($resMonitores as $m) {
+            $resEstudiante = consultarEstudiante($m->getMonitorEstudiante());
+            if($resEstudiante["exito"]){
+              $relMonitorEstudiante[$m->getId()] = $resEstudiante["content"];
+            }
+          }
+     
 
           echo '
 
@@ -98,8 +110,19 @@ checkLogin();
               <p><span>Descripción</span><input class="contact" type="text" name="tareaDescripcion" value="'.$descripcion.'" /></p>
               <p><span>Comentarios</span><input class="contact" type="text" name="tareaComentarios" value="'.$comentarios.'" /></p>
               <p><span>Fecha de Inicio</span><input class="contact" type="text" name="tareaFechaInicio" value="'.$fechaInicio.'" /></p>
-              <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'" /></p>
-              <p><span>Monitor Encargado</span><input class="contact" type="text" name="tareaMonitor" value="'.$monitor.'" /></p>
+              <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'" /></p>';
+              
+              echo '<p><span>Monitor (Cód. Estudiante)</span><select name="tareaMonitor" >';
+                foreach($resMonitores as $m){
+                  $e = $relMonitorEstudiante[$m-getId()];
+                  if($e && $m->getId()==$monitor){
+                      echo'<option selected="true" value="'.$monitor.'">'.$e->getEstudianteCodigo().'</option>';
+                  }else if($e){
+                      echo'<option value="'.$monitor.'">'.$e->getEstudianteCodigo().'</option>';
+                  }
+                
+              }
+              echo'</select></p>
               <p style="padding-top 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';
