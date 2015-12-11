@@ -61,7 +61,7 @@ ALTER TABLE estudiante DROP CONSTRAINT estudiante_persona;
 
 
 
-
+DROP TRIGGER cuando_elimine_computadora ON computadora;
 
 
 DROP TABLE software;
@@ -125,6 +125,3 @@ DROP TABLE persona;
 
 
 DROP TABLE usuario;
-
-
-

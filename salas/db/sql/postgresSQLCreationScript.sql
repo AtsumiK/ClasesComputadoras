@@ -250,7 +250,22 @@ ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
 
 
 
+-- TRIGGERS
 
 
 
+-- ESTE TRIGGER SE DISPARA CUANDO SE ELIMINA UNA COMPUTADORA, Y ELIMINA DEL INVENTARIO TODAS LAS PARTES RELACIONADAS CON LA COMPUTADORA PARA QUE NO QUEDEN SUELTAS NI GENERE ERROR.
 
+CREATE OR REPLACE FUNCTION eliminar_inventarios_computadora() 
+  RETURNS trigger AS $eic$
+BEGIN
+ DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
+ RETURN OLD;
+END;
+$eic$ LANGUAGE plpgsql;
+
+CREATE TRIGGER cuando_elimine_computadora
+  BEFORE DELETE
+  ON computadora
+  FOR EACH ROW
+  EXECUTE PROCEDURE eliminar_inventarios_computadora();
