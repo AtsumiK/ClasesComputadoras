@@ -45,7 +45,7 @@
             if(isset($_GET['id'])){
               $id = $_GET['id'];
             }
-        	  $res = consultarInventario($id);
+        	  $res = consultarObjetoEnInventario($id);
             if($res["exito"]){
               $inventario = $res["content"];
 
@@ -55,7 +55,7 @@
               '<p>El registro seleccionado contiene la siguiente información</p>
               <b>Id: </b>'.$inventario->getId().'<br>
               <b>Elemento </b>'.$inventario->getInventarioElemento().'<br>
-              <b>N de Serie </b>'.$inventario->getInventarioNumeroSerie().'<br>
+              <b>Número de Serie </b>'.$inventario->getInventarioNumeroSerie().'<br>
               <b>Salon: </b>'.$inventario->getInventarioCarrerra().'<br>
               <b>Computadora: </b>'.$inventario->getComputadora().'
               <p><br>Puede <a href="editar_inventario.html?id='.$inventario->getId().'">editar</a> o

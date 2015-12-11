@@ -54,14 +54,13 @@
               echo
               '<p>El registro seleccionado contiene la siguiente información</p>
               <b>Id: </b>'.$computadora->getId().'<br>
-              <b>Código </b>'.$computadora->getComputadoraNombre().'<br>
-              <b>Facultad: </b>'.$computadora->getComputadoraRam().'<br>
+              <b>Nombre: </b>'.$computadora->getComputadoraNombre().'<br>
+              <b>Memoria RAM: </b>'.$computadora->getComputadoraRam().'<br>
               <b>Procesador: </b>'.$computadora->getComputadoraProcesador().'<br>
-              <b>Id DiscoDuro: </b>'.$computadora->getComputadoraDiscoDuro().'<br>
-              <b>Id DiscoDuro: </b>'.$computadora->getComputadoraDirIp().'<br>
-              <b>Id DiscoDuro: </b>'.$computadora->getComputadoraDirMac().'<br>
-              <b>Id DiscoDuro: </b>'.$computadora->getComputadoraDiscoDuro().'<br>
-              <b>Id DiscoDuro: </b>'.$computadora->getComputaoraObjetosInventario().'
+              <b>DiscoDuro: </b>'.$computadora->getComputadoraDiscoDuro().'<br>
+              <b>Dirección IP: </b>'.$computadora->getComputadoraDirIp().'<br>
+              <b>Dirección MAC: </b>'.$computadora->getComputadoraDirMac().'<br>
+              <b>Objetos Asociados: </b>'.$computadora->getComputaoraObjetosInventario().'
               <p><br>Puede <a href="editar_computadora.html?id='.$computadora->getId().'">editar</a> o
               <a href="eliminar_computadora.html?id='.$computadora->getId().'">eliminar</a> este registro (clic sobre las palabras subrayadas)</p>';
 
