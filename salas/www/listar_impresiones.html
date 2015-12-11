@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Impresiones</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salones</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">Software</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+        <h1>Listar Impresions</h1>
+        <span class="tool_button"><a href="insertar_impresion.html">Nuevo</a></span>
+        <table style="width:100%">
+          <tr>
+            <th>id</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+            <th>Estudiante</th>
+            <th>Acción</th>
+
+          </tr>
+          <?php
+
+//-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+// 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+//---------------------------------------------------------------------------------------------------------
+
+          	require_once 'facade.php';
+        	  $res = listarImpresiones();
+
+            if($res["exito"]){
+              $impresions = $res["content"];
+              foreach ($impresions as $impresion) {
+
+
+    // 1. Poner los vínculos correspondientes
+
+        	    	echo '<tr><td>'.$impresion->getId().'</td>
+                          <td>'.$impresion->getImpresionFecha().'</td>
+                          <td>'.$impresion->getImpresionLugar().'</td>
+                          <td>'.$impresion->getImpresionEstudiante().'</td>
+                          <td><a href="consultar_impresion.html?id='.$impresion->getId().'"> Ver  -</a>
+                              <a href="editar_impresion.html?id='.$impresion->getId().'"> Editar  -</a>
+                              <a href="eliminar_impresion.html?id='.$impresion->getId().'"> Eliminar   </a>
+                          </td>
+                      </tr>';
+
+   // ------------- fin de 1 ------------------
+        	    }
+            }else{
+                echo $res["content"];
+            }
+          ?>
+        </table>
+      </div>
+    </div>
+    <div id="footer">
+      Universidad Nacional de Colombia
+    </div>
+  </div>
+</html>

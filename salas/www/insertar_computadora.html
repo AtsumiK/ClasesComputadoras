@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Agregar Computadora</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html"><span>Clases de computadoras</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">Software</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+        <h1>Insertar Computadora</h1>
+
+        <?php
+  //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+  // 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+  //---------------------------------------------------------------------------------------------------------
+          require_once 'facade.php';
+          $id = null;
+          $res = null;
+          $computadora = null;
+          $error = null;
+
+
+    // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
+                $nombre = "";
+                $ram = "";
+                $procesador = "";
+                $discoDuro = "";
+                $dirIp = "";
+                $dirMac = "";
+                $objetosInventario = "";
+
+
+    // ------------- fin de 1 ------------------
+
+          if(isset($_POST['submit'])){
+
+
+   // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
+            $nombre = $_POST['computadoraNombre'];
+            $procesador = $_POST['computadoraProcesador'];
+            $ram = $_POST['computadoraRam'];
+            $discoDuro = $_POST['computadoraDiscoDuro'];
+            $dirIp = $_POST['computadoraDirIp'];
+            $dirMac = $_POST['computadoraDirMac'];
+            $objetosInventario = $_POST['computadoraInventario'];
+   // ------------- fin de 2 ------------------
+
+
+
+            $computadora = new ComputadoraDTO(null, $nombre, $ram, $procesador, $discoDuro, $dirIp, $dirMac, $objetosInventario);
+
+   // 3. Guardar en la variable el resultado de la insersion.
+
+            $res = insertarComputadora($computadora);
+   // ------------- fin de 2 ------------------
+
+
+            if($res["exito"]){
+                echo $res["content"];
+                exit;
+            }else{
+                echo '<span>'.$res["content"].'</span>';
+            }
+          }
+
+          echo '
+
+          <form method="post" action="#">
+            <div class="form_settings">
+              <p><span>Nombre</span><input class="contact" type="text" name="computadoraNombre" value="'.$nombre.'" /></p>
+              <p><span>Ram</span><input class="contact" type="text" name="computadoraRam" value="'.$ram.'" /></p>
+              <p><span>Procesador</span><input class="contact" type="text" name="computadoraProcesador" value="'.$procesador.'" /></p>
+              <p><span>DiscoDuro</span><input class="contact" type="text" name="computadoraDiscoDuro" value="'.$discoDuro.'" /></p>
+              <p><span>Dirección IP</span><input class="contact" type="text" name="computadoraDirIp" value="'.$dirIp.'" /></p>
+              <p><span>Dirección MAC</span><input class="contact" type="text" name="computadoraDirMac" value="'.$dirMac.'" /></p>
+              <p><span>Objetos Inventario</span><input class="contact" type="text" name="computadoraInventario" value="'.$objetosInventario.'" /></p>
+              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
+            </div>
+          </form>';
+
+        ?>
+      </div>
+    </div>
+    <div id="footer">
+      Universidad Nacional de Colombia
+    </div>
+  </div>
+</html>

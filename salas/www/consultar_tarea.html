@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Consultar Información Software</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div id="logo">
+          <div id="logo_text">
+            <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_estudiantes.html">Estudiantes</a></li>
+          <li><a href="listar_profesores.html">Profesores</a></li>
+          <li><a href="listar_monitores.html">Monitores</a></li>
+          <li><a href="listar_clases.html">Clases</a></li>
+          <li><a href="listar_inventarios.html">Inventario</a></li>
+          <li><a href="listar_salones.html">Salones</a></li>
+          <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
+          <li><a href="listar_computadoras.html">Computadoras</a></li>
+          <li><a href="listar_softwares.html">Software</a></li>
+          <li><a href="listar_tareas.html">Tareas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+
+      </div>
+      <div id="content">
+          <h1>Consultar Información Software</h1>
+          <?php
+//-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+// 0. Las variables ejemplo $salon, deben ser sustituidas por las correspondentes de cada objeto-----------
+//---------------------------------------------------------------------------------------------------------
+          	require_once 'facade.php';
+            $id = null;
+            if(isset($_GET['id'])){
+              $id = $_GET['id'];
+            }
+        	  $res = consultarSoftware($id);
+            if($res["exito"]){
+              $software = $res["content"];
+
+   // 1. Poner en la tabla los valores de cada campo * en el mismo echo
+
+              echo
+              '<p>El registro seleccionado contiene la siguiente información</p>
+              <b>Id: </b>'.$software->getId().'<br>
+              <b>Número de Serie: </b>'.$software->getSoftwareNumeroSerie().'<br>
+              <b>Nombre: </b>'.$software->getSoftwareNombre().'<br>
+              <b>Versión: </b>'.$software->getSoftwareVersion().'<br>
+              <b>Fecha Caducidad: </b>'.$software->getSoftwareFechaCaducidad().'<br>
+              <b>Fecha Adquisición: </b>'.$software->getSoftwareFechaAquisicion().'<br>
+              <b>Equipos Permitidos: </b>'.$software->getSoftwareEquiposPermitidos().'<br>              
+              <b>Comentarios: </b>'.$software->getSoftwareComentarios().'
+              <p><br>Puede <a href="editar_software.html?id='.$software->getId().'">editar</a> o
+              <a href="eliminar_software.html?id='.$software->getId().'">eliminar</a> este registro (clic sobre las palabras subrayadas)</p>';
+
+   // ------------- fin de 1 ------------------
+            }else{
+              echo $res["content"];
+            }
+          ?>
+      </div>
+    </div>
+    <div id="footer">
+      Universidad Nacional de Colombia
+    </div>
+  </div>
+</html>
