@@ -58,10 +58,11 @@ checkLogin();
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	 
+        	   $res = listarTareas();
+             
             if($res["exito"]){
               $tareas = $res["content"];
-              $res = listarTareas();
+              
               
               foreach ($tareas as $tarea) {
                 $resMonitor = consultarMonitor($tarea->getTareaMonitor());
