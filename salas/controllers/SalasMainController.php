@@ -1270,5 +1270,86 @@
 				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 146) ."->".$e->getCode());
 			}
 		}
+		//Tabla Usuario
+		public function setUsuario($usuarioDTO) {
+			try{
+				$usuarioCtrl = new UsuarioController($this->persistenceManager);//crea una instancia,persistenceManager se encarga de persistencia, y controladores lo usa para hacer las op en bd
+
+				$usuarioCtrl->setUsuario($usuarioDTO);
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 147,$usuarioDTO);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 148) ."->".$e->getCode());
+			}
+		}
+
+		public function getUsuario($idUsuario) {
+			try{
+
+				$ctrl = new UsuarioController($this->persistenceManager);
+				$usuario = new UsuarioDTO($idUsuario);
+
+				$ctrl->getUsuario($usuario);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 149,$usuario);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 150) ."->".$e->getCode());
+			}
+		}
+
+		public function getUsuarios($firstItem,$orderPriority) {
+			try{
+
+				$ctrl = new UsuarioController($this->persistenceManager);
+
+				$usuario = $ctrl->getUsuarios(true,$firstItem,SALAS_COMP_LIST_PAGE_SIZE,array(UsuarioDTO::$ORDER_BY_USUARIO_LOGIN), $orderPriority);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 151,$usuario,$ctrl->getLastRequestSize());
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 152) ."->".$e->getCode());
+			}
+		}
+
+		public function updateUsuario($usuarioDTO) {
+			try{
+
+				$ctrl = new UsuarioController($this->persistenceManager);
+				$usuario = new UsuarioDTO();
+
+				$usuario->setId($usuarioDTO->getId());
+				$ctrl->getUsuario($usuario);
+
+				$usuario->setUsuarioClave($usuarioDTO->getUsuarioClave());
+				$usuario->setUsuarioTipo($usuarioDTO->getUsuarioTipo());
+
+				$ctrl->updateUsuario($usuario);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 153,$usuario);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 154) ."->".$e->getCode());
+			}
+		}
+
+		public function removeUsuario($idUsuario) {
+			try{
+
+				$ctrl = new UsuarioController($this->persistenceManager);
+
+				$ctrl->removeUsuario($idUsuario);
+
+				$cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 155);
+
+				return $cm;
+			}catch (Exception $e){
+				return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 156) ."->".$e->getCode());
+			}
+		}
 	}
 ?>
