@@ -49,8 +49,6 @@
  insertarReserva($dto);
  $dto = new TareaDTO(null, 'fgsd', 'gsf', '12/02/2016', '12/02/2016', '1');
  insertarTarea($dto);
- $dto = new UsuarioDTO(null, 'fgsd', 'fdsadsa', 'ta');
- insertarUsuario($dto);
 
 //prueba consultar
 $te=consultarEstudiante(1);				echo $te["content"]->getId().'<br/>';
@@ -65,7 +63,6 @@ $te=consultarReserva(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarResponsable(1);			echo $te["content"]->getId().'<br/>';
 $te=consultarSoftware(1);				echo $te["content"]->getId().'<br/>';
 $te=consultarTarea(1);					echo $te["content"]->getId().'------<br/>';
-$te=consultarUsuario(1);					echo $te["content"]->getId().'------<br/>';
 
 //prueba lista
 
@@ -83,7 +80,6 @@ $te=consultarUsuario(1);					echo $te["content"]->getId().'------<br/>';
 	$res = listarResponsables();			printListas($res,'respon');
 	$res = listarSoftwares();				printListas($res,'soft');
 	$res = listarTareas();					printListas($res,'tareas');
-	$res = listarUsuarios();					printListas($res,'usuario');
 	function printListas($res,$mens){
 		if($res["exito"]){
 			$temp = $res["content"];
@@ -149,11 +145,6 @@ $te = $te["content"];
 $te = editarTarea($te);
 echo $te["content"].'-----<br/>';
 
-$te=consultarUsuario(1);
-$te = $te["content"];
-$te = editarUsuario($te);
-echo $te["content"].'-----<br/>';
-
 
 //prueba eliminar
 
@@ -171,7 +162,6 @@ echo $te["content"].'-----<br/>';
 	eliminarResponsable(1);
 	eliminarSoftware(1);
 	eliminarTarea(1);
-	eliminarUsuario(1);
 */
 
 
@@ -965,55 +955,4 @@ echo $te["content"].'-----<br/>';
 		);
 	}
 
-//Usuarios
-		function listarUsuarios($firstItem = 0) {
-			$mainCtrl = new SalasMainController ();
-
-			$cm = $mainCtrl->getUsuarios ( $firstItem, "ASC" );
-			$usuarios = $cm->getData ();
-			return array (
-					"exito" => $cm->getStatus (),
-					"content" => $usuarios
-			);
-		}
-		function consultarUsuario($idUsuario) {
-			$mainCtrl = new SalasMainController ();
-			$cm = $mainCtrl->getUsuario ( $idUsuario );
-			$usuario = $cm->getData ();
-			if ($cm->getStatus ()) {
-				return array (
-						"exito" => $cm->getStatus (),
-						"content" => $usuario
-				);
-			} else {
-				return array (
-						"exito" => $cm->getStatus (),
-						"content" => $cm->getMessage ()
-				);
-			}
-		}
-		function eliminarUsuario($idUsuario) {
-			$mainCtrl = new SalasMainController ();
-			$cm = $mainCtrl->removeUsuario ( $idUsuario );
-			return array (
-					"exito" => $cm->getStatus (),
-					"content" => $cm->getMessage ()
-			);
-		}
-		function editarUsuario($usuario) {
-			$mainCtrl = new SalasMainController ();
-			$cm = $mainCtrl->updateUsuario ( $usuario );
-			return array (
-					"exito" => $cm->getStatus (),
-					"content" => $cm->getMessage ()
-			);
-		}
-		function insertarUsuario($usuario) {
-			$mainCtrl = new SalasMainController ();
-			$cm = $mainCtrl->setUsuario ( $usuario );
-			return array (
-					"exito" => $cm->getStatus (),
-					"content" => $cm->getMessage ()
-			);
-		}
 ?>

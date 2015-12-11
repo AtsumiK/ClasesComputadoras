@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Inventario</title>
+  <title>Impresiones</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -23,7 +23,7 @@
           <li><a href="listar_inventarios.html">Inventario</a></li>
           <li><a href="listar_salones.html">Salones</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
-          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
           <li><a href="listar_softwares.html">Software</a></li>
           <li><a href="listar_tareas.html">Tareas</a></li>
@@ -35,15 +35,14 @@
 
       </div>
       <div id="content">
-        <h1>Listar Inventario</h1>
-        <span class="tool_button"><a href="insertar_inventario.html">Nuevo</a></span>
+        <h1>Listar Impresions</h1>
+        <span class="tool_button"><a href="insertar_impresion.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Elemento</th>
-            <th>Numero de Serie</th>
-            <th>Salón</th>
-            <th>Persona</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+            <th>Estudiante</th>
             <th>Acción</th>
 
           </tr>
@@ -54,23 +53,22 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarObjetoEnInventarios();
+        	  $res = listarImpresiones();
 
             if($res["exito"]){
-              $inventarios = $res["content"];
-              foreach ($inventarios as $inventario) {
+              $impresions = $res["content"];
+              foreach ($impresions as $impresion) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$inventario->getId().'</td>
-                          <td>'.$inventario->getInventarioElemento().'</td>
-                          <td>'.$inventario->getInventarioNumeroSerie().'</td>
-                          <td>'.$inventario->getInventarioSalon().'</td>
-                          <td>'.$inventario->getComputadora().'</td>
-                          <td><a href="consultar_inventario.html?id='.$inventario->getId().'"> Ver  -</a>
-                              <a href="editar_inventario.html?id='.$inventario->getId().'"> Editar  -</a>
-                              <a href="eliminar_inventario.html?id='.$inventario->getId().'"> Eliminar   </a>
+        	    	echo '<tr><td>'.$impresion->getId().'</td>
+                          <td>'.$impresion->getImpresionFecha().'</td>
+                          <td>'.$impresion->getImpresionLugar().'</td>
+                          <td>'.$impresion->getImpresionEstudiante().'</td>
+                          <td><a href="consultar_impresion.html?id='.$impresion->getId().'"> Ver  -</a>
+                              <a href="editar_impresion.html?id='.$impresion->getId().'"> Editar  -</a>
+                              <a href="eliminar_impresion.html?id='.$impresion->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

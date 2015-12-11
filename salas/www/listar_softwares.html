@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Inventario</title>
+  <title>Softwares</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -15,7 +15,7 @@
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
           <li><a href="listar_estudiantes.html">Estudiantes</a></li>
           <li><a href="listar_profesores.html">Profesores</a></li>
           <li><a href="listar_monitores.html">Monitores</a></li>
@@ -23,7 +23,7 @@
           <li><a href="listar_inventarios.html">Inventario</a></li>
           <li><a href="listar_salones.html">Salones</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
-          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
           <li><a href="listar_softwares.html">Software</a></li>
           <li><a href="listar_tareas.html">Tareas</a></li>
@@ -35,16 +35,19 @@
 
       </div>
       <div id="content">
-        <h1>Listar Inventario</h1>
-        <span class="tool_button"><a href="insertar_inventario.html">Nuevo</a></span>
+        <h1>Listar Softwares</h1>
+        <span class="tool_button"><a href="insertar_software.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Elemento</th>
             <th>Numero de Serie</th>
-            <th>Salón</th>
-            <th>Persona</th>
-            <th>Acción</th>
+            <th>Nombre</th>            
+            <th>Versión</th>
+            <th>Fecha de Caducidad</th>
+            <th>Fecha Adquisición</th>
+            <th>Número de Equipos Permitidos</th>
+            <th>Comentarios</th>   
+            <th>Acción</th>      
 
           </tr>
           <?php
@@ -54,23 +57,26 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarObjetoEnInventarios();
+        	  $res = listarSoftwares();
 
             if($res["exito"]){
-              $inventarios = $res["content"];
-              foreach ($inventarios as $inventario) {
+              $softwares = $res["content"];
+              foreach ($softwares as $software) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$inventario->getId().'</td>
-                          <td>'.$inventario->getInventarioElemento().'</td>
-                          <td>'.$inventario->getInventarioNumeroSerie().'</td>
-                          <td>'.$inventario->getInventarioSalon().'</td>
-                          <td>'.$inventario->getComputadora().'</td>
-                          <td><a href="consultar_inventario.html?id='.$inventario->getId().'"> Ver  -</a>
-                              <a href="editar_inventario.html?id='.$inventario->getId().'"> Editar  -</a>
-                              <a href="eliminar_inventario.html?id='.$inventario->getId().'"> Eliminar   </a>
+        	    	echo '<tr><td>'.$software->getId().'</td>
+                          <td>'.$software->getSoftwareNumeroSerie().'</td>
+                          <td>'.$software->getSoftwareNombre().'</td>
+                          <td>'.$software->getSoftwareVersion().'</td>
+                          <td>'.$software->getSoftwareFechaCaducidad().'</td>
+                          <td>'.$software->getSoftwareFechaAquisicion().'</td>
+                          <td>'.$software->getSoftwareEquiposPermitidos().'</td>
+                          <td>'.$software->getSoftwareComentarios().'</td>
+                          <td><a href="consultar_software.html?id='.$software->getId().'"> Ver  -</a>
+                              <a href="editar_software.html?id='.$software->getId().'"> Editar  -</a>
+                              <a href="eliminar_software.html?id='.$software->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

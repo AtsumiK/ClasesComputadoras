@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Editar Objeto Perdido</title>
+  <title>Editar Impresion</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -21,7 +21,7 @@
           <li><a href="listar_monitores.html">Monitores</a></li>
           <li><a href="listar_clases.html">Clases</a></li>
           <li><a href="listar_inventarios.html">Inventario</a></li>
-          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_salones.html">Salones</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
           <li><a href="listar_impresiones.html">Impresiónes</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-        <h1>Editar Información Objeto Perdido</h1>
+        <h1>Editar Información Impresion</h1>
 
               <?php
     //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
@@ -44,16 +44,15 @@
 
                 require_once 'facade.php';
                 $id = null;
-                $estudiante = null;
+                $impresion = null;
                 $res = null;
                 $error = null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $codigo = "";
-                $facultad = "";
-                $carrera = "";
-                $persona = "";
-
+                $fecha = "";
+                $lugar = "";
+                $estudiante = "";
+                
     // ------------- fin de 1 ------------------
 
                 if(isset($_POST['submit'])){
@@ -62,10 +61,10 @@
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
 
-                  $codigo = $_POST['estudianteCodigo'];
-                  $facultad = $_POST['estudianteFacultad'];
-                  $carrera = $_POST['estudianteCarrera'];
-                  $persona = $_POST['estudiantePersona'];
+                  $fecha = $_POST['impresionFecha'];
+                  $lugar = $_POST['impresionLugar'];
+                  $estudiante = $_POST['impresionEstudiante'];
+                  
 
     // ------------- fin de 2 ------------------
 
@@ -74,14 +73,14 @@
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        EstudianteDTO($id = null, $ estudianteCodigo = null, $ estudianteFacultad = null, $ estudianteCarrera = null, $ estudiantePersona = null)
+        ImpresionDTO($id = null, $ impresionFecha = null, $ impresionLugar = null, $ impresionEstudiante = null, $ impresionPersona = null)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $estudiante = new EstudianteDTO($id, $codigo, $facultad, $carrera, $persona);
+                  $impresion = new ImpresionDTO($id, $fecha, $lugar, $estudiante);
 
-                  $res = editarEstudiante($estudiante);
+                  $res = editarImpresion($impresion);
 
     // ------------- fin de 3 ------------------
 
@@ -96,17 +95,17 @@
                 }else if(isset($_GET['id'])){
                   $id = $_GET['id'];
 
-                  $res = consultarEstudiante($id);
+                  $res = consultarImpresion($id);
 
                   if($res["exito"]){
 
-                    $estudiante = $res["content"];
+                    $impresion = $res["content"];
 
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
-                    $codigo = $estudiante->getEstudianteCodigo();
-                    $facultad = $estudiante->getEstudianteFacultad();
-                    $carrera = $estudiante->getEstudianteCarrerra();
-                    $persona = $estudiante->getEstudiantePersona();
+                    $fecha = $impresion->getImpresionFecha();
+                    $lugar = $impresion->getImpresionLugar();
+                    $estudiante = $impresion->getImpresionEstudiante();
+                    
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -122,10 +121,10 @@
                   <input class="contact" type="hidden" name="id" value="'.$id.'">
                   </input>
                   <div class="form_settings">
-                    <p><span>Codigo</span><input class="contact" type="text" name="estudianteCodigo" value="'.$codigo.'"></input></p>
-                    <p><span>Facultad</span><input class="contact" type="text" name="estudianteFacultad" value="'.$facultad.'"></input></p>
-                    <p><span>Carrera</span><input class="contact" type="text" name="estudianteCarrera" value="'.$carrera.'"></input></p>
-                    <p><span>Persona</span><input class="contact" type="text" name="estudiantePersona" value="'.$persona.'"></input></p>
+                    <p><span>Fecha</span><input class="contact" type="text" name="impresionFecha" value="'.$fecha.'"></input></p>
+                    <p><span>Lugar</span><input class="contact" type="text" name="impresionLugar" value="'.$lugar.'"></input></p>
+                    <p><span>Estudiante</span><input class="contact" type="text" name="impresionEstudiante" value="'.$estudiante.'"></input></p>
+                    
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>

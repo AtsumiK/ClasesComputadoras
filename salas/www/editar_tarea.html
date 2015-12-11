@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Editar Objeto Perdido</title>
+  <title>Editar Tarea</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -15,13 +15,13 @@
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
           <li><a href="listar_estudiantes.html">Estudiantes</a></li>
           <li><a href="listar_profesores.html">Profesores</a></li>
           <li><a href="listar_monitores.html">Monitores</a></li>
           <li><a href="listar_clases.html">Clases</a></li>
           <li><a href="listar_inventarios.html">Inventario</a></li>
-          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_salones.html">Salones</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
           <li><a href="listar_impresiones.html">Impresiónes</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-        <h1>Editar Información Objeto Perdido</h1>
+        <h1>Editar Información Tarea</h1>
 
               <?php
     //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
@@ -44,15 +44,19 @@
 
                 require_once 'facade.php';
                 $id = null;
-                $estudiante = null;
+                $tarea = null;
                 $res = null;
                 $error = null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $codigo = "";
-                $facultad = "";
-                $carrera = "";
-                $persona = "";
+                $descripcion = "";
+                $comentarios = "";
+                $fechaInicio = "";
+                $fechaFin= "";
+                $monitor = "";
+
+
+
 
     // ------------- fin de 1 ------------------
 
@@ -62,10 +66,14 @@
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
 
-                  $codigo = $_POST['estudianteCodigo'];
-                  $facultad = $_POST['estudianteFacultad'];
-                  $carrera = $_POST['estudianteCarrera'];
-                  $persona = $_POST['estudiantePersona'];
+                  $descripcion = $_POST['tareaDescripcion'];
+                  $comentarios = $_POST['tareaComentarios'];
+                  $fechaInicio = $_POST['tareaFechaInicio'];
+                  $fechaFin= $_POST['tareaFechaFin'];
+                  $monitor = $_POST['tareaMonitor'];
+                  $equiposPermitidos = $_POST['tareaEquiposPermitidos'];
+                  $comentarios = $_POST['tareaComentarios'];
+
 
     // ------------- fin de 2 ------------------
 
@@ -74,14 +82,14 @@
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        EstudianteDTO($id = null, $ estudianteCodigo = null, $ estudianteFacultad = null, $ estudianteCarrera = null, $ estudiantePersona = null)
+        TareaDTO($id = null, $ tareaDescripcion = null, $ tareaComentarios = null, $ tareaFechaInicio = null, $ tareaFechaFin = null)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $estudiante = new EstudianteDTO($id, $codigo, $facultad, $carrera, $persona);
+                  $tarea = new TareaDTO($id, $descripcion, $comentarios, $fechaInicio, $fechaFin, $monitor);
 
-                  $res = editarEstudiante($estudiante);
+                  $res = editarTarea($tarea);
 
     // ------------- fin de 3 ------------------
 
@@ -96,17 +104,19 @@
                 }else if(isset($_GET['id'])){
                   $id = $_GET['id'];
 
-                  $res = consultarEstudiante($id);
+                  $res = consultarTarea($id);
 
                   if($res["exito"]){
 
-                    $estudiante = $res["content"];
+                    $tarea = $res["content"];
 
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
-                    $codigo = $estudiante->getEstudianteCodigo();
-                    $facultad = $estudiante->getEstudianteFacultad();
-                    $carrera = $estudiante->getEstudianteCarrerra();
-                    $persona = $estudiante->getEstudiantePersona();
+                    $descripcion = $tarea->getTareaDescripcion();
+                    $comentarios = $tarea->getTareaComentarios();
+                    $fechaInicio = $tarea->getTareaFechaInicio();
+                    $fechaFin= $tarea->getTareaFechaFin();
+                    $monitor = $tarea->getTareaMonitor();
+
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -122,11 +132,11 @@
                   <input class="contact" type="hidden" name="id" value="'.$id.'">
                   </input>
                   <div class="form_settings">
-                    <p><span>Codigo</span><input class="contact" type="text" name="estudianteCodigo" value="'.$codigo.'"></input></p>
-                    <p><span>Facultad</span><input class="contact" type="text" name="estudianteFacultad" value="'.$facultad.'"></input></p>
-                    <p><span>Carrera</span><input class="contact" type="text" name="estudianteCarrera" value="'.$carrera.'"></input></p>
-                    <p><span>Persona</span><input class="contact" type="text" name="estudiantePersona" value="'.$persona.'"></input></p>
-
+                    <p><span>Descripción</span><input class="contact" type="text" name="tareaDescripcion" value="'.$descripcion.'"></input></p>
+                    <p><span>Comentarios</span><input class="contact" type="text" name="tareaComentarios" value="'.$comentarios.'"></input></p>
+                    <p><span>Fefcha de Inicio</span><input class="contact" type="text" name="tareaFechaInicio" value="'.$fechaInicio.'"></input></p>
+                    <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'"></input></p>
+                    <p><span>Monitor</span><input class="contact" type="text" name="tareaMonitor" value="'.$monitor.'"></input></p>                    
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>
               </form>

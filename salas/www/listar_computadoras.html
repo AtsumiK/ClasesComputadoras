@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Inventario</title>
+  <title>Computadoras</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -15,13 +15,13 @@
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
           <li><a href="listar_estudiantes.html">Estudiantes</a></li>
           <li><a href="listar_profesores.html">Profesores</a></li>
           <li><a href="listar_monitores.html">Monitores</a></li>
           <li><a href="listar_clases.html">Clases</a></li>
           <li><a href="listar_inventarios.html">Inventario</a></li>
-          <li><a href="listar_salones.html">Salones</a></li>
+          <li><a href="listar_salones.html">Salónes</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
           <li><a href="listar_impresiones.html">Impresiónes</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
@@ -35,16 +35,19 @@
 
       </div>
       <div id="content">
-        <h1>Listar Inventario</h1>
-        <span class="tool_button"><a href="insertar_inventario.html">Nuevo</a></span>
+        <h1>Listar Computadoras</h1>
+        <span class="tool_button"><a href="insertar_computadora.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Elemento</th>
-            <th>Numero de Serie</th>
-            <th>Salón</th>
-            <th>Persona</th>
-            <th>Acción</th>
+            <th>Nombre</th>
+            <th>Memoria RAM</th>
+            <th>Procesador</th>
+            <th>Disco Duro</th>
+            <th>Dirección IP</th>
+            <th>Dirección MAC</th>
+            <th>Acciones</th>
+            <th>Objetos en Inventario</th>        
 
           </tr>
           <?php
@@ -54,23 +57,26 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarObjetoEnInventarios();
+        	  $res = listarComputadoras();
 
             if($res["exito"]){
-              $inventarios = $res["content"];
-              foreach ($inventarios as $inventario) {
+              $computadoras = $res["content"];
+              foreach ($computadoras as $computadora) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$inventario->getId().'</td>
-                          <td>'.$inventario->getInventarioElemento().'</td>
-                          <td>'.$inventario->getInventarioNumeroSerie().'</td>
-                          <td>'.$inventario->getInventarioSalon().'</td>
-                          <td>'.$inventario->getComputadora().'</td>
-                          <td><a href="consultar_inventario.html?id='.$inventario->getId().'"> Ver  -</a>
-                              <a href="editar_inventario.html?id='.$inventario->getId().'"> Editar  -</a>
-                              <a href="eliminar_inventario.html?id='.$inventario->getId().'"> Eliminar   </a>
+        	    	echo '<tr><td>'.$computadora->getId().'</td>
+                          <td>'.$computadora->getComputadoraNombre().'</td>
+                          <td>'.$computadora->getComputadoraRam().'</td>
+                          <td>'.$computadora->getComputadoraProcesador().'</td>
+                          <td>'.$computadora->getComputadoraDiscoDuro().'</td>
+                          <td>'.$computadora->getComputadoraDirIp().'</td>
+                          <td>'.$computadora->getComputadoraDirMac().'</td>
+                          <td>'.$computadora->getComputaoraObjetosInventario().'</td>
+                          <td><a href="consultar_computadora.html?id='.$computadora->getId().'"> Ver  -</a>
+                              <a href="editar_computadora.html?id='.$computadora->getId().'"> Editar  -</a>
+                              <a href="eliminar_computadora.html?id='.$computadora->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

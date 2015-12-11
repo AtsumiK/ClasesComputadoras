@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Eliminar Objeto Perdido de los Registros</title>
+  <title>Eliminar Impresion de los Registros</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta charset="UTF-8">
   </head>
@@ -21,9 +21,9 @@
           <li><a href="listar_monitores.html">Monitores</a></li>
           <li><a href="listar_clases.html">Clases</a></li>
           <li><a href="listar_inventarios.html">Inventario</a></li>
-          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_salones.html">Salones</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
-          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
           <li><a href="listar_softwares.html">Software</a></li>
           <li><a href="listar_tareas.html">Tareas</a></li>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-          <h1>Eliminar Objeto Perdido de los Registros</h1>
+          <h1>Eliminar Impresion de los Registros</h1>
 
             <?php
             	require_once 'facade.php';
@@ -43,10 +43,9 @@
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
 
-                $codigo = "";
-                $facultad = "";
-                $carrera = "";
-                $persona = "";
+                $fecha = "";
+                $lugar = "";
+                $estudiante = "";
 
 
     // ------------- fin de 1 ------------------
@@ -56,7 +55,7 @@
 
     // 2. Guardar en la variable el resultado de la insersion.
 
-                $res = eliminarEstudiante($id);
+                $res = eliminarImpresion($id);
 
     // ------------- fin de 2 ------------------
 
@@ -68,21 +67,20 @@
                 }
               }else if(isset($_GET['id'])){
                 $id = $_GET['id'];
-                $res = consultarEstudiante($id);
+                $res = consultarImpresion($id);
                 if($res["exito"]){
-                  $estudiante = $res["content"];
-                  $codigo = $estudiante->getEstudianteCodigo();
-                  $facultad = $estudiante->getEstudianteFacultad();
-                  $carrera = $estudiante->getEstudianteCarrerra();
-                  $persona = $estudiante->getEstudiantePersona();
+                  $impresion = $res["content"];
+                  $fecha = $impresion->getImpresionFecha();
+                  $lugar = $impresion->getImpresionLugar();
+                  $estudiante = $impresion->getImpresionEstudiante();
+                  $persona = $impresion->getImpresionPersona();
 
                   echo
                     '<p>De hacer clic en "Eliminar" la siguiente información se perderá definitivamente</p>
                     <b>Id: </b>'.$id.'<br>
-                    <b>Código: </b>'.$codigo.'<br>
-                    <b>Facultad: </b>'.$facultad.'<br>
-                    <b>Carrerra: </b>'.$carrera.'<br>
-                    <b>Id Persona: </b>'.$persona.'<br>';
+                    <b>Fecha: </b>'.$fecha.'<br>
+                    <b>Lugar: </b>'.$lugar.'<br>
+                    <b>Estudiante: </b>'.$estudiante.'<br>';
                 }else{
                     echo '<span>'.$res["content"].'</span>';
                     exit;

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Agregar Inventario</title>
+  <title>Agregar Tarea</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -10,12 +10,12 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <h1><a href="index.html"><span>Clases de computadoras</span></a></h1>
+          <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li><a href="listar_personas.html">Personas</a></li>
+          <li><a href="listar_personas.html">DiscoDuros</a></li>
           <li><a href="listar_estudiantes.html">Estudiantes</a></li>
           <li><a href="listar_profesores.html">Profesores</a></li>
           <li><a href="listar_monitores.html">Monitores</a></li>
@@ -23,7 +23,7 @@
           <li><a href="listar_inventarios.html">Inventario</a></li>
           <li><a href="listar_salones.html">Salónes</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
-          <li><a href="listar_impresiones.html">Impresiónes</a></li>
+          <li><a href="listar_impresiones.html">Impresiones</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
           <li><a href="listar_softwares.html">Software</a></li>
           <li><a href="listar_tareas.html">Tareas</a></li>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-        <h1>Insertar Inventario</h1>
+        <h1>Insertar Tarea</h1>
 
         <?php
   //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
@@ -44,39 +44,39 @@
           require_once 'facade.php';
           $id = null;
           $res = null;
-          $inventario = null;
+          $tarea = null;
           $error = null;
-          $idComputadora = null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $elemento = "";
-                $numeroSerie = "";
-                $salon = "";
-                $res = listarComputadoras();
-                $computadoras = $res["content"];
-                $res = null;
+                $descripcion = "";
+                $comentarios = "";
+                $fechaInicio = "";
+                $fechaFin= "";
+                $monitor = "";
 
 
     // ------------- fin de 1 ------------------
 
           if(isset($_POST['submit'])){
-            $idComputadora = $_POST['idComputadora'];
+
 
    // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-            $elemento = $_POST['inventarioElemento'];
-            $salon = $_POST['inventarioSalon'];
-            $numeroSerie = $_POST['inventarioNumeroSerie'];
+            $descripcion = $_POST['tareaDescripcion'];
+            $fechaInicio = $_POST['tareaFechaInicio'];
+            $comentarios = $_POST['tareaComentarios'];
+            $fechaFin= $_POST['tareaFechaFin'];
+            $monitor = $_POST['tareaMonitor'];
 
    // ------------- fin de 2 ------------------
 
 
 
-            $inventario = new ObjetoEnInventarioDTO(null, $elemento, $numeroSerie, $salon, $idComputadora);
+            $tarea = new TareaDTO(null, $descripcion, $comentarios, $fechaInicio, $fechaFin, $monitor);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
-            $res = insertarObjetoEnInventario($inventario);
+            $res = insertarTarea($tarea);
    // ------------- fin de 2 ------------------
 
 
@@ -92,19 +92,12 @@
 
           <form method="post" action="#">
             <div class="form_settings">
-              <p><span>Elemento</span><input class="contact" type="text" name="inventarioElemento" value="'.$elemento.'" /></p>
-              <p><span>N Serie</span><input class="contact" type="text" name="inventarioNumeroSerie" value="'.$numeroSerie.'" /></p>
-              <p><span>Salon</span><input class="contact" type="text" name="inventarioSalon" value="'.$salon.'" /></p>
-              <p><span>Computadoras</span><select name="idComputadora" ><option value="">Ninguno</option>';
-                foreach($computadoras as $computadora){
-                  if($computadora->getId() == $idComputadora){
-                      echo'<option selected="true" value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
-                  }else{
-                      echo'<option value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
-                  }
-                }
-              echo'</select> </p>
-              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
+              <p><span>Descripción</span><input class="contact" type="text" name="tareaDescripcion" value="'.$descripcion.'" /></p>
+              <p><span>Comentarios</span><input class="contact" type="text" name="tareaComentarios" value="'.$comentarios.'" /></p>
+              <p><span>Fecha de Inicio</span><input class="contact" type="text" name="tareaFechaInicio" value="'.$fechaInicio.'" /></p>
+              <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'" /></p>
+              <p><span>Monitor Encargado</span><input class="contact" type="text" name="tareaMonitor" value="'.$monitor.'" /></p>
+              <p style="padding-top 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';
 
