@@ -17,7 +17,7 @@
  * OBJ PERDIDO PROPRIETARIO ELIMINAR CAMPO
  */
 
-
+/*
  	$dto = new SalonDTO(null, 'fdsa');
 	insertarSalon($dto);
 
@@ -49,7 +49,7 @@
  insertarReserva($dto);
  $dto = new TareaDTO(null, 'fgsd', 'gsf', '12/02/2016', '12/02/2016', '1');
  insertarTarea($dto);
- $dto = new TareaDTO(null, 'fgsd', 'fdsadsa', 'ta');
+ $dto = new UsuarioDTO(null, 'fgsd', 'fdsadsa', 'ta');
  insertarUsuario($dto);
 
 //prueba consultar
@@ -83,7 +83,7 @@ $te=consultarUsuario(1);					echo $te["content"]->getId().'------<br/>';
 	$res = listarResponsables();			printListas($res,'respon');
 	$res = listarSoftwares();				printListas($res,'soft');
 	$res = listarTareas();					printListas($res,'tareas');
-	$res = listarUsuarios();					printListas($res,'tareas');
+	$res = listarUsuarios();					printListas($res,'usuario');
 	function printListas($res,$mens){
 		if($res["exito"]){
 			$temp = $res["content"];
@@ -173,7 +173,7 @@ echo $te["content"].'-----<br/>';
 	eliminarSoftware(1);
 	eliminarTarea(1);
 	eliminarUsuario(1);
-
+*/
 
 
 

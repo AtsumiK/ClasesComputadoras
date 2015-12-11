@@ -61,6 +61,8 @@ ALTER TABLE estudiante DROP CONSTRAINT estudiante_persona;
 
 
 
+DROP TRIGGER cuando_elimine_computadora ON computadora;
+
 
 DROP TABLE software;
 
@@ -119,6 +121,10 @@ DROP TABLE estudiante;
 
 
 DROP TABLE persona;
+
+
+
+DROP TABLE usuario;
 
 
 CREATE TABLE software (
@@ -235,7 +241,8 @@ CREATE TABLE impresion (
     impresion_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     impresion_lugar CHARACTER VARYING(50) NOT NULL,
     impresion_estudiante BIGINT NOT NULL,
-    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id)
+    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id),
+    CONSTRAINT impresion_impresion_estudiante_key UNIQUE (impresion_estudiante)
 );
 
 
@@ -294,6 +301,17 @@ CREATE TABLE persona (
     persona_apellidos CHARACTER VARYING(250) NOT NULL,
     CONSTRAINT persona_pkey PRIMARY KEY (persona_id),
     CONSTRAINT persona_persona_documento_identidad_key UNIQUE (persona_documento_identidad)
+);
+
+
+
+CREATE TABLE usuario (
+    usuario_id SERIAL NOT NULL,
+    usuario_login CHARACTER VARYING(20) NOT NULL,
+    usuario_clave CHARACTER VARYING(20) NOT NULL,
+    usuario_tipo CHARACTER VARYING(3) NOT NULL,
+    CONSTRAINT usuario_pkey PRIMARY KEY (usuario_id),
+    CONSTRAINT usuario_usuario_login_key UNIQUE (usuario_login)
 );
 
 
@@ -357,3 +375,26 @@ ALTER TABLE responsable ADD CONSTRAINT responsable_persona
 
 ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
     FOREIGN KEY ( estudiante_persona) REFERENCES persona(persona_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
+
+
+
+
+-- TRIGGERS
+
+
+
+-- ESTE TRIGGER SE DISPARA CUANDO SE ELIMINA UNA COMPUTADORA, Y ELIMINA DEL INVENTARIO TODAS LAS PARTES RELACIONADAS CON LA COMPUTADORA PARA QUE NO QUEDEN SUELTAS NI GENERE ERROR.
+
+CREATE OR REPLACE FUNCTION eliminar_inventarios_computadora()
+  RETURNS trigger AS $eic$
+BEGIN
+ DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
+ RETURN OLD;
+END;
+$eic$ LANGUAGE plpgsql;
+
+CREATE TRIGGER cuando_elimine_computadora
+  BEFORE DELETE
+  ON computadora
+  FOR EACH ROW
+  EXECUTE PROCEDURE eliminar_inventarios_computadora();

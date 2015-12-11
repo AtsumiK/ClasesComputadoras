@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Clases</title>
+  <title>Listar Usuários</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -10,7 +10,7 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <h1><a href="index.html"><span>Salas de Cómputo</span></a></h1>
+          <h1><a href="index.html"><span>Clases de computadoras</span></a></h1>
         </div>
       </div>
       <div id="menubar">
@@ -21,7 +21,7 @@
           <li><a href="listar_monitores.html">Monitores</a></li>
           <li><a href="listar_clases.html">Clases</a></li>
           <li><a href="listar_inventarios.html">Inventario</a></li>
-          <li><a href="listar_salones.html">Salónes</a></li>
+          <li><a href="listar_usuarios.html">Salónes</a></li>
           <li><a href="listar_objetos_perdidos.html">Objetos Perdidos</a></li>
           <li><a href="listar_impresiones.html">Impresiónes</a></li>
           <li><a href="listar_computadoras.html">Computadoras</a></li>
@@ -35,44 +35,36 @@
 
       </div>
       <div id="content">
-        <h1>Listar Clases</h1>
-        <span class="tool_button"><a href="insertar_clase.html">Nuevo</a></span>
+        <h1>Listar Usuarios</h1>
+        <span class="tool_button"><a href="insertar_usuario.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
-            <th>id</th>
-            <th>Clase</th>
-            <th>Inicio</th>
-            <th>Fin</th>
-            <th>Responsable</th>
-            <th>Salon</th>
-            <th>Acción</th>
-
+            <th>Login</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
           </tr>
           <?php
 
 //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
-// 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+// 0. Las variables ejemplo $usuario y $usuarios, deben ser sustituidas por las correspondentes de cada objeto
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarReservas();
+        	  $res = listarUsuarios();
 
             if($res["exito"]){
-              $reservas = $res["content"];
-              foreach ($reservas as $reserva) {
+              $usuarios = $res["content"];
+              foreach ($usuarios as $usuario) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$reserva->getId().'</td>
-                          <td>'.$reserva->getReservaClase().'</td>
-                          <td>'.$reserva->getReservaHoraInicio().'</td>
-                          <td>'.$reserva->getReservaHoraFin().'</td>
-                          <td>'.$reserva->getReservaResponsable().'</td>
-                          <td>'.$reserva->getReservaSalon().'</td>
-                          <td><a href="consultar_clase.html?id='.$reserva->getId().'"> Ver  -</a>
-                              <a href="editar_clase.html?id='.$reserva->getId().'"> Editar  -</a>
-                              <a href="eliminar_clase.html?id='.$reserva->getId().'"> Eliminar   </a>
+        	    	echo '<tr>
+                          <td>'.$usuario->getUsuarioLogin().'</td>
+                          <td>'.$usuario->getUsuarioTipo().'</td>
+                          <td><a href="consultar_usuario.html?id='.$usuario->getId().'"> Ver </a>
+                              <a href="editar_usuario.html?id='.$usuario->getId().'"> Editar </a>
+                              <a href="eliminar_usuario.html?id='.$usuario->getId().'"> Eliminar </a>
                           </td>
                       </tr>';
 
@@ -86,7 +78,7 @@
       </div>
     </div>
     <div id="footer">
-      Universidad Nacional de Colombia
+      Salones de compuadora
     </div>
   </div>
 </html>

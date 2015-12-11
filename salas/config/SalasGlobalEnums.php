@@ -225,5 +225,10 @@
     define('PERSONA_DTO', 'PersonaDTO.php');
     define('PERSONA_CONTROLLER', 'PersonaController.php');
 
+    define('USUARIO_BEAN', 'UsuarioBean.php');
+    define('USUARIO_ENTITY', 'Usuario.php');
+    define('USUARIO_DTO', 'UsuarioDTO.php');
+    define('USUARIO_CONTROLLER', 'UsuarioController.php');
+
 
 ?>
