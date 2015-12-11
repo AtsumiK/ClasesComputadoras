@@ -94,7 +94,7 @@ checkLogin();
 
           $resMonitores = listarMonitores();
           $resEstudiantes = array();
-          $relEstMonitor = araay();
+          $relEstMonitor = array();
           foreach ($resMonitores as $m) {
             $resEstudiante = consultarEstudiante($m->getMonitorEstudiante());
             if($resEstudiante["exito"]){
