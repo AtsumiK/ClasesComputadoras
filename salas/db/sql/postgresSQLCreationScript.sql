@@ -112,8 +112,7 @@ CREATE TABLE impresion (
     impresion_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     impresion_lugar CHARACTER VARYING(50) NOT NULL,
     impresion_estudiante BIGINT NOT NULL,
-    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id),
-    CONSTRAINT impresion_impresion_estudiante_key UNIQUE (impresion_estudiante)
+    CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id)
 );
 
 
@@ -275,55 +274,15 @@ ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
     FOREIGN KEY ( estudiante_persona) REFERENCES persona(persona_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
 
 
-    -- TRIGGERS
 
 
 
-    -- ESTE TRIGGER SE DISPARA CUANDO SE ELIMINA UNA COMPUTADORA, Y ELIMINA DEL INVENTARIO TODAS LAS PARTES RELACIONADAS CON LA COMPUTADORA PARA QUE NO QUEDEN SUELTAS NI GENERE ERROR.
-  -- TRIGGER 1
-    CREATE OR REPLACE FUNCTION eliminar_inventarios_computadora()
-      RETURNS trigger AS $eic$
-    BEGIN
-     DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
-     DELETE FROM computadora_software WHERE computadora = OLD.computadora_id;
-     DELETE FROM prestamo WHERE prestamo_computadora = OLD.computadora_id;
-     RETURN OLD;
-    END;
-    $eic$ LANGUAGE plpgsql;
 
-    CREATE TRIGGER cuando_elimine_computadora
-      BEFORE DELETE
-      ON computadora
-      FOR EACH ROW
-      EXECUTE PROCEDURE eliminar_inventarios_computadora();
-  -- TRIGGER 2
-    CREATE OR REPLACE FUNCTION backup_instalacion_software()
-        RETURNS trigger AS $eic$
-      BEGIN
-        INSERT INTO software_computadora_backup (id_software_computadora, numero_serie_programa_backup,  comp_soft_fecha_instalacion_backup,  computadora_backup,  software_backup,  fecha_backup_s_c )
-        (SELECT *,now() FROM computadora_software);
-        RETURN OLD;
-      END;
-      $eic$ LANGUAGE plpgsql;
 
-      CREATE TRIGGER cuando_elimine_software
-        BEFORE DELETE
-        ON computadora_software
-        FOR EACH ROW
-        EXECUTE PROCEDURE backup_instalacion_software();
 
-  -- TRIGGER 3
-      CREATE OR REPLACE FUNCTION backup_prestamo()
-        RETURNS trigger AS $eic$
-      BEGIN
-        INSERT INTO prestamo_backup (prestamo_id,prestamo_entrada_backup,prestamo_salida_backup,prestamo_comentarios_backup,prestamo_estudiante_backup,prestamo_computadora_backup,prestamo_backup_fecha_backup)
-        (SELECT *,now() FROM prestamo);
-        RETURN OLD;
-      END;
-      $eic$ LANGUAGE plpgsql;
 
-      CREATE TRIGGER cuando_elimine_prestamo
-        BEFORE DELETE
-        ON prestamo
-        FOR EACH ROW
-        EXECUTE PROCEDURE backup_prestamo();
+
+
+
+
+

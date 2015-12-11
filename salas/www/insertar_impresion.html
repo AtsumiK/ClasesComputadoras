@@ -49,12 +49,14 @@ checkLogin();
           $res = null;
           $impresion = null;
           $error = null;
+          $idEstudiante=null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
                 $fecha = "";
                 $lugar = "";
-                $estudiante = "";
+                $res = listarEstudiantes();
+                $estudiantes = $res["content"];
 
 
     // ------------- fin de 1 ------------------
@@ -64,13 +66,13 @@ checkLogin();
 
    // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
             $fecha = $_POST['impresionFecha'];
-            $estudiante = $_POST['impresionEstudiante'];
+            $idEstudiante = $_POST['idEstudiante'];
             $lugar = $_POST['impresionLugar'];
    // ------------- fin de 2 ------------------
 
 
 
-            $impresion = new ImpresionDTO(null, $fecha, $lugar, $estudiante);
+            $impresion = new ImpresionDTO(null, $fecha, $lugar, $idEstudiante);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
@@ -92,7 +94,15 @@ checkLogin();
             <div class="form_settings">
               <p><span>Fecha</span><input class="contact" type="text" name="impresionFecha" value="'.$fecha.'" /></p>
               <p><span>Lugar</span><input class="contact" type="text" name="impresionLugar" value="'.$lugar.'" /></p>
-              <p><span>Estudiante</span><input class="contact" type="text" name="impresionEstudiante" value="'.$estudiante.'" /></p>
+              <p><span>Estudiante</span><select name="idEstudiante" ><option value="">Ninguno</option>';
+                foreach($estudiantes as $estudiante){
+                  if($estudiante->getId() == $idEstudiante){
+                      echo'<option selected="true" value="'.$estudiante->getId().'">'.$estudiante->getEstudianteCodigo().'</option>';
+                  }else{
+                      echo'<option value="'.$estudiante->getId().'">'.$estudiante->getEstudianteCodigo().'</option>';
+                  }
+                }
+              echo'</select></p>
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';

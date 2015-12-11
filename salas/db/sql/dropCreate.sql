@@ -1,141 +1,3 @@
-
-
-ALTER TABLE objeto_en_inventario DROP CONSTRAINT inventario_salon;
-
-ALTER TABLE objeto_en_inventario DROP CONSTRAINT objeto_en_inventario_computadora;
-
-
-
-
-
-ALTER TABLE computadora_software DROP CONSTRAINT computadora;
-
-ALTER TABLE computadora_software DROP CONSTRAINT software;
-
-
-
-ALTER TABLE objeto_perdido DROP CONSTRAINT objeto_perdido_salon;
-
-ALTER TABLE objeto_perdido DROP CONSTRAINT objeto_perdido_estudiante;
-
-
-
-ALTER TABLE tarea DROP CONSTRAINT tarea_monitor;
-
-
-
-
-
-ALTER TABLE prestamo DROP CONSTRAINT prestamo_estudiante;
-
-ALTER TABLE prestamo DROP CONSTRAINT prestamo_computadora;
-
-
-
-ALTER TABLE monitor_salon DROP CONSTRAINT monitor;
-
-ALTER TABLE monitor_salon DROP CONSTRAINT salon;
-
-
-
-ALTER TABLE impresion DROP CONSTRAINT impresion_estudiante;
-
-
-
-ALTER TABLE monitor DROP CONSTRAINT monitor_estudiante;
-
-
-
-ALTER TABLE reserva DROP CONSTRAINT reserva_responsable;
-
-ALTER TABLE reserva DROP CONSTRAINT reserva_salon;
-
-
-
-ALTER TABLE responsable DROP CONSTRAINT responsable_persona;
-
-
-
-ALTER TABLE estudiante DROP CONSTRAINT estudiante_persona;
-
-
-
-
-DROP TRIGGER cuando_elimine_computadora ON computadora;
-DROP TRIGGER cuando_elimine_software ON computadora_software;
-DROP TRIGGER cuando_elimine_prestamo ON prestamo;
-
-
-DROP TABLE software;
-
-
-
-DROP TABLE objeto_en_inventario;
-
-
-
-DROP TABLE computadora;
-
-
-
-DROP TABLE computadora_software;
-
-
-
-DROP TABLE objeto_perdido;
-
-
-
-DROP TABLE tarea;
-
-
-
-DROP TABLE salon;
-
-
-
-DROP TABLE prestamo;
-
-
-
-DROP TABLE monitor_salon;
-
-
-
-DROP TABLE impresion;
-
-
-
-DROP TABLE monitor;
-
-
-
-DROP TABLE reserva;
-
-
-
-DROP TABLE responsable;
-
-
-
-DROP TABLE estudiante;
-
-
-
-DROP TABLE persona;
-
-
-
-DROP TABLE usuario;
-
-
-
-DROP TABLE software_computadora_backup;
-
-
-
-DROP TABLE prestamo_backup;
-
 CREATE TABLE software (
     software_id SERIAL NOT NULL,
     software_numero_serie CHARACTER VARYING(50) NOT NULL,
@@ -246,12 +108,19 @@ CREATE TABLE monitor_salon (
 
 
 CREATE TABLE impresion (
+
     impresion_id SERIAL NOT NULL,
+
     impresion_fecha TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+
     impresion_lugar CHARACTER VARYING(50) NOT NULL,
+
     impresion_estudiante BIGINT NOT NULL,
+
     CONSTRAINT impresion_pkey PRIMARY KEY (impresion_id),
+
     CONSTRAINT impresion_impresion_estudiante_key UNIQUE (impresion_estudiante)
+
 );
 
 
@@ -392,8 +261,9 @@ ALTER TABLE monitor_salon ADD CONSTRAINT monitor
     FOREIGN KEY ( salon) REFERENCES salon(salon_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
 
 
-ALTER TABLE impresion ADD CONSTRAINT impresion_estudiante
-    FOREIGN KEY ( impresion_estudiante) REFERENCES estudiante(estudiante_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
+    ALTER TABLE impresion ADD CONSTRAINT impresion_estudiante
+
+        FOREIGN KEY ( impresion_estudiante) REFERENCES estudiante(estudiante_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION ;
 
 
 ALTER TABLE monitor ADD CONSTRAINT monitor_estudiante
@@ -423,6 +293,8 @@ ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
       RETURNS trigger AS $eic$
     BEGIN
      DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
+     DELETE FROM computadora_software WHERE computadora = OLD.computadora_id;
+     DELETE FROM prestamo WHERE prestamo_computadora = OLD.computadora_id;
      RETURN OLD;
     END;
     $eic$ LANGUAGE plpgsql;

@@ -719,7 +719,6 @@
 		    $ctrl->getObjetoPerdido($objetoPerdido);
 
 
-		    $objetoPerdido->setObjetoPerdidoCorreo($objetoPerdidoDTO->getObjetoPerdidoCorreo());
 		    $objetoPerdido->setObjetoPerdidoFechaDevolucion($objetoPerdidoDTO->getObjetoPerdidoFechaDevolucion());
 		    $objetoPerdido->setObjetoPerdidoComentarios($objetoPerdidoDTO->getObjetoPerdidoComentarios());
 		    $objetoPerdido->setObjetoPerdidoEstudiante($objetoPerdidoDTO->getObjetoPerdidoEstudiante());

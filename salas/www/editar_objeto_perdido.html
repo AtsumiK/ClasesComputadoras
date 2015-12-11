@@ -47,15 +47,21 @@ checkLogin();
 
                 require_once 'facade.php';
                 $id = null;
-                $estudiante = null;
                 $res = null;
+                $objetoPerdido = null;
                 $error = null;
+                $estudianteId=null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $codigo = "";
-                $facultad = "";
-                $carrera = "";
-                $persona = "";
+
+                $objetoPerdidoElemento=null;
+                $objetoPerdidoFecha = null;
+                $objetoPerdidoFechaDevolucion = null;
+                $objperdido=null;
+                $res = listarEstudiantes();
+                $idEstudiante = $res["content"];
+                $res = listarSalones();
+                $idSalon = $res["content"];
 
     // ------------- fin de 1 ------------------
 
@@ -64,11 +70,11 @@ checkLogin();
 
 
     // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-
-                  $codigo = $_POST['estudianteCodigo'];
-                  $facultad = $_POST['estudianteFacultad'];
-                  $carrera = $_POST['estudianteCarrera'];
-                  $persona = $_POST['estudiantePersona'];
+                $objetoPerdidoElemento=$_POST['elemento'];
+                $objetoPerdidoFecha = $_POST['fecha'];
+                $objetoPerdidoFechaDevolucion = $_POST['fechaDevolucion'];
+                $objetoPerdidoSalon=$_POST['salon'];
+                $idEstudiante = $_POST['idEstudiante'];
 
     // ------------- fin de 2 ------------------
 
@@ -77,14 +83,15 @@ checkLogin();
         Para saber cuáles campos van y en qué orden, debe dirigirse a la carpeta llamada "DTOs" del proyecto
         y abrir el archivo correspondiente al objeto que quiere crear. Fijarse en el constructor, en este caso de Salón, sale así:
 
-        EstudianteDTO($id = null, $ estudianteCodigo = null, $ estudianteFacultad = null, $ estudianteCarrera = null, $ estudiantePersona = null)
+        EstudianteDTO($id,$objetoPerdidoElemento, $objetoPerdidoFecha, $objetoPerdidoCorreo, $objetoPerdidoFechaDevolucion, $objetoPerdidoComentarios, $objetoPerdidoSalon, $idEstudiante)
 
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $estudiante = new EstudianteDTO($id, $codigo, $facultad, $carrera, $persona);
+                $objetoPerdido = new ObjetoPerdidoDTO ($id,$objetoPerdidoElemento, $objetoPerdidoFecha, $objetoPerdidoCorreo,
+                $objetoPerdidoFechaDevolucion, $objetoPerdidoComentarios, $objetoPerdidoSalon, $idEstudiante);
 
-                  $res = editarEstudiante($estudiante);
+                  $res = editarObjetoPerdido($objetoPerdido);
 
     // ------------- fin de 3 ------------------
 
@@ -99,17 +106,16 @@ checkLogin();
                 }else if(isset($_GET['id'])){
                   $id = $_GET['id'];
 
-                  $res = consultarEstudiante($id);
+                  $res = consultarObjetoPerdido($id);
 
                   if($res["exito"]){
 
                     $estudiante = $res["content"];
 
     // 4. Guardar en las variables creadas en el paso 1, los datos que vengan del objeto DTO. En este caso sólo se necesita el nombre.
-                    $codigo = $estudiante->getEstudianteCodigo();
-                    $facultad = $estudiante->getEstudianteFacultad();
-                    $carrera = $estudiante->getEstudianteCarrerra();
-                    $persona = $estudiante->getEstudiantePersona();
+                    $objetoPerdidoElemento = $objetoPerdido->getObjetoPerdidoElemento();
+                    $objetoPerdidoFechaDevolucion =$objetoPerdido->getObjetoPerdidoFechaDevolucion();
+                    $idEstudiante =$objetoPerdido->getObjetoPerdidoEstudiante();
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -120,15 +126,33 @@ checkLogin();
 
     // 5. Armar el formulario con todos los campos modificables que se requiere que el usuario diligencie para llenar el objeto.
 
+
                 echo '
                 <form method="post" action="#">
                   <input class="contact" type="hidden" name="id" value="'.$id.'">
                   </input>
                   <div class="form_settings">
-                    <p><span>Codigo</span><input class="contact" type="text" name="estudianteCodigo" value="'.$codigo.'"></input></p>
-                    <p><span>Facultad</span><input class="contact" type="text" name="estudianteFacultad" value="'.$facultad.'"></input></p>
-                    <p><span>Carrera</span><input class="contact" type="text" name="estudianteCarrera" value="'.$carrera.'"></input></p>
-                    <p><span>Persona</span><input class="contact" type="text" name="estudiantePersona" value="'.$persona.'"></input></p>
+                    <p><span>Codigo</span><input class="contact" type="text" name="elemento" value="'.$codigo.'"></input></p>
+                    <p><span>Facultad</span><input class="contact" type="text" name="fecha" value="'.$facultad.'"></input></p>
+                    <p><span>Carrera</span><input class="contact" type="text" name="fechaDevolucion" value="'.$carrera.'"></input></p>
+                    <p><span>Carrera</span><select name="idSalon" ><option value="">Ninguno</option>';
+                      foreach($salones as $salon){
+                        if($salon->getId() == $idSalon){
+                            echo'<option selected="true" value="'.$salon->getId().'">'.$salon->getObjetoPerdidoSalon().'</option>';
+                        }else{
+                            echo'<option value="'.$salon->getId().'">'.$salon->getObjetoPerdidoSalon().'</option>';
+                        }
+                      }
+                    echo'</select></p>
+                    <p><span>Estudiante</span><select name="idEstudiante" ><option value="">Ninguno</option>';
+                      foreach($estudiantes as $estudiante){
+                        if($estudiante->getId() == $estudianteId){
+                            echo'<option selected="true" value="'.$estudiante->getId().'">'.$estudiante->getObjetoPerdidoEstudiante().'</option>';
+                        }else{
+                            echo'<option value="'.$estudiante->getId().'">'.$estudiante->getObjetoPerdidoEstudiante().'</option>';
+                        }
+                      }
+                    echo'</select></p>
 
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>

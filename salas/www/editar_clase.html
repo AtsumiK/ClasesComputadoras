@@ -40,16 +40,18 @@ checkLogin();
       <div id="content">
         <h1>Editar Información Clase</h1>
 
-              <?php
-    //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
-    // 0. Las variables ejemplo $salon, deben ser sustituidas por las correspondentes de cada objeto-----------
-    //---------------------------------------------------------------------------------------------------------
+        <?php
+  //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
+  // 0. Las variables ejemplo $salon y $salones, deben ser sustituidas por las correspondentes de cada objeto
+  //---------------------------------------------------------------------------------------------------------
+          require_once 'facade.php';
+          $id = null;
+          $res = null;
+          $reserva = null;
+          $error = null;
+          $idResponsable=null;
+          $idSalon=null;
 
-                require_once 'facade.php';
-                $id = null;
-                $reserva = null;
-                $res = null;
-                $error = null;
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
                 $clase = "";
@@ -57,6 +59,10 @@ checkLogin();
                 $horaFin = "";
                 $responsable = "";
                 $salon = "";
+                $res = listarSalones();
+                $salones = $res["content"];
+                $res = listarResponsables();
+                $responsables = $res["content"];
 
     // ------------- fin de 1 ------------------
 
@@ -64,15 +70,13 @@ checkLogin();
                   $id = $_POST['id'];
 
 
-    // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-
-                  $clase = $_POST['reservaClase'];
-                  $horaInicio = $_POST['reservaHoraInicio'];
-                  $horaFin = $_POST['reservaCarrera'];
-                  $responsable = $_POST['reservaResponsable'];
-                  $salon = $_POST['reservaSalon'];
-
-    // ------------- fin de 2 ------------------
+   // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
+            $clase = $_POST['reservaClase'];
+            $horaFin = $_POST['reservaHoraFin'];
+            $horaInicio = $_POST['reservaHoraInicio'];
+            $idResponsable = $_POST['idResponsable'];
+            $idSalon = $_POST['idSalon'];
+   // ------------- fin de 2 ------------------
 
     /*
         3. Crear el objeto DTO, en este caso el salón, y en el constructor pasar todos los campos para su creación.
@@ -84,7 +88,7 @@ checkLogin();
         Entonces ya se sabe que primero va el id, y luego el nombre.
     */
 
-                  $reserva = new ReservaDTO($id, $clase, $horaInicio, $horaFin, $responsable, $salon);
+                  $reserva = new ReservaDTO($id, $clase, $horaInicio, $horaFin, $idResponsable, $idSalon);
 
                   $res = editarReserva($reserva);
 
@@ -111,8 +115,8 @@ checkLogin();
                     $clase = $reserva->getReservaClase();
                     $horaInicio = $reserva->getReservaHoraInicio();
                     $horaFin = $reserva->getReservaHoraFin();
-                    $responsable = $reserva->getReservaResponsable();
-                    $salon = $reserva->getReservaSalon();
+                    $idResponsable = $reserva->getReservaResponsable();
+                    $idSalon = $reserva->getReservaSalon();
 
     // ------------- fin de 4 ------------------
                   }else{
@@ -130,9 +134,24 @@ checkLogin();
                   <div class="form_settings">
                     <p><span>Clase </span><input class="contact" type="text" name="reservaClase" value="'.$clase.'"></input></p>
                     <p><span>Inicio</span><input class="contact" type="text" name="reservaHoraInicio" value="'.$horaInicio.'"></input></p>
-                    <p><span>Fin</span><input class="contact" type="text" name="reservaCarrera" value="'.$horaFin.'"></input></p>
-                    <p><span>Responsable</span><input class="contact" type="text" name="reservaResponsable" value="'.$responsable.'"></input></p>
-                    <p><span>Salon</span><input class="contact" type="text" name="reservaSalon" value="'.$salon.'"></input></p>
+                    <p><span>Fin</span><input class="contact" type="text" name="reservaHoraFin" value="'.$horaFin.'"></input></p>
+                    <p><span>Responsable</span><select name="idResponsable" ><option value="">Ninguno</option>';
+                      foreach($responsables as $responsable){
+                        if($responsable->getId() == $idResponsable){
+                            echo'<option selected="true" value="'.$responsable->getId().'">'.$responsable->getResponsableAsignatura().'</option>';
+                        }else{
+                            echo'<option value="'.$responsable->getId().'">'.$responsable->getResponsableAsignatura().'</option>';
+                        }
+                      }
+                    echo'</select> </p><p><span>Salon</span><select name="idSalon" ><option value="">Ninguno</option>';
+                      foreach($salones as $salon){
+                        if($salon->getId() == $idSalon){
+                            echo'<option selected="true" value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                        }else{
+                            echo'<option value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                        }
+                      }
+                    echo '</select></p>
                   <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Guardar" /></p>
                 </div>
               </form>

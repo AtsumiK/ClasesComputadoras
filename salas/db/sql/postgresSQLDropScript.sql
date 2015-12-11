@@ -61,9 +61,11 @@ ALTER TABLE estudiante DROP CONSTRAINT estudiante_persona;
 
 
 
-DROP TRIGGER cuando_elimine_computadora ON computadora;
-DROP TRIGGER cuando_elimine_software ON computadora_software;
-DROP TRIGGER cuando_elimine_prestamo ON prestamo;
+
+
+
+
+
 
 
 DROP TABLE software;
@@ -135,3 +137,6 @@ DROP TABLE software_computadora_backup;
 
 
 DROP TABLE prestamo_backup;
+
+
+

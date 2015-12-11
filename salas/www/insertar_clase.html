@@ -49,6 +49,8 @@ checkLogin();
           $res = null;
           $reserva = null;
           $error = null;
+          $idResponsable=null;
+          $idSalon=null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
@@ -57,6 +59,10 @@ checkLogin();
                 $horaFin = "";
                 $responsable = "";
                 $salon = "";
+                $res = listarSalones();
+                $salones = $res["content"];
+                $res = listarResponsables();
+                $responsables = $res["content"];
 
     // ------------- fin de 1 ------------------
 
@@ -67,13 +73,13 @@ checkLogin();
             $clase = $_POST['reservaClase'];
             $horaFin = $_POST['reservaHoraFin'];
             $horaInicio = $_POST['reservaHoraInicio'];
-            $responsable = $_POST['reservaResponsable'];
-            $salon = $_POST['reservaSalon'];
+            $idResponsable = $_POST['idResponsable'];
+            $idSalon = $_POST['idSalon'];
    // ------------- fin de 2 ------------------
 
 
 
-            $reserva = new ReservaDTO(null, $clase, $horaInicio, $horaFin, $responsable, $salon);
+            $reserva = new ReservaDTO(null, $clase, $horaInicio, $horaFin, $idResponsable, $idSalon);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
@@ -96,9 +102,23 @@ checkLogin();
               <p><span>Clase</span><input class="contact" type="text" name="reservaClase" value="'.$clase.'" /></p>
               <p><span>Inicio</span><input class="contact" type="text" name="reservaHoraInicio" value="'.$horaInicio.'" /></p>
               <p><span>Fin</span><input class="contact" type="text" name="reservaHoraFin" value="'.$horaFin.'" /></p>
-              <p><span>Responsable</span><input class="contact" type="text" name="reservaResponsable" value="'.$responsable.'" /></p>
-              <p><span>Salon</span><input class="contact" type="text" name="reservaSalon" value="'.$salon.'" /></p>
-              <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
+              <p><span>Responsable</span><select name="idResponsable" ><option value="">Ninguno</option>';
+                foreach($responsables as $responsable){
+                  if($responsable->getId() == $idResponsable){
+                      echo'<option selected="true" value="'.$responsable->getId().'">'.$responsable->getResponsableAsignatura().'</option>';
+                  }else{
+                      echo'<option value="'.$responsable->getId().'">'.$responsable->getResponsableAsignatura().'</option>';
+                  }
+                }
+              echo'</select> </p><p><span>Salon</span><select name="idSalon" ><option value="">Ninguno</option>';
+                foreach($salones as $salon){
+                  if($salon->getId() == $idSalon){
+                      echo'<option selected="true" value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                  }else{
+                      echo'<option value="'.$salon->getId().'">'.$salon->getSalonNombre().'</option>';
+                  }
+                }
+              echo '</select></p> <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';
 
