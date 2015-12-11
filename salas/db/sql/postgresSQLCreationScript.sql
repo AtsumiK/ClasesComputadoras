@@ -176,13 +176,13 @@ CREATE TABLE persona (
 
 
 
-CREATE TABLE usuarios (
-    usuarios_id SERIAL NOT NULL,
+CREATE TABLE usuario (
+    usuario_id SERIAL NOT NULL,
     usuario_login CHARACTER VARYING(20) NOT NULL,
     usuario_clave CHARACTER VARYING(20) NOT NULL,
     usuario_tipo CHARACTER VARYING(3) NOT NULL,
-    CONSTRAINT usuarios_pkey PRIMARY KEY (usuarios_id),
-    CONSTRAINT usuarios_usuario_login_key UNIQUE (usuario_login)
+    CONSTRAINT usuario_pkey PRIMARY KEY (usuario_id),
+    CONSTRAINT usuario_usuario_login_key UNIQUE (usuario_login)
 );
 
 
@@ -250,22 +250,7 @@ ALTER TABLE estudiante ADD CONSTRAINT estudiante_persona
 
 
 
--- TRIGGERS
 
 
 
--- ESTE TRIGGER SE DISPARA CUANDO SE ELIMINA UNA COMPUTADORA, Y ELIMINA DEL INVENTARIO TODAS LAS PARTES RELACIONADAS CON LA COMPUTADORA PARA QUE NO QUEDEN SUELTAS NI GENERE ERROR.
 
-CREATE OR REPLACE FUNCTION eliminar_inventarios_computadora() 
-  RETURNS trigger AS $eic$
-BEGIN
- DELETE FROM objeto_en_inventario WHERE computadora_id = OLD.computadora_id;
- RETURN OLD;
-END;
-$eic$ LANGUAGE plpgsql;
-
-CREATE TRIGGER cuando_elimine_computadora
-  BEFORE DELETE
-  ON computadora
-  FOR EACH ROW
-  EXECUTE PROCEDURE eliminar_inventarios_computadora();

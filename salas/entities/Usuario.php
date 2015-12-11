@@ -1,14 +1,14 @@
 <?php
 
     require_once UTILS_DIR.ENTITY_VALIDATOR_OBJ;
-    require_once SALAS_COMP_DTOS_DIR.USUARIOS_DTO;
+    require_once SALAS_COMP_DTOS_DIR.USUARIO_DTO;
 
-    class Usuarios {
+    class Usuario {
 
         # Constantes públicas para soporte de base de datos
 
-        public $ENTITY_DB_NAME = "usuarios";
-        public $PRIMARY_KEY_DB_NAME = "usuarios_id";
+        public $ENTITY_DB_NAME = "usuario";
+        public $PRIMARY_KEY_DB_NAME = "usuario_id";
 
         public $USUARIO_LOGIN = "usuario_login";
         public static $ORDER_BY_USUARIO_LOGIN = "usuario_login";
@@ -29,7 +29,7 @@
         private $usuarioClave;
         private $usuarioTipo;
 
-        function Usuarios($usuarioLogin = null, $usuarioClave = null, $usuarioTipo = null){
+        function Usuario($usuarioLogin = null, $usuarioClave = null, $usuarioTipo = null){
             $this->id = null;
             $this->usuarioLogin = $this->scapeString($usuarioLogin);
             $this->usuarioClave = $this->scapeString($usuarioClave);
@@ -135,17 +135,17 @@
 
         public function loadFromSqlResultQuery($rq){
             $this->id = $rq[$this->PRIMARY_KEY_DB_NAME];
-            if(isset($rq[$this->USUARIO_LOGIN]) && !UsuariosDTO::isEmpty($rq[$this->USUARIO_LOGIN])){
+            if(isset($rq[$this->USUARIO_LOGIN]) && !UsuarioDTO::isEmpty($rq[$this->USUARIO_LOGIN])){
                 $this->usuarioLogin = $this->scapeString($rq[$this->USUARIO_LOGIN]);
             }else{
                 $this->usuarioLogin = null;
             }
-            if(isset($rq[$this->USUARIO_CLAVE]) && !UsuariosDTO::isEmpty($rq[$this->USUARIO_CLAVE])){
+            if(isset($rq[$this->USUARIO_CLAVE]) && !UsuarioDTO::isEmpty($rq[$this->USUARIO_CLAVE])){
                 $this->usuarioClave = $this->scapeString($rq[$this->USUARIO_CLAVE]);
             }else{
                 $this->usuarioClave = null;
             }
-            if(isset($rq[$this->USUARIO_TIPO]) && !UsuariosDTO::isEmpty($rq[$this->USUARIO_TIPO])){
+            if(isset($rq[$this->USUARIO_TIPO]) && !UsuarioDTO::isEmpty($rq[$this->USUARIO_TIPO])){
                 $this->usuarioTipo = $this->scapeString($rq[$this->USUARIO_TIPO]);
             }else{
                 $this->usuarioTipo = null;
@@ -153,12 +153,12 @@
         }
 
         public function toDTO(){
-            $usuariosDTO = new UsuariosDTO();
-            $usuariosDTO->setId($this->getId());
-            $usuariosDTO->setUsuarioLogin($this->unscapeString($this->getUsuarioLogin()));
-            $usuariosDTO->setUsuarioClave($this->unscapeString($this->getUsuarioClave()));
-            $usuariosDTO->setUsuarioTipo($this->unscapeString($this->getUsuarioTipo()));
-            return $usuariosDTO;
+            $usuarioDTO = new UsuarioDTO();
+            $usuarioDTO->setId($this->getId());
+            $usuarioDTO->setUsuarioLogin($this->unscapeString($this->getUsuarioLogin()));
+            $usuarioDTO->setUsuarioClave($this->unscapeString($this->getUsuarioClave()));
+            $usuarioDTO->setUsuarioTipo($this->unscapeString($this->getUsuarioTipo()));
+            return $usuarioDTO;
         }
 
         public function isEntityValid(){

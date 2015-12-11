@@ -1,14 +1,14 @@
 <?php
 
     require_once UTILS_DIR.ENTITY_VALIDATOR_OBJ;
-    require_once SALAS_COMP_ENTITIES_DIR.USUARIOS_ENTITY;
+    require_once SALAS_COMP_ENTITIES_DIR.USUARIO_ENTITY;
 
-    class UsuariosDTO {
+    class UsuarioDTO {
 
         # Constantes públicas para soporte de base de datos
 
-        public static $ENTITY_DB_NAME = "usuarios";
-        public static $PRIMARY_KEY_DB_NAME = "usuarios_id";
+        public static $ENTITY_DB_NAME = "usuario";
+        public static $PRIMARY_KEY_DB_NAME = "usuario_id";
 
         public static $ORDER_BY_USUARIO_LOGIN = "usuario_login";
         public static $ORDER_BY_USUARIO_CLAVE = "usuario_clave";
@@ -26,7 +26,7 @@
         private $usuarioClave;
         private $usuarioTipo;
 
-        function UsuariosDTO($id = null, $usuarioLogin = null, $usuarioClave = null, $usuarioTipo = null){
+        function UsuarioDTO($id = null, $usuarioLogin = null, $usuarioClave = null, $usuarioTipo = null){
             $this->id = $id;
             $this->usuarioLogin = $usuarioLogin;
             $this->usuarioClave = $usuarioClave;
@@ -95,20 +95,20 @@
         public static function loadFromEntities(array $entities){
             $daos = array();
             foreach ($entities as $entity) {
-                $dao = new UsuariosDTO();
+                $dao = new UsuarioDTO();
                 $dao->loadFromEntity($entity);
                 $daos[] = $dao;
             }
             return $daos;
         }
 
-        public static function toEntity(UsuariosDTO $usuariosDTO){
-            $usuarios = new Usuarios();
-            $usuarios->setId($usuariosDTO->getId());
-            $usuarios->setUsuarioLogin($usuariosDTO->getUsuarioLogin());
-            $usuarios->setUsuarioClave($usuariosDTO->getUsuarioClave());
-            $usuarios->setUsuarioTipo($usuariosDTO->getUsuarioTipo());
-            return $usuarios;
+        public static function toEntity(UsuarioDTO $usuarioDTO){
+            $usuario = new Usuario();
+            $usuario->setId($usuarioDTO->getId());
+            $usuario->setUsuarioLogin($usuarioDTO->getUsuarioLogin());
+            $usuario->setUsuarioClave($usuarioDTO->getUsuarioClave());
+            $usuario->setUsuarioTipo($usuarioDTO->getUsuarioTipo());
+            return $usuario;
         }
 
         public function isEntityValid(){
@@ -117,10 +117,10 @@
         }
         public function toXML(){
             $xml="";
-            $xml .= "<Usuarios>";
-                $xml .= "<Usuarios_Id>";
+            $xml .= "<Usuario>";
+                $xml .= "<Usuario_Id>";
                     $xml .= $this->getId();
-                $xml .= "</Usuarios_Id>";
+                $xml .= "</Usuario_Id>";
                 if($this->getUsuarioLogin() !== null){
                     $xml .= "<usuarioLogin><![CDATA[";
                         $xml .= $this->getUsuarioLogin();
@@ -136,17 +136,17 @@
                         $xml .= $this->getUsuarioTipo();
                     $xml .= "]]></usuarioTipo>";
                 }
-            $xml .= "</Usuarios>";
+            $xml .= "</Usuario>";
             return $xml;
         }
         public static function loadFromXML($xmlDaos){
             $daos = array();
             $doc = new DOMDocument('1.0', 'utf-8');
             $doc-> loadXML($xmlDaos);
-            $nodes = $doc->getElementsByTagName("Usuarios");
+            $nodes = $doc->getElementsByTagName("Usuario");
             foreach ($nodes as $node) {
-                $dao = new UsuariosDTO();
-                $data = $node->getElementsByTagName("Usuarios_Id");
+                $dao = new UsuarioDTO();
+                $data = $node->getElementsByTagName("Usuario_Id");
                 if($data->length>0){
                     $data = $data->item(0)->nodeValue;
                 }else{
@@ -154,21 +154,21 @@
                 }
                 $dao->setId($data);
                 $data = $node->getElementsByTagName("usuarioLogin");
-                if($data->length>0 && !UsuariosDTO::isEmpty($data->item(0)->nodeValue)){
+                if($data->length>0 && !UsuarioDTO::isEmpty($data->item(0)->nodeValue)){
                     $data = $data->item(0)->nodeValue;
                 }else{
                      $data = null;
                 }
                 $dao->setUsuarioLogin($data);
                 $data = $node->getElementsByTagName("usuarioClave");
-                if($data->length>0 && !UsuariosDTO::isEmpty($data->item(0)->nodeValue)){
+                if($data->length>0 && !UsuarioDTO::isEmpty($data->item(0)->nodeValue)){
                     $data = $data->item(0)->nodeValue;
                 }else{
                      $data = null;
                 }
                 $dao->setUsuarioClave($data);
                 $data = $node->getElementsByTagName("usuarioTipo");
-                if($data->length>0 && !UsuariosDTO::isEmpty($data->item(0)->nodeValue)){
+                if($data->length>0 && !UsuarioDTO::isEmpty($data->item(0)->nodeValue)){
                     $data = $data->item(0)->nodeValue;
                 }else{
                      $data = null;
@@ -179,17 +179,17 @@
             return $daos;
         }
         public function toXML2(){
-            $xml = "<Usuarioses>";
+            $xml = "<Usuarios>";
                 $xml .= $this->toXML();
-            $xml .= "</Usuarioses>";
+            $xml .= "</Usuarios>";
             return $xml;
         }
         public static function DTOsToXML(array $daos){
-            $xml = "<Usuarioses>";
+            $xml = "<Usuarios>";
             foreach ($daos as $dao) {
                 $xml .= $dao->toXML();
             }
-            $xml .= "</Usuarioses>";
+            $xml .= "</Usuarios>";
             return $xml;
         }
         /**

@@ -124,4 +124,7 @@ DROP TABLE persona;
 
 
 
-DROP TRIGGER cuando_elimine_computadora ON computadora;
+DROP TABLE usuario;
+
+
+

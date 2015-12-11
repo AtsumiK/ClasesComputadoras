@@ -4,28 +4,28 @@
     require_once UTILS_DIR.ENTITY_VALIDATOR_OBJ;
     require_once PERSISTENCE_DIR.PERSISTENCE_MANAGER_OBJ;
 
-    require_once SALAS_COMP_ENTITIES_DIR.USUARIOS_ENTITY;
-    require_once SALAS_COMP_BEANS_DIR.USUARIOS_BEAN;
+    require_once SALAS_COMP_ENTITIES_DIR.USUARIO_ENTITY;
+    require_once SALAS_COMP_BEANS_DIR.USUARIO_BEAN;
 
     
 
-    class UsuariosController {
+    class UsuarioController {
 
         private $ID = 0;
 
         private $persistenceManager;
         private $lastRequestSize;
 
-        private $usuariosBean;
+        private $usuarioBean;
 
-        function UsuariosController(PersistenceManager $persistenceManager = null){
+        function UsuarioController(PersistenceManager $persistenceManager = null){
             $this->lastRequestSize = 0;
             if($persistenceManager == null){
                 $this->persistenceManager = new PersistenceManager(DB_HOST,DB_PORT,DB_NAME,DB_USER_NAME,DB_USER_PASS);
             }else{
                 $this->persistenceManager = $persistenceManager;
             }
-            $this->usuariosBean = new UsuariosBean($this->persistenceManager);
+            $this->usuarioBean = new UsuarioBean($this->persistenceManager);
         }
 
         public function getLastRequestSize(){
@@ -33,96 +33,96 @@
         }
 
         /**
-         * Agregar Usuarios al sistema.
+         * Agregar Usuario al sistema.
          * 
-         * @param UsuariosDTO $usuariosDTO
+         * @param UsuarioDTO $usuarioDTO
         */
-        public function setUsuarios(UsuariosDTO &$usuariosDTO){
-            $usuarios = UsuariosDTO::toEntity($usuariosDTO);
+        public function setUsuario(UsuarioDTO &$usuarioDTO){
+            $usuario = UsuarioDTO::toEntity($usuarioDTO);
 
             # Validamos los campos
-            if(!$usuarios->isEntityValid()){
+            if(!$usuario->isEntityValid()){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 0);
             }
 
             # Si las entidades complejas relacionan un ID válido entonces se verifica que exista la entidad correspondiente
             # Almacenamos la entidad
-            if(!$this->usuariosBean->setUsuarios($usuarios)){
+            if(!$this->usuarioBean->setUsuario($usuario)){
                 throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_SET_FAIL, $this->ID + 1);
             }
 
-            $usuariosDTO->loadFromEntity($usuarios);
+            $usuarioDTO->loadFromEntity($usuario);
         }
         /**
-         * Actualizar Usuarios al sistema.
+         * Actualizar Usuario al sistema.
          * 
-         * @param UsuariosDTO $usuariosDTO
+         * @param UsuarioDTO $usuarioDTO
         */
-        public function updateUsuarios(UsuariosDTO &$usuariosDTO){
-            $usuarios = UsuariosDTO::toEntity($usuariosDTO);
+        public function updateUsuario(UsuarioDTO &$usuarioDTO){
+            $usuario = UsuarioDTO::toEntity($usuarioDTO);
 
             # Validamos los campos
-            if(!$usuarios->isEntityValid()){
+            if(!$usuario->isEntityValid()){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 2);
             }
 
             # Si las entidades complejas relacionan un ID válido entonces se verifica que exista la entidad correspondiente
             # Actualizamos la entidad
-            if(!$this->usuariosBean->updateUsuarios($usuarios)){
+            if(!$this->usuarioBean->updateUsuario($usuario)){
                 throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_UPDATE_FAIL, $this->ID + 3);
             }
 
-            $usuariosDTO->loadFromEntity($usuarios);
+            $usuarioDTO->loadFromEntity($usuario);
         }
         /**
-         * Obtener un Usuarios único.
+         * Obtener un Usuario único.
          * 
-         * @param UsuariosDTO &$usuariosDTO
+         * @param UsuarioDTO &$usuarioDTO
         */
 
-        public function getUsuarios(UsuariosDTO &$usuariosDTO){
+        public function getUsuario(UsuarioDTO &$usuarioDTO){
 
-            $usuarios = UsuariosDTO::toEntity($usuariosDTO);
+            $usuario = UsuarioDTO::toEntity($usuarioDTO);
             # Validamos los campos
-            if(!EntityValidator::validateId($usuarios->getId())){
+            if(!EntityValidator::validateId($usuario->getId())){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 4);
             }
 
             # Obtenemos la entidad
-            if(!$this->usuariosBean->getUsuarios($usuarios)){
+            if(!$this->usuarioBean->getUsuario($usuario)){
                 throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND2_FAIL, $this->ID + 5);
             }
 
-            $usuariosDTO->loadFromEntity($usuarios);
+            $usuarioDTO->loadFromEntity($usuario);
         }
         /**
-         * Obtener todos los Usuarios
+         * Obtener todos los Usuario
          * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
 
-        public function getUsuarioses($performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuarios($performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
 
             # Obtenemos las entidades
 
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countAllUsuarioses();
+                $this->lastRequestSize = $this->usuarioBean->countAllUsuarios();
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getAllUsuarioses($firstResultNumber,$numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getAllUsuarios($firstResultNumber,$numResults, $orderBy, $orderPriority));
         }
 
         /**
-         * Listar todos los Usuarios
+         * Listar todos los Usuario
          * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
 
-        public function listUsuarioses($performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuarios($performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
 
             # Validamos los campos
 
@@ -137,21 +137,21 @@
             # Obtenemos las entidades
 
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countAllUsuarioses();
+                $this->lastRequestSize = $this->usuarioBean->countAllUsuarios();
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listAllUsuarioses($firstResultNumber,$numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listAllUsuarios($firstResultNumber,$numResults, $orderBy, $orderPriority));
         }
 
         /**
-         * Obtener algunos Usuarios dado $usuarioLogin
+         * Obtener algunos Usuario dado $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLogin($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLogin($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 8);
@@ -167,22 +167,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLogin($usuarioLogin );
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLogin($usuarioLogin );
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLogin($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLogin($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado $usuarioLogin
+         * Listar algunos Usuario dado $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLogin($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLogin($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 9);
@@ -198,15 +198,15 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLogin($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLogin($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLogin($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLogin($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango
+         * Obtener algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -214,7 +214,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 14);
@@ -230,15 +230,15 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango
+         * Listar algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -246,7 +246,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 15);
@@ -262,22 +262,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango superior
+         * Obtener algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 20);
@@ -293,22 +293,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango superior
+         * Listar algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 21);
@@ -324,22 +324,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango inferior
+         * Obtener algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 26);
@@ -355,22 +355,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango inferior
+         * Listar algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 27);
@@ -386,22 +386,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Obtener algunos Usuarios comenzando por $usuarioLogin
+         *1. Obtener algunos Usuario comenzando por $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginBeginsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginBeginsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 32);
@@ -417,22 +417,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBeginsWith($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBeginsWith($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginBeginsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginBeginsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Listar algunos Usuarios comenzando por $usuarioLogin
+         *1. Listar algunos Usuario comenzando por $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginBeginsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginBeginsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 33);
@@ -448,22 +448,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginBeginsWith($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginBeginsWith($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginBeginsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginBeginsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios terminando por $usuarioLogin
+         * Obtener algunos Usuario terminando por $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginEndsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginEndsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 38);
@@ -479,22 +479,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginEndsWith($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginEndsWith($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginEndsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginEndsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios terminando por $usuarioLogin
+         * Listar algunos Usuario terminando por $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginEndsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginEndsWith($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 39);
@@ -510,22 +510,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginEndsWith($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginEndsWith($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginEndsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginEndsWith($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios que contenga $usuarioLogin
+         * Obtener algunos Usuario que contenga $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioLoginContains($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioLoginContains($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 44);
@@ -541,22 +541,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginContains($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginContains($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioLoginContains($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioLoginContains($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios que contenga $usuarioLogin
+         * Listar algunos Usuario que contenga $usuarioLogin
          * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioLoginContains($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioLoginContains($usuarioLogin, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 45);
@@ -572,22 +572,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioLoginContains($usuarioLogin);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioLoginContains($usuarioLogin);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioLoginContains($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioLoginContains($usuarioLogin, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado $usuarioClave
+         * Obtener algunos Usuario dado $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClave($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClave($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 50);
@@ -603,22 +603,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClave($usuarioClave );
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClave($usuarioClave );
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClave($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClave($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado $usuarioClave
+         * Listar algunos Usuario dado $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClave($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClave($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 51);
@@ -634,15 +634,15 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClave($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClave($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClave($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClave($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango
+         * Obtener algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -650,7 +650,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 56);
@@ -666,15 +666,15 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango
+         * Listar algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -682,7 +682,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 57);
@@ -698,22 +698,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango superior
+         * Obtener algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 62);
@@ -729,22 +729,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango superior
+         * Listar algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 63);
@@ -760,22 +760,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango inferior
+         * Obtener algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 68);
@@ -791,22 +791,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango inferior
+         * Listar algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 69);
@@ -822,22 +822,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Obtener algunos Usuarios comenzando por $usuarioClave
+         *1. Obtener algunos Usuario comenzando por $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveBeginsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveBeginsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 74);
@@ -853,22 +853,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBeginsWith($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBeginsWith($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveBeginsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveBeginsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Listar algunos Usuarios comenzando por $usuarioClave
+         *1. Listar algunos Usuario comenzando por $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveBeginsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveBeginsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 75);
@@ -884,22 +884,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveBeginsWith($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveBeginsWith($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveBeginsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveBeginsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios terminando por $usuarioClave
+         * Obtener algunos Usuario terminando por $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveEndsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveEndsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 80);
@@ -915,22 +915,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveEndsWith($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveEndsWith($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveEndsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveEndsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios terminando por $usuarioClave
+         * Listar algunos Usuario terminando por $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveEndsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveEndsWith($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 81);
@@ -946,22 +946,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveEndsWith($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveEndsWith($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveEndsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveEndsWith($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios que contenga $usuarioClave
+         * Obtener algunos Usuario que contenga $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioClaveContains($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioClaveContains($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 86);
@@ -977,22 +977,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveContains($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveContains($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioClaveContains($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioClaveContains($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios que contenga $usuarioClave
+         * Listar algunos Usuario que contenga $usuarioClave
          * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioClaveContains($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioClaveContains($usuarioClave, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 87);
@@ -1008,22 +1008,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioClaveContains($usuarioClave);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioClaveContains($usuarioClave);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioClaveContains($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioClaveContains($usuarioClave, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado $usuarioTipo
+         * Obtener algunos Usuario dado $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipo($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipo($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 92);
@@ -1039,22 +1039,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipo($usuarioTipo );
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipo($usuarioTipo );
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipo($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipo($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado $usuarioTipo
+         * Listar algunos Usuario dado $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipo($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipo($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 93);
@@ -1070,15 +1070,15 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipo($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipo($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipo($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipo($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango
+         * Obtener algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -1086,7 +1086,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 98);
@@ -1102,15 +1102,15 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango
+         * Listar algunos Usuario dado un rango
          * 
          * @param $firstValue
          * @param $secondValue
@@ -1118,7 +1118,7 @@
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoBetween($firstValue, $secondValue, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 99);
@@ -1134,22 +1134,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBetween($firstValue, $secondValue);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBetween($firstValue, $secondValue);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoBetween($firstValue, $secondValue, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango superior
+         * Obtener algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 104);
@@ -1165,22 +1165,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango superior
+         * Listar algunos Usuario dado un rango superior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoBiggerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 105);
@@ -1196,22 +1196,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBiggerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBiggerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoBiggerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios dado un rango inferior
+         * Obtener algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 110);
@@ -1227,22 +1227,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios dado un rango inferior
+         * Listar algunos Usuario dado un rango inferior
          * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoLowerThan($value, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 111);
@@ -1258,22 +1258,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoLowerThan($value);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoLowerThan($value);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoLowerThan($value, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Obtener algunos Usuarios comenzando por $usuarioTipo
+         *1. Obtener algunos Usuario comenzando por $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoBeginsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoBeginsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 116);
@@ -1289,22 +1289,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBeginsWith($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBeginsWith($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoBeginsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoBeginsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         *1. Listar algunos Usuarios comenzando por $usuarioTipo
+         *1. Listar algunos Usuario comenzando por $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoBeginsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoBeginsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 117);
@@ -1320,22 +1320,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoBeginsWith($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoBeginsWith($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoBeginsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoBeginsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios terminando por $usuarioTipo
+         * Obtener algunos Usuario terminando por $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoEndsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoEndsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 122);
@@ -1351,22 +1351,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoEndsWith($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoEndsWith($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoEndsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoEndsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios terminando por $usuarioTipo
+         * Listar algunos Usuario terminando por $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoEndsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoEndsWith($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 123);
@@ -1382,22 +1382,22 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoEndsWith($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoEndsWith($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoEndsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoEndsWith($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Obtener algunos Usuarios que contenga $usuarioTipo
+         * Obtener algunos Usuario que contenga $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function getUsuariosesByUsuarioTipoContains($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function getUsuariosByUsuarioTipoContains($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 128);
@@ -1413,22 +1413,22 @@
 
             # Obtenemos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoContains($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoContains($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->getUsuariosesByUsuarioTipoContains($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->getUsuariosByUsuarioTipoContains($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
         /**
-         * Listar algunos Usuarios que contenga $usuarioTipo
+         * Listar algunos Usuario que contenga $usuarioTipo
          * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
         */
-        public function listUsuariosesByUsuarioTipoContains($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
+        public function listUsuariosByUsuarioTipoContains($usuarioTipo, $performSize = false, $firstResultNumber = null, $numResults = null, $orderBy = null, $orderPriority = SQL_ASCENDING_ORDER){
             # Validamos los campos
             if($firstResultNumber !== null && !EntityValidator::validatePositiveNumber($firstResultNumber)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 129);
@@ -1444,38 +1444,38 @@
 
             # Listamos las entidades
             if($performSize){
-                $this->lastRequestSize = $this->usuariosBean->countGetUsuariosesByUsuarioTipoContains($usuarioTipo);
+                $this->lastRequestSize = $this->usuarioBean->countGetUsuariosByUsuarioTipoContains($usuarioTipo);
             }
 
-            return UsuariosDTO::loadFromEntities($this->usuariosBean->listUsuariosesByUsuarioTipoContains($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
+            return UsuarioDTO::loadFromEntities($this->usuarioBean->listUsuariosByUsuarioTipoContains($usuarioTipo, $firstResultNumber, $numResults, $orderBy, $orderPriority));
 
         }
 
 
         /**
-         * Eliminar un Usuarios Dado el $usuariosId
+         * Eliminar un Usuario Dado el $usuarioId
          * 
-         * @param $usuariosId
+         * @param $usuarioId
         */
-        public function removeUsuarios($usuariosId){
+        public function removeUsuario($usuarioId){
 
-            $usuarios = new Usuarios();
-            $usuarios->setId($usuariosId); 
+            $usuario = new Usuario();
+            $usuario->setId($usuarioId); 
 
             # Validamos los campos
-            if( !EntityValidator::validateId($usuariosId)){
+            if( !EntityValidator::validateId($usuarioId)){
                 throw new Exception(SALAS_COMP_ALERT_E_VALIDATION_FAIL, $this->ID + 134);
             }
 
             # Verificamos que la entidad exista.
-            if(!$this->usuariosBean->getUsuarios($usuarios)){
+            if(!$this->usuarioBean->getUsuario($usuario)){
                 throw new Exception(SALAS_COMP_ALERT_E_ENTITY_NOT_FOUND_FAIL, $this->ID + 135);
             }
 
             # Verificamos que la entidad no esté siendo utilziada en alguna otra.
 
             # Eliminamos la entidad
-            if(!$this->usuariosBean->removeUsuarios($usuarios)){
+            if(!$this->usuarioBean->removeUsuario($usuario)){
                 throw new Exception(SALAS_COMP_ALERT_E_PERSISTENCE_REMOVE_FAIL, $this->ID + 136);
             }
 
