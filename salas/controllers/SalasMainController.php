@@ -732,6 +732,7 @@
 				$objetoEnInventarios = $objetoEnInventarioCtrl->getObjetoEnInventariosByInventarioNumeroSerie($objetoEnInventarioDTO->getInventarioNumeroSerie(),false,0,1);
 				if(count($objetoEnInventarios)==0){
 			    $objetoEnInventarioCtrl->setObjetoEnInventario($objetoEnInventarioDTO);
+
 			    $cm = new CommunicationMensaje(true,SALAS_COMP_ALERT_A_OPERATION_SUCCESS,$this->ID + 81,$objetoEnInventarioDTO);
 				}else{
 					$cm = new CommunicationMensaje(false,"Ya existe un objeto con el número de serie: ".$objetoEnInventarioDTO->getInventarioNumeroSerie(),$this->ID + 11);
@@ -739,6 +740,7 @@
 
 		    return $cm;
 		  }catch (Exception $e){
+
 		    return new CommunicationMensaje(false,$e->getMessage(),($this->ID + 82) ."->".$e->getCode());
 		  }
 		}

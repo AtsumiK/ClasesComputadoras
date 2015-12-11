@@ -46,30 +46,33 @@
           $res = null;
           $inventario = null;
           $error = null;
+          $idComputadora = null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
                 $elemento = "";
                 $numeroSerie = "";
                 $salon = "";
-                $computadora = "";
+                $res = listarComputadoras();
+                $computadoras = $res["content"];
+                $res = null;
 
 
     // ------------- fin de 1 ------------------
 
           if(isset($_POST['submit'])){
-
+            $idComputadora = $_POST['idComputadora'];
 
    // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
             $elemento = $_POST['inventarioElemento'];
             $salon = $_POST['inventarioSalon'];
             $numeroSerie = $_POST['inventarioNumeroSerie'];
-            $computadora = $_POST['computadora'];
+
    // ------------- fin de 2 ------------------
 
 
 
-            $inventario = new ObjetoEnInventarioDTO(null, $elemento, $numeroSerie, $salon, $computadora);
+            $inventario = new ObjetoEnInventarioDTO(null, $elemento, $numeroSerie, $salon, $idComputadora);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
@@ -92,7 +95,15 @@
               <p><span>Elemento</span><input class="contact" type="text" name="inventarioElemento" value="'.$elemento.'" /></p>
               <p><span>N Serie</span><input class="contact" type="text" name="inventarioNumeroSerie" value="'.$numeroSerie.'" /></p>
               <p><span>Salon</span><input class="contact" type="text" name="inventarioSalon" value="'.$salon.'" /></p>
-              <p><span>Computadora</span><input class="contact" type="text" name="computadora" value="'.$computadora.'" /></p>
+              <p><span>Computadoras</span><select name="idComputadora" ><option value="">Ninguno</option>';
+                foreach($computadoras as $computadora){
+                  if($computadora->getId() == $idComputadora){
+                      echo'<option selected="true" value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
+                  }else{
+                      echo'<option value="'.$computadora->getId().'">'.$computadora->getComputadoraNombre().'</option>';
+                  }
+                }
+              echo'</select> </p>
               <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';

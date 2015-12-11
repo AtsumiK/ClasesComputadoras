@@ -7,7 +7,7 @@
     require_once SALAS_COMP_ENTITIES_DIR.USUARIO_ENTITY;
     require_once SALAS_COMP_BEANS_DIR.USUARIO_BEAN;
 
-
+    
 
     class UsuarioController {
 
@@ -34,7 +34,7 @@
 
         /**
          * Agregar Usuario al sistema.
-         *
+         * 
          * @param UsuarioDTO $usuarioDTO
         */
         public function setUsuario(UsuarioDTO &$usuarioDTO){
@@ -55,7 +55,7 @@
         }
         /**
          * Actualizar Usuario al sistema.
-         *
+         * 
          * @param UsuarioDTO $usuarioDTO
         */
         public function updateUsuario(UsuarioDTO &$usuarioDTO){
@@ -76,7 +76,7 @@
         }
         /**
          * Obtener un Usuario único.
-         *
+         * 
          * @param UsuarioDTO &$usuarioDTO
         */
 
@@ -97,7 +97,7 @@
         }
         /**
          * Obtener todos los Usuario
-         *
+         * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -116,7 +116,7 @@
 
         /**
          * Listar todos los Usuario
-         *
+         * 
          * @param $performSize
          * @param $firstResultNumber
          * @param $numResults
@@ -145,7 +145,7 @@
 
         /**
          * Obtener algunos Usuario dado $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -176,7 +176,7 @@
 
         /**
          * Listar algunos Usuario dado $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -207,7 +207,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -239,7 +239,7 @@
 
         /**
          * Listar algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -271,7 +271,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -302,7 +302,7 @@
 
         /**
          * Listar algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -333,7 +333,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -364,7 +364,7 @@
 
         /**
          * Listar algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -395,7 +395,7 @@
 
         /**
          *1. Obtener algunos Usuario comenzando por $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -426,7 +426,7 @@
 
         /**
          *1. Listar algunos Usuario comenzando por $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -457,7 +457,7 @@
 
         /**
          * Obtener algunos Usuario terminando por $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -488,7 +488,7 @@
 
         /**
          * Listar algunos Usuario terminando por $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -519,7 +519,7 @@
 
         /**
          * Obtener algunos Usuario que contenga $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -550,7 +550,7 @@
 
         /**
          * Listar algunos Usuario que contenga $usuarioLogin
-         *
+         * 
          * @param $usuarioLogin
          * @param $performSize
          * @param $firstResultNumber
@@ -581,7 +581,7 @@
 
         /**
          * Obtener algunos Usuario dado $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -612,7 +612,7 @@
 
         /**
          * Listar algunos Usuario dado $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -643,7 +643,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -675,7 +675,7 @@
 
         /**
          * Listar algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -707,7 +707,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -738,7 +738,7 @@
 
         /**
          * Listar algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -769,7 +769,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -800,7 +800,7 @@
 
         /**
          * Listar algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -831,7 +831,7 @@
 
         /**
          *1. Obtener algunos Usuario comenzando por $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -862,7 +862,7 @@
 
         /**
          *1. Listar algunos Usuario comenzando por $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -893,7 +893,7 @@
 
         /**
          * Obtener algunos Usuario terminando por $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -924,7 +924,7 @@
 
         /**
          * Listar algunos Usuario terminando por $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -955,7 +955,7 @@
 
         /**
          * Obtener algunos Usuario que contenga $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -986,7 +986,7 @@
 
         /**
          * Listar algunos Usuario que contenga $usuarioClave
-         *
+         * 
          * @param $usuarioClave
          * @param $performSize
          * @param $firstResultNumber
@@ -1017,7 +1017,7 @@
 
         /**
          * Obtener algunos Usuario dado $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1048,7 +1048,7 @@
 
         /**
          * Listar algunos Usuario dado $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1079,7 +1079,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1111,7 +1111,7 @@
 
         /**
          * Listar algunos Usuario dado un rango
-         *
+         * 
          * @param $firstValue
          * @param $secondValue
          * @param $performSize
@@ -1143,7 +1143,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1174,7 +1174,7 @@
 
         /**
          * Listar algunos Usuario dado un rango superior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1205,7 +1205,7 @@
 
         /**
          * Obtener algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1236,7 +1236,7 @@
 
         /**
          * Listar algunos Usuario dado un rango inferior
-         *
+         * 
          * @param $value
          * @param $performSize
          * @param $firstResultNumber
@@ -1267,7 +1267,7 @@
 
         /**
          *1. Obtener algunos Usuario comenzando por $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1298,7 +1298,7 @@
 
         /**
          *1. Listar algunos Usuario comenzando por $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1329,7 +1329,7 @@
 
         /**
          * Obtener algunos Usuario terminando por $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1360,7 +1360,7 @@
 
         /**
          * Listar algunos Usuario terminando por $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1391,7 +1391,7 @@
 
         /**
          * Obtener algunos Usuario que contenga $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1422,7 +1422,7 @@
 
         /**
          * Listar algunos Usuario que contenga $usuarioTipo
-         *
+         * 
          * @param $usuarioTipo
          * @param $performSize
          * @param $firstResultNumber
@@ -1454,13 +1454,13 @@
 
         /**
          * Eliminar un Usuario Dado el $usuarioId
-         *
+         * 
          * @param $usuarioId
         */
         public function removeUsuario($usuarioId){
 
             $usuario = new Usuario();
-            $usuario->setId($usuarioId);
+            $usuario->setId($usuarioId); 
 
             # Validamos los campos
             if( !EntityValidator::validateId($usuarioId)){

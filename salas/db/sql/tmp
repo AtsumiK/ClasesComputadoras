@@ -1,0 +1,1 @@
+SELECT estudiante_id, estudiante_codigo FROM estudiante WHERE estudiante_id IN (SELECT impresion_estudiante FROM impresion GROUP BY (impresion_estudiante) HAVING COUNT(impresion_id)=50);
