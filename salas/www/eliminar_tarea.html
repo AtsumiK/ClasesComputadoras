@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Eliminar Software de los Registros</title>
+  <title>Eliminar Tarea de los Registros</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta charset="UTF-8">
   </head>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-          <h1>Eliminar Software de los Registros</h1>
+          <h1>Eliminar Tarea de los Registros</h1>
 
             <?php
             	require_once 'facade.php';
@@ -43,11 +43,11 @@
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
 
-                $numeroSerie = "";
-                $nombre = "";
-                $version = "";
-                $fechaCaducidad= "";
-                $fechaAquisicion = "";
+                $descripcion = "";
+                $comentarios = "";
+                $fechaInicio = "";
+                $fechaFin= "";
+                $monitor = "";
                 $equiposPermitidos = "";
                 $comentarios = "";
 
@@ -59,7 +59,7 @@
 
     // 2. Guardar en la variable el resultado de la insersion.
 
-                $res = eliminarSoftware($id);
+                $res = eliminarTarea($id);
 
     // ------------- fin de 2 ------------------
 
@@ -71,27 +71,25 @@
                 }
               }else if(isset($_GET['id'])){
                 $id = $_GET['id'];
-                $res = consultarSoftware($id);
+                $res = consultarTarea($id);
                 if($res["exito"]){
-                  $software = $res["content"];
-                  $numeroSerie = $software->getSoftwareNumeroSerie();
-                  $nombre = $software->getSoftwareNombre();
-                  $version = $software->getSoftwareVersion();
-                  $fechaCaducidad= $software->getSoftwareFechaCaducidad();
-                  $fechaAquisicion = $software->getSoftwareFechaAquisicion();
-                  $equiposPermitidos = $software->getSoftwareEquiposPermitidos();
-                  $comentarios = $software->getSoftwareComentarios();
+                  $tarea = $res["content"];
+                  $descripcion = $tarea->getTareaDescripcion();
+                  $comentarios = $tarea->getTareaComentarios();
+                  $fechaInicio = $tarea->getTareaFechaInicio();
+                  $fechaFin= $tarea->getTareaFechaFin();
+                  $monitor = $tarea->getTareaMonitor();
+                  $equiposPermitidos = $tarea->getTareaEquiposPermitidos();
+                  $comentarios = $tarea->getTareaComentarios();
 
                   echo
                     '<p>De hacer clic en "Eliminar" la siguiente información se perderá definitivamente</p>
                     <b>Id: </b>'.$id.'<br>
-                    <b>Numero de Serie: </b>'.$numeroSerie.'<br>
-                    <b>Nombre: </b>'.$nombre.'<br>
-                    <b>Versión: </b>'.$version.'<br>
-                    <b>Fecha de Caducidad: </b>'.$fechaCaducidad.'<br>
-                    <b>Fecha Adquisición: </b>'.$fechaAquisicion.'<br>
-                    <b>Número de Equipos Permitidos: </b>'.$equiposPermitidos.'<br>
-                    <b>Comentarios: </b>'.$comentarios.'<br>';
+                    <b>Descripción: </b>'.$descripcion.'<br>
+                    <b>Comentarios: </b>'.$comentarios.'<br>
+                    <b>Fecha de Inicio: </b>'.$fechaInicio.'<br>
+                    <b>Fecha de Finalización: </b>'.$fechaFin.'<br>
+                    <b>Monitor: </b>'.$monitor.'<br>';
 
                 }else{
                     echo '<span>'.$res["content"].'</span>';

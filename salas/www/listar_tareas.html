@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Softwares</title>
+  <title>Tareas</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -35,18 +35,16 @@
 
       </div>
       <div id="content">
-        <h1>Listar Softwares</h1>
-        <span class="tool_button"><a href="insertar_software.html">Nuevo</a></span>
+        <h1>Listar Tareas</h1>
+        <span class="tool_button"><a href="insertar_tarea.html">Nuevo</a></span>
         <table style="width:100%">
           <tr>
             <th>id</th>
-            <th>Numero de Serie</th>
-            <th>Nombre</th>            
-            <th>Versión</th>
-            <th>Fecha de Caducidad</th>
-            <th>Fecha Adquisición</th>
-            <th>Número de Equipos Permitidos</th>
-            <th>Comentarios</th>   
+            <th>Descripción</th>
+            <th>Comentarios</th>            
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Finalización</th>
+            <th>Monitor</th>
             <th>Acción</th>      
 
           </tr>
@@ -57,26 +55,24 @@
 //---------------------------------------------------------------------------------------------------------
 
           	require_once 'facade.php';
-        	  $res = listarSoftwares();
+        	  $res = listarTareas();
 
             if($res["exito"]){
-              $softwares = $res["content"];
-              foreach ($softwares as $software) {
+              $tareas = $res["content"];
+              foreach ($tareas as $tarea) {
 
 
     // 1. Poner los vínculos correspondientes
 
-        	    	echo '<tr><td>'.$software->getId().'</td>
-                          <td>'.$software->getSoftwareNumeroSerie().'</td>
-                          <td>'.$software->getSoftwareNombre().'</td>
-                          <td>'.$software->getSoftwareVersion().'</td>
-                          <td>'.$software->getSoftwareFechaCaducidad().'</td>
-                          <td>'.$software->getSoftwareFechaAquisicion().'</td>
-                          <td>'.$software->getSoftwareEquiposPermitidos().'</td>
-                          <td>'.$software->getSoftwareComentarios().'</td>
-                          <td><a href="consultar_software.html?id='.$software->getId().'"> Ver  -</a>
-                              <a href="editar_software.html?id='.$software->getId().'"> Editar  -</a>
-                              <a href="eliminar_software.html?id='.$software->getId().'"> Eliminar   </a>
+        	    	echo '<tr><td>'.$tarea->getId().'</td>
+                          <td>'.$tarea->getTareaDescripcion().'</td>
+                          <td>'.$tarea->getTareaComentarios().'</td>
+                          <td>'.$tarea->getTareaFechaInicio().'</td>
+                          <td>'.$tarea->getTareaFechaFin().'</td>
+                          <td>'.$tarea->getTareaMonitor().'</td>
+                          <td><a href="consultar_tarea.html?id='.$tarea->getId().'"> Ver  -</a>
+                              <a href="editar_tarea.html?id='.$tarea->getId().'"> Editar  -</a>
+                              <a href="eliminar_tarea.html?id='.$tarea->getId().'"> Eliminar   </a>
                           </td>
                       </tr>';
 

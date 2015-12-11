@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Agregar Software</title>
+  <title>Agregar Tarea</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <meta charset="UTF-8">
 </head>
@@ -35,7 +35,7 @@
 
       </div>
       <div id="content">
-        <h1>Insertar Software</h1>
+        <h1>Insertar Tarea</h1>
 
         <?php
   //-------------------- PARA EL PHP TENER EN CUENTA LAS INSTRUCCIONES --------------------------------------
@@ -44,18 +44,16 @@
           require_once 'facade.php';
           $id = null;
           $res = null;
-          $software = null;
+          $tarea = null;
           $error = null;
 
 
     // 1. Poner variables que se recogen en el formulario, que son los campos para crear un objeto. En este caso sólo tiene nombre.
-                $numeroSerie = "";
-                $nombre = "";
-                $version = "";
-                $fechaCaducidad= "";
-                $fechaAquisicion = "";
-                $equiposPermitidos = "";
+                $descripcion = "";
                 $comentarios = "";
+                $fechaInicio = "";
+                $fechaFin= "";
+                $monitor = "";
 
 
     // ------------- fin de 1 ------------------
@@ -64,22 +62,21 @@
 
 
    // 2. Guardar en las variables creadas en el paso 1, los datos que vengan de POST del formulario con los nombres que se haya puesto en el input. En este caso sólo se necesita nombre.
-            $numeroSerie = $_POST['softwareNumeroSerie'];
-            $version = $_POST['softwareVersion'];
-            $nombre = $_POST['softwareNombre'];
-            $fechaCaducidad= $_POST['softwareFechaCaducidad'];
-            $fechaAquisicion = $_POST['softwareFechaAquisicion'];
-            $equiposPermitidos = $_POST['softwareEquiposPermitidos'];
-            $comentarios = $_POST['softwareComentarios'];
+            $descripcion = $_POST['tareaDescripcion'];
+            $fechaInicio = $_POST['tareaFechaInicio'];
+            $comentarios = $_POST['tareaComentarios'];
+            $fechaFin= $_POST['tareaFechaFin'];
+            $monitor = $_POST['tareaMonitor'];
+
    // ------------- fin de 2 ------------------
 
 
 
-            $software = new SoftwareDTO(null, $numeroSerie, $nombre, $version, $fechaCaducidad, $fechaAquisicion, $equiposPermitidos, $comentarios);
+            $tarea = new TareaDTO(null, $descripcion, $comentarios, $fechaInicio, $fechaFin, $monitor);
 
    // 3. Guardar en la variable el resultado de la insersion.
 
-            $res = insertarSoftware($software);
+            $res = insertarTarea($tarea);
    // ------------- fin de 2 ------------------
 
 
@@ -95,13 +92,11 @@
 
           <form method="post" action="#">
             <div class="form_settings">
-              <p><span>Numero de Serie</span><input class="contact" type="text" name="softwareNumeroSerie" value="'.$numeroSerie.'" /></p>
-              <p><span>Nombre</span><input class="contact" type="text" name="softwareNombre" value="'.$nombre.'" /></p>
-              <p><span>Versión</span><input class="contact" type="text" name="softwareVersion" value="'.$version.'" /></p>
-              <p><span>Fecha de Caducidad</span><input class="contact" type="text" name="softwareFechaCaducidad" value="'.$fechaCaducidad.'" /></p>
-              <p><span>Fecha Adquisición</span><input class="contact" type="text" name="softwareFechaAquisicion" value="'.$fechaAquisicion.'" /></p>
-              <p><span>Número de Equipos Permitidos</span><input class="contact" type="text" name="softwareEquiposPermitidos" value="'.$equiposPermitidos.'" /></p>
-              <p><span>Comentarios</span><input class="contact" type="text" name="softwareComentarios" value="'.$comentarios.'" /></p>
+              <p><span>Descripción</span><input class="contact" type="text" name="tareaDescripcion" value="'.$descripcion.'" /></p>
+              <p><span>Comentarios</span><input class="contact" type="text" name="tareaComentarios" value="'.$comentarios.'" /></p>
+              <p><span>Fecha de Inicio</span><input class="contact" type="text" name="tareaFechaInicio" value="'.$fechaInicio.'" /></p>
+              <p><span>Fecha de Finalización</span><input class="contact" type="text" name="tareaFechaFin" value="'.$fechaFin.'" /></p>
+              <p><span>Monitor Encargado</span><input class="contact" type="text" name="tareaMonitor" value="'.$monitor.'" /></p>
               <p style="padding-top 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submit" value="Crear" /></p>
             </div>
           </form>';
